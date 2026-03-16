@@ -1,0 +1,42 @@
+project:
+  type: book
+
+book:
+  title: "Notebook: GenAI"
+  author: "Angelika Merkel"
+  date: "12/4/2025"
+  page-footer:
+    center: |
+      This book was build with curiosity and <a href="https://quarto.org/">Quarto</a>.
+      
+  chapters:
+    - index.qmd
+    
+    - Prompt_engineering.qmd
+    - Prompt_pattern.practical.qmd
+    - Prompt_pattern.technical.qmd
+    - CustomGPTs.qmd
+    - Data_analysis_with_ChatGTP.qmd
+    
+
+#  TO DO chapters:
+#  - Building_trustworthy_AI.qmd
+#  - ChatGTP_basics.qmd
+#  - AI_agents.qmd
+#  - History_of_generative_AI.qmd
+#  - Ethiks_and_Risks.qmd
+#  - GenAI_for_code_development.qmd
+#  - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Data analysis with ChatGTP – Notebook: GenAI</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./CustomGPTs.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f8665e8ba8ed36f59a195ffe85da951d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Data_analysis_with_ChatGTP.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data analysis with ChatGTP</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Notebook: GenAI</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Prompt_engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Prompt Engineering</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Prompt_pattern.practical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prompt Pattern (practical)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Prompt_pattern.technical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./CustomGPTs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CustomGPTs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Data_analysis_with_ChatGTP.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data analysis with ChatGTP</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#general-principles-of-working-with-generative-ai" id="toc-general-principles-of-working-with-generative-ai" class="nav-link active" data-scroll-target="#general-principles-of-working-with-generative-ai"><span class="header-section-number">5.1</span> General Principles of Working with generative AI</a></li>
+  <li><a href="#working-with-data-files-documents-media-and-zip-files" id="toc-working-with-data-files-documents-media-and-zip-files" class="nav-link" data-scroll-target="#working-with-data-files-documents-media-and-zip-files"><span class="header-section-number">5.2</span> Working with Data Files, Documents, Media and Zip Files</a>
+  <ul class="collapse">
+  <li><a href="#working-with-data-files-and-visualizations" id="toc-working-with-data-files-and-visualizations" class="nav-link" data-scroll-target="#working-with-data-files-and-visualizations"><span class="header-section-number">5.2.1</span> Working with Data Files and Visualizations</a></li>
+  <li><a href="#working-with-documents" id="toc-working-with-documents" class="nav-link" data-scroll-target="#working-with-documents"><span class="header-section-number">5.2.2</span> Working with Documents</a></li>
+  <li><a href="#using-canvas-in-chatgpt" id="toc-using-canvas-in-chatgpt" class="nav-link" data-scroll-target="#using-canvas-in-chatgpt"><span class="header-section-number">5.2.3</span> Using Canvas in ChatGPT</a></li>
+  <li><a href="#structured-data-workflows" id="toc-structured-data-workflows" class="nav-link" data-scroll-target="#structured-data-workflows"><span class="header-section-number">5.2.4</span> Structured Data Workflows</a></li>
+  <li><a href="#working-with-media-and-zip-archives" id="toc-working-with-media-and-zip-archives" class="nav-link" data-scroll-target="#working-with-media-and-zip-archives"><span class="header-section-number">5.2.5</span> Working with Media and Zip Archives</a></li>
+  </ul></li>
+  <li><a href="#workflows-and-planning" id="toc-workflows-and-planning" class="nav-link" data-scroll-target="#workflows-and-planning"><span class="header-section-number">5.3</span> Workflows and Planning</a></li>
+  <li><a href="#check-bringing-information-into-the-conversation" id="toc-check-bringing-information-into-the-conversation" class="nav-link" data-scroll-target="#check-bringing-information-into-the-conversation"><span class="header-section-number">5.4</span> Check: Bringing Information into the Conversation</a>
+  <ul class="collapse">
+  <li><a href="#the-etac-framework-for-workflows-human-ai-process-planning" id="toc-the-etac-framework-for-workflows-human-ai-process-planning" class="nav-link" data-scroll-target="#the-etac-framework-for-workflows-human-ai-process-planning"><span class="header-section-number">5.4.1</span> The ETAC Framework for workflows Human + AI Process Planning</a></li>
+  <li><a href="#analyze-from-raw-material-to-insight" id="toc-analyze-from-raw-material-to-insight" class="nav-link" data-scroll-target="#analyze-from-raw-material-to-insight"><span class="header-section-number">5.4.2</span> Analyze: From raw material to insight</a></li>
+  <li><a href="#planning-workflows-human-and-ai-roles" id="toc-planning-workflows-human-and-ai-roles" class="nav-link" data-scroll-target="#planning-workflows-human-and-ai-roles"><span class="header-section-number">5.4.3</span> Planning Workflows – Human and AI Roles</a></li>
+  <li><a href="#ai-planning-techniques-and-iteration" id="toc-ai-planning-techniques-and-iteration" class="nav-link" data-scroll-target="#ai-planning-techniques-and-iteration"><span class="header-section-number">5.4.4</span> AI Planning Techniques and Iteration</a></li>
+  <li><a href="#alternative-approaches-and-tool-choice" id="toc-alternative-approaches-and-tool-choice" class="nav-link" data-scroll-target="#alternative-approaches-and-tool-choice"><span class="header-section-number">5.4.5</span> Alternative Approaches and Tool Choice</a></li>
+  <li><a href="#fixing-and-spotting-errors" id="toc-fixing-and-spotting-errors" class="nav-link" data-scroll-target="#fixing-and-spotting-errors"><span class="header-section-number">5.4.6</span> Fixing and Spotting Errors</a></li>
+  <li><a href="#consistency-test-cases-and-source-linking" id="toc-consistency-test-cases-and-source-linking" class="nav-link" data-scroll-target="#consistency-test-cases-and-source-linking"><span class="header-section-number">5.4.7</span> Consistency, Test Cases, and Source Linking</a></li>
+  <li><a href="#breaking-down-and-assembling-larger-projects" id="toc-breaking-down-and-assembling-larger-projects" class="nav-link" data-scroll-target="#breaking-down-and-assembling-larger-projects"><span class="header-section-number">5.4.8</span> Breaking Down and Assembling Larger Projects</a></li>
+  <li><a href="#turning-conversations-into-software" id="toc-turning-conversations-into-software" class="nav-link" data-scroll-target="#turning-conversations-into-software"><span class="header-section-number">5.4.9</span> Turning Conversations into Software</a></li>
+  </ul></li>
+  <li><a href="#problem-selection-and-trustworthy-ai" id="toc-problem-selection-and-trustworthy-ai" class="nav-link" data-scroll-target="#problem-selection-and-trustworthy-ai"><span class="header-section-number">5.5</span> Problem Selection and Trustworthy AI</a>
+  <ul class="collapse">
+  <li><a href="#picking-good-problems-for-ai-achieve-aligned-view" id="toc-picking-good-problems-for-ai-achieve-aligned-view" class="nav-link" data-scroll-target="#picking-good-problems-for-ai-achieve-aligned-view"><span class="header-section-number">5.5.1</span> Picking Good Problems for AI (ACHIEVE-aligned view)</a></li>
+  <li><a href="#the-achieve-framework-overview" id="toc-the-achieve-framework-overview" class="nav-link" data-scroll-target="#the-achieve-framework-overview"><span class="header-section-number">5.5.2</span> The ACHIEVE Framework (Overview)</a></li>
+  <li><a href="#achieve-detailed-use-cases" id="toc-achieve-detailed-use-cases" class="nav-link" data-scroll-target="#achieve-detailed-use-cases"><span class="header-section-number">5.5.3</span> ACHIEVE – Detailed Use Cases</a></li>
+  <li><a href="#achieve-for-augmented-intelligence-recap" id="toc-achieve-for-augmented-intelligence-recap" class="nav-link" data-scroll-target="#achieve-for-augmented-intelligence-recap"><span class="header-section-number">5.5.4</span> ACHIEVE for Augmented Intelligence (Recap)</a></li>
+  <li><a href="#building-trustworthy-ai" id="toc-building-trustworthy-ai" class="nav-link" data-scroll-target="#building-trustworthy-ai"><span class="header-section-number">5.5.5</span> Building Trustworthy AI</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data analysis with ChatGTP</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>My notes from the Coursera courses <em>Advanced Data Analysis with ChatGPT</em> and <em>Building Trustworthy AI</em> (Code Interpreter) by Jules White. Digitized from handwritten material via mobile photos and organized into a coherent structure using ChatGPT (customGPT: “Notes Organizer”).</p>
+<p><strong>Synopsis:</strong> How to use ChatGPT effectively for data analysis, document processing, workflow planning, and creative problem-solving, and outline key principles, tools, and frameworks (such as ACHIEVE and ETAC) that help AI augment human reasoning while maintaining accuracy and control.</p>
+<hr>
+<section id="general-principles-of-working-with-generative-ai" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="general-principles-of-working-with-generative-ai"><span class="header-section-number">5.1</span> General Principles of Working with generative AI</h2>
+<p><strong>Fundamentals</strong></p>
+<ul>
+<li><em>“LLMs do not generate answers, LLMs generate text. Some of the text might provide useful answers”(Jules White)</em></li>
+<li>LLM output has an inherent random component (LLMs predict, and the same prompt may not provide the exact same output)</li>
+<li>Using generative AI implys taking ownership of the output.</li>
+</ul>
+<p><strong>Treat Code Interpreter as an internal assistant</strong></p>
+<p>Think of the Code Interpreter as a smart intern that needs clear instructions:</p>
+<ol type="1">
+<li><strong>Break tasks down step-by-step.</strong></li>
+<li><strong>Provide all necessary context and information upfront</strong> – data files, constraints, goals, examples.</li>
+<li>Ask for <strong>detailed feedback</strong>, e.g.&nbsp;“What could be improved about this figure?”</li>
+<li><strong>Don’t expect perfection.</strong> Plan to iterate with it.</li>
+<li><strong>Always review results</strong> for accuracy, plausibility, and errors.</li>
+<li>Be <strong>explicit</strong> about:
+<ul>
+<li>What you want to achieve.</li>
+<li>How you want results presented (tables, plots, summaries, slides).</li>
+<li>Any constraints (runtime, file formats, colour schemes, etc.).</li>
+</ul></li>
+<li><strong>Provide escape valves</strong></li>
+</ol>
+<hr>
+</section>
+<section id="working-with-data-files-documents-media-and-zip-files" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="working-with-data-files-documents-media-and-zip-files"><span class="header-section-number">5.2</span> Working with Data Files, Documents, Media and Zip Files</h2>
+<section id="working-with-data-files-and-visualizations" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="working-with-data-files-and-visualizations"><span class="header-section-number">5.2.1</span> Working with Data Files and Visualizations</h3>
+<section id="uploading-and-exploring-data" class="level4" data-number="5.2.1.1">
+<h4 data-number="5.2.1.1" class="anchored" data-anchor-id="uploading-and-exploring-data"><span class="header-section-number">5.2.1.1</span> Uploading and exploring data</h4>
+<p>Typical workflow with Code Interpreter:</p>
+<ul>
+<li>Upload a dataset (csv) and ask:
+<ul>
+<li>“Read this file and explain the structure of the data.”</li>
+<li>“Show me the columns, data types, and basic statistics.”</li>
+</ul></li>
+<li>Ask for <strong>interesting visualizations</strong>:
+<ul>
+<li>“Create several interesting plots that could be useful for exploratory analysis.”</li>
+<li>“Try a histogram, a boxplot, and a scatterplot matrix.”</li>
+</ul></li>
+</ul>
+<p>You can then iterate:</p>
+<ul>
+<li>“Refine the labels and axes.”</li>
+<li>“Use a harmonized colour scheme.”</li>
+<li>“Order categories in a meaningful way.”</li>
+</ul>
+</section>
+<section id="adding-narrative-text-and-presentations" class="level4" data-number="5.2.1.2">
+<h4 data-number="5.2.1.2" class="anchored" data-anchor-id="adding-narrative-text-and-presentations"><span class="header-section-number">5.2.1.2</span> Adding narrative text and presentations</h4>
+<p>You can ask ChatGPT to help with presentation-ready outputs:</p>
+<ul>
+<li>“Insert each visualization into a slide and write a short caption explaining what it shows.”</li>
+<li>“Update my existing slides with a short narrative for each plot.”</li>
+<li>“Use consistent terminology and colour coding across all slides.”</li>
+</ul>
+<p>Example prompt:</p>
+<blockquote class="blockquote">
+<p>“Create a one-slide summary for each of these plots, explaining what the viewer should take away. Use clear language suitable for a multidisciplinary biomedical audience.”</p>
+</blockquote>
+</section>
+</section>
+<section id="working-with-documents" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="working-with-documents"><span class="header-section-number">5.2.2</span> Working with Documents</h3>
+<section id="documents-as-objects-vs.-documents-as-knowledge" class="level4" data-number="5.2.2.1">
+<h4 data-number="5.2.2.1" class="anchored" data-anchor-id="documents-as-objects-vs.-documents-as-knowledge"><span class="header-section-number">5.2.2.1</span> Documents as objects vs.&nbsp;documents as knowledge</h4>
+<p>Two levels of interaction with documents:</p>
+<ol type="1">
+<li><strong>Document as an object</strong>
+<ul>
+<li>Operations: rename, move, download, edit, zip/unzip.</li>
+</ul></li>
+<li><strong>Document as knowledge</strong>
+<ul>
+<li>Operations: analyze, summarize, outline, extract key statements, compare sections, etc.</li>
+</ul></li>
+</ol>
+<p>Being aware of this distinction helps you design useful prompts.</p>
+</section>
+<section id="useful-document-prompts" class="level4" data-number="5.2.2.2">
+<h4 data-number="5.2.2.2" class="anchored" data-anchor-id="useful-document-prompts"><span class="header-section-number">5.2.2.2</span> Useful document prompts</h4>
+<p>Examples:</p>
+<ul>
+<li>“Extract this PDF to plain text and tell me what it contains at a high level.”</li>
+<li>“Reread the text and break it down into the smallest meaningful sections with headings.”</li>
+<li>“Create an outline of the document.”</li>
+<li>“Identify contradictions, gaps, or redundancies.”</li>
+<li>“Highlight all places where inclusion criteria are mentioned and summarise them.”</li>
+</ul>
+<p>This improves:</p>
+<ul>
+<li><strong>Reasoning</strong> – you understand the structure more clearly.</li>
+<li><strong>Verification</strong> – easier to check that all key information is captured.</li>
+<li><strong>Navigation</strong> – easier to find where specific concepts live.</li>
+</ul>
+</section>
+</section>
+<section id="using-canvas-in-chatgpt" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="using-canvas-in-chatgpt"><span class="header-section-number">5.2.3</span> Using Canvas in ChatGPT</h3>
+<p>Canvas is useful for interactive editing and document development.</p>
+<section id="basic-canvas-workflow" class="level4" data-number="5.2.3.1">
+<h4 data-number="5.2.3.1" class="anchored" data-anchor-id="basic-canvas-workflow"><span class="header-section-number">5.2.3.1</span> Basic Canvas workflow</h4>
+<ol type="1">
+<li>Open <strong>Canvas</strong>.</li>
+<li>Paste or import your text (or upload a document to extract text).</li>
+<li>Enter a prompt to modify the text or to ask for comments/suggestions.</li>
+<li>Edit the text manually or accept/reject suggested changes.</li>
+<li>Optionally upload additional documents for context (e.g.&nbsp;guidelines, previous drafts).</li>
+<li>Enter more prompts to adjust <strong>tone</strong>, <strong>clarity</strong>, <strong>length</strong>, or <strong>structure</strong>.</li>
+<li>Use the Canvas controls (e.g.&nbsp;icons in the lower corner) to adjust text length and polish.</li>
+</ol>
+</section>
+<section id="two-main-canvas-entry-paths" class="level4" data-number="5.2.3.2">
+<h4 data-number="5.2.3.2" class="anchored" data-anchor-id="two-main-canvas-entry-paths"><span class="header-section-number">5.2.3.2</span> Two main Canvas entry paths</h4>
+<ul>
+<li><strong>Upload a document + prompt</strong><br>
+&gt; “Extract the text from this document into Canvas and clean up formatting.”</li>
+<li><strong>Copy &amp; paste text directly</strong><br>
+Then iterate with prompts to refine.</li>
+</ul>
+</section>
+</section>
+<section id="structured-data-workflows" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="structured-data-workflows"><span class="header-section-number">5.2.4</span> Structured Data Workflows</h3>
+<section id="understanding-tables" class="level4" data-number="5.2.4.1">
+<h4 data-number="5.2.4.1" class="anchored" data-anchor-id="understanding-tables"><span class="header-section-number">5.2.4.1</span> Understanding tables</h4>
+<p>Useful prompts:</p>
+<ul>
+<li>“Read and explain the structure of this table.”</li>
+<li>“Describe each column, including data type and potential problems.”</li>
+<li>“Identify missing values, inconsistent labels, and outliers.”</li>
+</ul>
+<p>Then:</p>
+<ul>
+<li>“Calculate derived variables step-by-step and show intermediate tables.”</li>
+<li>“Visualise the relationship between variable X and Y, including confidence intervals.”</li>
+</ul>
+</section>
+<section id="example-workflow" class="level4" data-number="5.2.4.2">
+<h4 data-number="5.2.4.2" class="anchored" data-anchor-id="example-workflow"><span class="header-section-number">5.2.4.2</span> Example workflow</h4>
+<ol type="1">
+<li>Load dataset (CSV, TSV, Excel, etc.).</li>
+<li>Ask for an overview (dimensions, column types, missingness).</li>
+<li>Clean: standardise categories, handle missing values.</li>
+<li>Derive new variables (ratios, differences, grouping codes).</li>
+<li>Visualise key relationships.</li>
+<li>Summarise results in natural language.</li>
+</ol>
+</section>
+</section>
+<section id="working-with-media-and-zip-archives" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="working-with-media-and-zip-archives"><span class="header-section-number">5.2.5</span> Working with Media and Zip Archives</h3>
+<section id="video-workflows" class="level4" data-number="5.2.5.1">
+<h4 data-number="5.2.5.1" class="anchored" data-anchor-id="video-workflows"><span class="header-section-number">5.2.5.1</span> Video workflows</h4>
+<p>Typical operations:</p>
+<ul>
+<li>“Extract N frames from this video, evenly spaced.”</li>
+<li>“Display the extracted frames.”</li>
+<li>“Resize each image to 300 px wide while preserving aspect ratio.”</li>
+<li>“Convert to grayscale and increase contrast by 30%.”</li>
+</ul>
+<p>This is useful for:</p>
+<ul>
+<li>Creating thumbnails.</li>
+<li>Quick quality checks.</li>
+<li>Preparing training data for image models.</li>
+</ul>
+</section>
+<section id="zip-archives" class="level4" data-number="5.2.5.2">
+<h4 data-number="5.2.5.2" class="anchored" data-anchor-id="zip-archives"><span class="header-section-number">5.2.5.2</span> Zip archives</h4>
+<p>Zip archives are handy for batch operations:</p>
+<ul>
+<li>Zip multiple outputs into a single file for download.</li>
+<li>Ask ChatGPT to <strong>propose a folder structure</strong> and <strong>better filenames</strong>.</li>
+</ul>
+<p>Example prompt:</p>
+<blockquote class="blockquote">
+<p>“Resize all images to 300 px width, rename them systematically, and put them into a zip file for download. Suggest a clear naming scheme based on sample ID and time point.”</p>
+</blockquote>
+</section>
+</section>
+</section>
+<section id="workflows-and-planning" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="workflows-and-planning"><span class="header-section-number">5.3</span> Workflows and Planning</h2>
+</section>
+<section id="check-bringing-information-into-the-conversation" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="check-bringing-information-into-the-conversation"><span class="header-section-number">5.4</span> Check: Bringing Information into the Conversation</h2>
+<p>Useful operations:</p>
+<ul>
+<li>“Read this long text.”</li>
+<li>“Summarize it in X bullet points.”</li>
+<li>“Present the key information back to me in a way that I can quickly verify.”</li>
+<li>“Create an index of where specific information (e.g.&nbsp;inclusion criteria, endpoints) can be found.”</li>
+</ul>
+<p>This helps to:</p>
+<ul>
+<li>Improve reasoning.</li>
+<li>Support verification and auditing.</li>
+<li>Create better documentation and overviews.</li>
+</ul>
+<section id="the-etac-framework-for-workflows-human-ai-process-planning" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="the-etac-framework-for-workflows-human-ai-process-planning"><span class="header-section-number">5.4.1</span> The ETAC Framework for workflows Human + AI Process Planning</h3>
+<p>Think of the overall human–AI workflow as:</p>
+<p><strong>E – Extract → T – Transform → A – AI / Analyze → C – Create</strong></p>
+<section id="extract-modalities-and-operations" class="level4" data-number="5.4.1.1">
+<h4 data-number="5.4.1.1" class="anchored" data-anchor-id="extract-modalities-and-operations"><span class="header-section-number">5.4.1.1</span> Extract: modalities and operations</h4>
+<ul>
+<li><strong>Documents (docx, pdf, txt)</strong>
+<ul>
+<li>Text extraction</li>
+<li>Metadata extraction</li>
+<li>Entity recognition</li>
+</ul></li>
+<li><strong>Video (mp4, avi)</strong>
+<ul>
+<li>Frame extraction</li>
+<li>Object detection</li>
+<li>(Sometimes) face recognition</li>
+</ul></li>
+<li><strong>Audio (mp3, wav)</strong>
+<ul>
+<li>Speech-to-text</li>
+<li>Noise reduction</li>
+<li>Feature extraction</li>
+</ul></li>
+<li><strong>Datasets (csv, tsv, json, xlsx)</strong>
+<ul>
+<li>Load data</li>
+<li>Preprocess</li>
+<li>Feature engineering</li>
+</ul></li>
+<li><strong>Images (jpg, png, etc.)</strong>
+<ul>
+<li>Object detection</li>
+<li>Segmentation</li>
+<li>Feature extraction</li>
+</ul></li>
+</ul>
+</section>
+<section id="transform-data-and-images" class="level4" data-number="5.4.1.2">
+<h4 data-number="5.4.1.2" class="anchored" data-anchor-id="transform-data-and-images"><span class="header-section-number">5.4.1.2</span> Transform: data and images</h4>
+<ul>
+<li><strong>Structured data</strong>
+<ul>
+<li>Clean and normalise</li>
+<li>Drop or merge columns</li>
+<li>Recode values</li>
+<li>Compute derived features</li>
+</ul></li>
+<li><strong>Images</strong>
+<ul>
+<li>Subselect regions (ROI)</li>
+<li>Crop and resize</li>
+<li>Adjust contrast, brightness, etc.</li>
+</ul></li>
+</ul>
+<p>Always prefer <strong>small, controlled steps</strong> that you can undo or repeat.</p>
+</section>
+</section>
+<section id="analyze-from-raw-material-to-insight" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="analyze-from-raw-material-to-insight"><span class="header-section-number">5.4.2</span> Analyze: From raw material to insight</h3>
+<p>Analysis-related operations include:</p>
+<ul>
+<li>Find ambiguities and inconsistencies.</li>
+<li>Analyse and summarise content.</li>
+<li>Raise clarifying questions for the user.</li>
+<li>Generate examples and counter-examples.</li>
+</ul>
+<p>You can also maintain a “library” or mental catalogue of:</p>
+<ul>
+<li>File types</li>
+<li>Common operations</li>
+<li>Good default workflows</li>
+</ul>
+</section>
+<section id="planning-workflows-human-and-ai-roles" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="planning-workflows-human-and-ai-roles"><span class="header-section-number">5.4.3</span> Planning Workflows – Human and AI Roles</h3>
+<section id="human-planning" class="level4" data-number="5.4.3.1">
+<h4 data-number="5.4.3.1" class="anchored" data-anchor-id="human-planning"><span class="header-section-number">5.4.3.1</span> Human planning</h4>
+<ul>
+<li>Lay out the process manually first:
+<ul>
+<li>Inputs</li>
+<li>Intermediate artefacts</li>
+<li>Outputs</li>
+</ul></li>
+<li>Decide what you want to control vs.&nbsp;what AI can suggest.</li>
+</ul>
+</section>
+<section id="ai-planning" class="level4" data-number="5.4.3.2">
+<h4 data-number="5.4.3.2" class="anchored" data-anchor-id="ai-planning"><span class="header-section-number">5.4.3.2</span> AI planning</h4>
+<p>Ask ChatGPT:</p>
+<blockquote class="blockquote">
+<p>“Propose a detailed step-by-step plan for this task.”</p>
+</blockquote>
+<p>Then refine:</p>
+<ul>
+<li><p>Expand each bullet into <strong>2–3 actionable substeps</strong>.</p></li>
+<li><p>Ensure each step is something:</p>
+<ul>
+<li>You can perform, or</li>
+<li>The Python environment can perform.</li>
+</ul></li>
+<li><p>Turn the result into an <strong>actionable plan</strong> or checklist.</p></li>
+<li><p>Verify that the sequence of step is executable</p></li>
+</ul>
+</section>
+</section>
+<section id="ai-planning-techniques-and-iteration" class="level3" data-number="5.4.4">
+<h3 data-number="5.4.4" class="anchored" data-anchor-id="ai-planning-techniques-and-iteration"><span class="header-section-number">5.4.4</span> AI Planning Techniques and Iteration</h3>
+<p>Good practice when executing a plan with Code Interpreter:</p>
+<ol type="1">
+<li>Execute steps <strong>one by one</strong>.</li>
+<li>Save results of each step into <strong>separate files</strong> (for reproducibility and debugging).</li>
+<li>At the beginning of each step:
+<ul>
+<li>Reflect on prior output.</li>
+<li>Check alignment with goals.</li>
+</ul></li>
+<li>If something breaks:
+<ul>
+<li>Stop, diagnose, fix the step.</li>
+<li>Then continue.</li>
+</ul></li>
+</ol>
+<p>You can also:</p>
+<ul>
+<li>Store the plan itself in a separate file for later reuse.</li>
+<li>Use “flipped interaction”: ask AI to improve <em>your</em> plan, rather than just proposing its own.</li>
+</ul>
+</section>
+<section id="alternative-approaches-and-tool-choice" class="level3" data-number="5.4.5">
+<h3 data-number="5.4.5" class="anchored" data-anchor-id="alternative-approaches-and-tool-choice"><span class="header-section-number">5.4.5</span> Alternative Approaches and Tool Choice</h3>
+<p>Not all plans will work on the first try:</p>
+<ul>
+<li>Some approaches will fail due to limitations of the model or tools.</li>
+<li>It’s valuable to <strong>try alternative methods</strong> and compare.</li>
+</ul>
+<p>Tool choice matters:</p>
+<ul>
+<li><strong>GPT / ChatGPT</strong> – reasoning, summarising, planning, generating text.</li>
+<li><strong>Python / other tools</strong> – computation, heavy data processing, integration with external systems.</li>
+</ul>
+<p>Often you manually choose <strong>when</strong> to ask the LLM to “do something” and when to switch to specialised tools.</p>
+</section>
+<section id="fixing-and-spotting-errors" class="level3" data-number="5.4.6">
+<h3 data-number="5.4.6" class="anchored" data-anchor-id="fixing-and-spotting-errors"><span class="header-section-number">5.4.6</span> Fixing and Spotting Errors</h3>
+<section id="fixing-errors" class="level4" data-number="5.4.6.1">
+<h4 data-number="5.4.6.1" class="anchored" data-anchor-id="fixing-errors"><span class="header-section-number">5.4.6.1</span> Fixing errors</h4>
+<ul>
+<li>Go back to the prompt <strong>before</strong> the error occurred and edit it.</li>
+<li>Number steps in your plan so you can say: &gt; “Repeat step 4, but show the intermediate table before filtering.”</li>
+<li>Ask for explicit error reporting and logging.</li>
+</ul>
+</section>
+<section id="spotting-hallucinations" class="level4" data-number="5.4.6.2">
+<h4 data-number="5.4.6.2" class="anchored" data-anchor-id="spotting-hallucinations"><span class="header-section-number">5.4.6.2</span> Spotting hallucinations</h4>
+<p>Warning signs:</p>
+<ul>
+<li><strong>Input/output ratio is very small</strong> – tiny context, huge confident answer.</li>
+<li>A lot of <strong>artificial data is generated</strong> without clear reason.</li>
+<li>Long conversation history with many state changes.</li>
+</ul>
+<p>Additional caution when:</p>
+<ul>
+<li>Using conversation history as implicit input.</li>
+<li>Re-running code cells on modified data without re-checking assumptions.</li>
+</ul>
+</section>
+</section>
+<section id="consistency-test-cases-and-source-linking" class="level3" data-number="5.4.7">
+<h3 data-number="5.4.7" class="anchored" data-anchor-id="consistency-test-cases-and-source-linking"><span class="header-section-number">5.4.7</span> Consistency, Test Cases, and Source Linking</h3>
+<p>To build more trustworthy workflows:</p>
+<ul>
+<li>Use identifiers and citations:
+<ul>
+<li>Page numbers, line numbers, section IDs.</li>
+</ul></li>
+<li>Preserve references to <strong>original sources</strong> when summarising.</li>
+<li>Build <strong>test cases</strong>:
+<ul>
+<li>Use synthetic data to test specific actions/conditions.</li>
+<li>Check whether the workflow behaves as expected.</li>
+</ul></li>
+</ul>
+</section>
+<section id="breaking-down-and-assembling-larger-projects" class="level3" data-number="5.4.8">
+<h3 data-number="5.4.8" class="anchored" data-anchor-id="breaking-down-and-assembling-larger-projects"><span class="header-section-number">5.4.8</span> Breaking Down and Assembling Larger Projects</h3>
+<section id="breaking-down-a-large-project" class="level4" data-number="5.4.8.1">
+<h4 data-number="5.4.8.1" class="anchored" data-anchor-id="breaking-down-a-large-project"><span class="header-section-number">5.4.8.1</span> Breaking down a large project</h4>
+<ul>
+<li>Start by <strong>creating an index</strong>:
+<ul>
+<li>Sections, topics, questions.</li>
+</ul></li>
+<li>Then use the index to drive operations:
+<ul>
+<li>“Using this index, extract all content related to X.”</li>
+</ul></li>
+</ul>
+</section>
+<section id="assembling-output-into-a-larger-product" class="level4" data-number="5.4.8.2">
+<h4 data-number="5.4.8.2" class="anchored" data-anchor-id="assembling-output-into-a-larger-product"><span class="header-section-number">5.4.8.2</span> Assembling output into a larger product</h4>
+<p>Incremental workflow:</p>
+<ol type="1">
+<li>Run analyses chunk by chunk.</li>
+<li>Produce <strong>individual output files</strong> (markdown, figures, tables).</li>
+<li>At the end, combine them into:
+<ul>
+<li>A report</li>
+<li>A slide deck</li>
+<li>A book chapter</li>
+</ul></li>
+</ol>
+<p>This is particularly useful for <strong>text analysis</strong>:</p>
+<ul>
+<li>First build an outline.</li>
+<li>Then expand each section via incremental analysis.</li>
+<li>Finally assemble using the outline as a backbone.</li>
+</ul>
+</section>
+</section>
+<section id="turning-conversations-into-software" class="level3" data-number="5.4.9">
+<h3 data-number="5.4.9" class="anchored" data-anchor-id="turning-conversations-into-software"><span class="header-section-number">5.4.9</span> Turning Conversations into Software</h3>
+<p>You can move from interactive exploration to reusable tools. (From workflow to program)</p>
+<p>Prompt example:</p>
+<blockquote class="blockquote">
+<p>“Turn this process into a Python program that I can download and run locally. Include clear comments and command-line arguments.”</p>
+</blockquote>
+<p>Good practice:</p>
+<ul>
+<li>Inspect the code <strong>carefully</strong> before running it.</li>
+<li>Prefer running in a <strong>safe environment</strong> (sandbox, container, virtualenv).</li>
+<li>Keep configuration (file paths, parameters) outside the core logic where possible.</li>
+</ul>
+</section>
+</section>
+<section id="problem-selection-and-trustworthy-ai" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="problem-selection-and-trustworthy-ai"><span class="header-section-number">5.5</span> Problem Selection and Trustworthy AI</h2>
+<section id="picking-good-problems-for-ai-achieve-aligned-view" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="picking-good-problems-for-ai-achieve-aligned-view"><span class="header-section-number">5.5.1</span> Picking Good Problems for AI (ACHIEVE-aligned view)</h3>
+<p>Good AI candidates:</p>
+<ul>
+<li>Easy to <strong>check</strong> whether the answer is correct.</li>
+<li>A <strong>partial solution</strong> already saves substantial time.</li>
+<li>The task benefits from <strong>alternative perspectives</strong> or reformulations.</li>
+<li>The workflow can be decomposed into clear steps with observable outputs.</li>
+</ul>
+<p>AI should <strong>augment</strong>, not replace, human judgment, creativity or intelligence.</p>
+</section>
+<section id="the-achieve-framework-overview" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="the-achieve-framework-overview"><span class="header-section-number">5.5.2</span> The ACHIEVE Framework (Overview)</h3>
+<p>ACHIEVE is a way to think about how AI can augment human intelligence:</p>
+<ul>
+<li><strong>A – Aid human coordination</strong></li>
+<li><strong>C – Cut tedium / Reduce tedious work</strong></li>
+<li><strong>H – Provide a safety net (spot errors/risks)</strong></li>
+<li><strong>I – Inspire creativity</strong></li>
+<li><strong>E – Execute and scale ideas</strong></li>
+<li><strong>V – Visibility and verification</strong></li>
+<li><strong>E – Experimentation and exploration</strong></li>
+</ul>
+<p>Below, concrete examples and use cases.</p>
+</section>
+<section id="achieve-detailed-use-cases" class="level3" data-number="5.5.3">
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="achieve-detailed-use-cases"><span class="header-section-number">5.5.3</span> ACHIEVE – Detailed Use Cases</h3>
+<section id="aid-human-coordination" class="level4" data-number="5.5.3.1">
+<h4 data-number="5.5.3.1" class="anchored" data-anchor-id="aid-human-coordination"><span class="header-section-number">5.5.3.1</span> Aid human coordination</h4>
+<p>Example: planning a workshop series.</p>
+<ul>
+<li>Summarise meeting notes into key decisions and actions.</li>
+<li>Identify actors and assign responsibilities.</li>
+<li>Spot ambiguities and potential conflicts.</li>
+<li>Propose clarifications and conflict-resolution options.</li>
+<li>Draft follow-up emails and reminders.</li>
+</ul>
+</section>
+<section id="cut-tedium-reduce-tedious-work" class="level4" data-number="5.5.3.2">
+<h4 data-number="5.5.3.2" class="anchored" data-anchor-id="cut-tedium-reduce-tedious-work"><span class="header-section-number">5.5.3.2</span> Cut tedium / Reduce tedious work</h4>
+<p>Example: cleaning data from a registration form.</p>
+<ul>
+<li>Map similar free-text entries onto consistent categories.</li>
+<li>Create data dictionaries and lookup tables.</li>
+<li>Group related terms and suggest standardised labels.</li>
+<li>Generate code snippets for repetitive cleaning operations.</li>
+<li>Visualise distributions to check for odd patterns.</li>
+</ul>
+</section>
+<section id="help-provide-a-safety-net" class="level4" data-number="5.5.3.3">
+<h4 data-number="5.5.3.3" class="anchored" data-anchor-id="help-provide-a-safety-net"><span class="header-section-number">5.5.3.3</span> Help provide a safety net</h4>
+<p>Example: travel reimbursement workflows.</p>
+<ul>
+<li>Check forms for completeness and consistency.</li>
+<li>Compare entries against internal rules or policies.</li>
+<li>Highlight potential issues or missing information.</li>
+<li>Suggest corrections or follow-up questions.</li>
+<li>Important: <strong>final approval remains human.</strong></li>
+</ul>
+</section>
+<section id="inspire-creativity" class="level4" data-number="5.5.3.4">
+<h4 data-number="5.5.3.4" class="anchored" data-anchor-id="inspire-creativity"><span class="header-section-number">5.5.3.4</span> Inspire creativity</h4>
+<p>Example: designing a workshop.</p>
+<ul>
+<li>Ask it questions about your content to rethink structure:
+<ul>
+<li>“What natural modules do you see in this outline?”</li>
+</ul></li>
+<li>Generate follow-up or bonus content ideas.</li>
+<li>Suggest logistic setups and communication strategies.</li>
+<li>Design templates for slides, handouts, and emails.</li>
+<li>Help develop ideas into more detailed formats (e.g.&nbsp;exercises, case studies).</li>
+</ul>
+</section>
+<section id="execute-and-scale" class="level4" data-number="5.5.3.5">
+<h4 data-number="5.5.3.5" class="anchored" data-anchor-id="execute-and-scale"><span class="header-section-number">5.5.3.5</span> Execute and scale</h4>
+<ul>
+<li>Turn proven workflows into reusable templates.</li>
+<li>Create “starter kits” (data + notebook + documentation).</li>
+<li>Generate parameterised scripts for common tasks.</li>
+<li>Build small internal tools that others can run with minimal effort.</li>
+</ul>
+</section>
+<section id="visibility-and-verification" class="level4" data-number="5.5.3.6">
+<h4 data-number="5.5.3.6" class="anchored" data-anchor-id="visibility-and-verification"><span class="header-section-number">5.5.3.6</span> Visibility and verification</h4>
+<ul>
+<li>Create diagrams of workflows and data flows.</li>
+<li>Summarise long documents and highlight key decisions.</li>
+<li>Create indexes and cross-reference tables.</li>
+<li>Keep a clear link between outputs and their sources (citations, IDs).</li>
+</ul>
+</section>
+<section id="experimentation-and-exploration" class="level4" data-number="5.5.3.7">
+<h4 data-number="5.5.3.7" class="anchored" data-anchor-id="experimentation-and-exploration"><span class="header-section-number">5.5.3.7</span> Experimentation and exploration</h4>
+<ul>
+<li>Quickly test multiple approaches (alternative prompts, models, parameters).</li>
+<li>Use synthetic data to explore edge cases safely.</li>
+<li>Compare strategies side-by-side and reflect on trade-offs.</li>
+</ul>
+</section>
+</section>
+<section id="achieve-for-augmented-intelligence-recap" class="level3" data-number="5.5.4">
+<h3 data-number="5.5.4" class="anchored" data-anchor-id="achieve-for-augmented-intelligence-recap"><span class="header-section-number">5.5.4</span> ACHIEVE for Augmented Intelligence (Recap)</h3>
+<p>The goal is to <strong>augment and amplify</strong> human creativity and problem-solving, not replace people.</p>
+<p>ACHIEVE helps you:</p>
+<ul>
+<li>Spend more time on high-value, human tasks.</li>
+<li>Use AI as a thinking partner and productivity booster.</li>
+<li>Support communication, alignment, and shared understanding.</li>
+</ul>
+<section id="aid-human-communications" class="level4" data-number="5.5.4.1">
+<h4 data-number="5.5.4.1" class="anchored" data-anchor-id="aid-human-communications"><span class="header-section-number">5.5.4.1</span> Aid human communications</h4>
+<ul>
+<li>Draft email templates.</li>
+<li>Summarise meetings and highlight open questions.</li>
+<li>Clarify ambiguities and identify conflicts.</li>
+<li>Map actors and actions across a project.</li>
+</ul>
+</section>
+<section id="cut-tedious-tasks" class="level4" data-number="5.5.4.2">
+<h4 data-number="5.5.4.2" class="anchored" data-anchor-id="cut-tedious-tasks"><span class="header-section-number">5.5.4.2</span> Cut tedious tasks</h4>
+<ul>
+<li>Automate repetitive formatting and cleaning.</li>
+<li>Batch-generate routine outputs.</li>
+<li>Scaffold code and documentation.</li>
+</ul>
+</section>
+<section id="help-privide-safety-net" class="level4" data-number="5.5.4.3">
+<h4 data-number="5.5.4.3" class="anchored" data-anchor-id="help-privide-safety-net"><span class="header-section-number">5.5.4.3</span> Help privide safety net</h4>
+<p>AI can:</p>
+<ul>
+<li>Highlight ambiguities and potential conflict points.</li>
+<li>Surface missing information or inconsistent logic.</li>
+<li>Help evaluate risks and suggest mitigations.</li>
+</ul>
+<p>But:</p>
+<ul>
+<li>Humans remain responsible for final decisions.</li>
+</ul>
+</section>
+<section id="ideation" class="level4" data-number="5.5.4.4">
+<h4 data-number="5.5.4.4" class="anchored" data-anchor-id="ideation"><span class="header-section-number">5.5.4.4</span> Ideation</h4>
+<ul>
+<li>Generate many ideas quickly and cheaply.</li>
+<li>Use AI for <strong>low-risk brainstorming</strong> and exploration.</li>
+<li>Helpful for diagramming and visualising possibilities.</li>
+<li>The human user:
+<ul>
+<li>Selects promising ideas.</li>
+<li>Combines and adapts them.</li>
+<li>Maintains ownership and direction of the process.</li>
+</ul></li>
+</ul>
+</section>
+<section id="extract-and-filtering" class="level4" data-number="5.5.4.5">
+<h4 data-number="5.5.4.5" class="anchored" data-anchor-id="extract-and-filtering"><span class="header-section-number">5.5.4.5</span> Extract and Filtering</h4>
+<ul>
+<li>Filter context information so reasoning stays tractable.</li>
+<li>Summarise or analyse while keeping references to original sources.</li>
+<li>Ensure filtering is <strong>immediately checkable</strong> (quote, cite, link).</li>
+</ul>
+</section>
+</section>
+<section id="building-trustworthy-ai" class="level3" data-number="5.5.5">
+<h3 data-number="5.5.5" class="anchored" data-anchor-id="building-trustworthy-ai"><span class="header-section-number">5.5.5</span> Building Trustworthy AI</h3>
+<p>Dimensions of trustworthiness:</p>
+<ul>
+<li><strong>Veracity</strong> – conformity to facts.</li>
+<li><strong>Accuracy</strong> – numerical / logical correctness.</li>
+<li><strong>Cost of checking</strong> vs <strong>cost of producing</strong> the answer.</li>
+</ul>
+<p>Remember:</p>
+<ul>
+<li>Generative AI is <strong>not</strong> a primary source of facts.</li>
+<li>Treat outputs as <strong>drafts to be checked</strong>, not final truth.</li>
+</ul>
+<p>Good practices:</p>
+<ul>
+<li>Mark outputs by certainty or evidence level.</li>
+<li>Use visual aids (flow diagrams, decision trees) to help reasoning.</li>
+<li>Apply risk assessments, especially for:
+<ul>
+<li>Physical risks</li>
+<li>Social / psychological risks</li>
+<li>Economic or career impacts</li>
+<li>Data protection and privacy</li>
+</ul></li>
+</ul>
+<p>AI can: - Point you to relevant sections in documents (tracing) - Maintain a “trail of generation” – where information came from. - Spot missing or fragmented documentation and help mitigate consequences.</p>
+<p>This is <strong>especially useful with sensitive data</strong>, where you must know exactly:</p>
+<ul>
+<li>What was used.</li>
+<li>Why it was used.</li>
+<li>How outputs were derived.</li>
+</ul>
+<p>Remember the importance of expertise:</p>
+<ul>
+<li>Appropriate <strong>domain expertise</strong> is crucial to interpret outputs.</li>
+<li>AI cannot replace expertise; it can only <strong>amplify</strong> it.</li>
+<li>In biomedical and clinical research, expert review is non-negotiable.</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./CustomGPTs.html" class="pagination-link" aria-label="CustomGPTs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CustomGPTs</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,563 @@
+# Data analysis with ChatGTP
+
+My notes from the Coursera courses *Advanced Data Analysis with ChatGPT* and *Building Trustworthy AI* (Code Interpreter) by Jules White. Digitized from handwritten material via mobile photos and organized into a coherent structure using ChatGPT (customGPT: “Notes Organizer”).
+
+**Synopsis:** How to use ChatGPT effectively for data analysis, document processing, workflow planning, and creative problem-solving, and outline key principles, tools, and frameworks (such as ACHIEVE and ETAC) that help AI augment human reasoning while maintaining accuracy and control.
+
+------------------------------------------------------------------------
+
+## General Principles of Working with generative AI
+
+**Fundamentals**
+
+-   *"LLMs do not generate answers, LLMs generate text. Some of the text might provide useful answers "(Jules White)*
+-   LLM output has an inherent random component (LLMs predict, and the same prompt may not provide the exact same output)
+-   Using generative AI implys taking ownership of the output.
+
+**Treat Code Interpreter as an internal assistant**
+
+Think of the Code Interpreter as a smart intern that needs clear instructions:
+
+1.  **Break tasks down step-by-step.**
+2.  **Provide all necessary context and information upfront** – data files, constraints, goals, examples.
+3.  Ask for **detailed feedback**, e.g. “What could be improved about this figure?”
+4.  **Don’t expect perfection.** Plan to iterate with it.
+5.  **Always review results** for accuracy, plausibility, and errors.
+6.  Be **explicit** about:
+    -   What you want to achieve.
+    -   How you want results presented (tables, plots, summaries, slides).
+    -   Any constraints (runtime, file formats, colour schemes, etc.).
+7.  **Provide escape valves**
+
+------------------------------------------------------------------------
+
+## Working with Data Files, Documents, Media and Zip Files
+
+### Working with Data Files and Visualizations
+
+#### Uploading and exploring data
+
+Typical workflow with Code Interpreter:
+
+-   Upload a dataset (csv) and ask:
+    -   “Read this file and explain the structure of the data.”
+    -   “Show me the columns, data types, and basic statistics.”
+-   Ask for **interesting visualizations**:
+    -   “Create several interesting plots that could be useful for exploratory analysis.”
+    -   “Try a histogram, a boxplot, and a scatterplot matrix.”
+
+You can then iterate:
+
+-   “Refine the labels and axes.”
+-   “Use a harmonized colour scheme.”
+-   “Order categories in a meaningful way.”
+
+#### Adding narrative text and presentations
+
+You can ask ChatGPT to help with presentation-ready outputs:
+
+-   “Insert each visualization into a slide and write a short caption explaining what it shows.”
+-   “Update my existing slides with a short narrative for each plot.”
+-   “Use consistent terminology and colour coding across all slides.”
+
+Example prompt:
+
+> “Create a one-slide summary for each of these plots, explaining what the viewer should take away. Use clear language suitable for a multidisciplinary biomedical audience.”
+
+
+### Working with Documents
+
+#### Documents as objects vs. documents as knowledge
+
+Two levels of interaction with documents:
+
+1.  **Document as an object**
+    -   Operations: rename, move, download, edit, zip/unzip.
+2.  **Document as knowledge**
+    -   Operations: analyze, summarize, outline, extract key statements, compare sections, etc.
+
+Being aware of this distinction helps you design useful prompts.
+
+#### Useful document prompts
+
+Examples:
+
+-   “Extract this PDF to plain text and tell me what it contains at a high level.”
+-   “Reread the text and break it down into the smallest meaningful sections with headings.”
+-   “Create an outline of the document.”
+-   “Identify contradictions, gaps, or redundancies.”
+-   “Highlight all places where inclusion criteria are mentioned and summarise them.”
+
+This improves:
+
+-   **Reasoning** – you understand the structure more clearly.
+-   **Verification** – easier to check that all key information is captured.
+-   **Navigation** – easier to find where specific concepts live.
+
+
+### Using Canvas in ChatGPT
+
+Canvas is useful for interactive editing and document development.
+
+#### Basic Canvas workflow
+
+1.  Open **Canvas**.
+2.  Paste or import your text (or upload a document to extract text).
+3.  Enter a prompt to modify the text or to ask for comments/suggestions.
+4.  Edit the text manually or accept/reject suggested changes.
+5.  Optionally upload additional documents for context (e.g. guidelines, previous drafts).
+6.  Enter more prompts to adjust **tone**, **clarity**, **length**, or **structure**.
+7.  Use the Canvas controls (e.g. icons in the lower corner) to adjust text length and polish.
+
+#### Two main Canvas entry paths
+
+-   **Upload a document + prompt**\
+    \> “Extract the text from this document into Canvas and clean up formatting.”
+-   **Copy & paste text directly**\
+    Then iterate with prompts to refine.
+
+
+### Structured Data Workflows
+
+#### Understanding tables
+
+Useful prompts:
+
+-   “Read and explain the structure of this table.”
+-   “Describe each column, including data type and potential problems.”
+-   “Identify missing values, inconsistent labels, and outliers.”
+
+Then:
+
+-   “Calculate derived variables step-by-step and show intermediate tables.”
+-   “Visualise the relationship between variable X and Y, including confidence intervals.”
+
+#### Example workflow
+
+1.  Load dataset (CSV, TSV, Excel, etc.).
+2.  Ask for an overview (dimensions, column types, missingness).
+3.  Clean: standardise categories, handle missing values.
+4.  Derive new variables (ratios, differences, grouping codes).
+5.  Visualise key relationships.
+6.  Summarise results in natural language.
+
+
+### Working with Media and Zip Archives
+
+#### Video workflows
+
+Typical operations:
+
+-   “Extract N frames from this video, evenly spaced.”
+-   “Display the extracted frames.”
+-   “Resize each image to 300 px wide while preserving aspect ratio.”
+-   “Convert to grayscale and increase contrast by 30%.”
+
+This is useful for:
+
+-   Creating thumbnails.
+-   Quick quality checks.
+-   Preparing training data for image models.
+
+#### Zip archives
+
+Zip archives are handy for batch operations:
+
+-   Zip multiple outputs into a single file for download.
+-   Ask ChatGPT to **propose a folder structure** and **better filenames**.
+
+Example prompt:
+
+> “Resize all images to 300 px width, rename them systematically, and put them into a zip file for download. Suggest a clear naming scheme based on sample ID and time point.”
+
+
+## Workflows and Planning
+
+## Check: Bringing Information into the Conversation
+
+Useful operations:
+
+-   “Read this long text.”
+-   “Summarize it in X bullet points.”
+-   “Present the key information back to me in a way that I can quickly verify.”
+-   “Create an index of where specific information (e.g. inclusion criteria, endpoints) can be found.”
+
+This helps to:
+
+-   Improve reasoning.
+-   Support verification and auditing.
+-   Create better documentation and overviews.
+
+
+
+### The ETAC Framework for workflows Human + AI Process Planning
+
+Think of the overall human–AI workflow as:
+
+**E – Extract → T – Transform → A – AI / Analyze → C – Create**
+
+#### Extract: modalities and operations
+
+-   **Documents (docx, pdf, txt)**
+    -   Text extraction
+    -   Metadata extraction
+    -   Entity recognition
+-   **Video (mp4, avi)**
+    -   Frame extraction
+    -   Object detection
+    -   (Sometimes) face recognition
+-   **Audio (mp3, wav)**
+    -   Speech-to-text
+    -   Noise reduction
+    -   Feature extraction
+-   **Datasets (csv, tsv, json, xlsx)**
+    -   Load data
+    -   Preprocess
+    -   Feature engineering
+-   **Images (jpg, png, etc.)**
+    -   Object detection
+    -   Segmentation
+    -   Feature extraction
+
+#### Transform: data and images
+
+-   **Structured data**
+    -   Clean and normalise
+    -   Drop or merge columns
+    -   Recode values
+    -   Compute derived features
+-   **Images**
+    -   Subselect regions (ROI)
+    -   Crop and resize
+    -   Adjust contrast, brightness, etc.
+
+Always prefer **small, controlled steps** that you can undo or repeat.
+
+
+### Analyze: From raw material to insight
+
+Analysis-related operations include:
+
+-   Find ambiguities and inconsistencies.
+-   Analyse and summarise content.
+-   Raise clarifying questions for the user.
+-   Generate examples and counter-examples.
+
+You can also maintain a “library” or mental catalogue of:
+
+-   File types
+-   Common operations
+-   Good default workflows
+
+
+### Planning Workflows – Human and AI Roles
+
+#### Human planning
+
+-   Lay out the process manually first:
+    -   Inputs
+    -   Intermediate artefacts
+    -   Outputs
+-   Decide what you want to control vs. what AI can suggest.
+
+#### AI planning
+
+Ask ChatGPT:
+
+> “Propose a detailed step-by-step plan for this task.”
+
+Then refine:
+
+-   Expand each bullet into **2–3 actionable substeps**.
+
+-   Ensure each step is something:
+
+    -   You can perform, or
+    -   The Python environment can perform.
+
+-   Turn the result into an **actionable plan** or checklist.
+
+-   Verify that the sequence of step is executable
+
+### AI Planning Techniques and Iteration
+
+Good practice when executing a plan with Code Interpreter:
+
+1.  Execute steps **one by one**.
+2.  Save results of each step into **separate files** (for reproducibility and debugging).
+3.  At the beginning of each step:
+    -   Reflect on prior output.
+    -   Check alignment with goals.
+4.  If something breaks:
+    -   Stop, diagnose, fix the step.
+    -   Then continue.
+
+You can also:
+
+-   Store the plan itself in a separate file for later reuse.
+-   Use “flipped interaction”: ask AI to improve *your* plan, rather than just proposing its own.
+
+### Alternative Approaches and Tool Choice
+
+Not all plans will work on the first try:
+
+-   Some approaches will fail due to limitations of the model or tools.
+-   It’s valuable to **try alternative methods** and compare.
+
+Tool choice matters:
+
+-   **GPT / ChatGPT** – reasoning, summarising, planning, generating text.
+-   **Python / other tools** – computation, heavy data processing, integration with external systems.
+
+Often you manually choose **when** to ask the LLM to “do something” and when to switch to specialised tools.
+
+### Fixing and Spotting Errors
+
+#### Fixing errors
+
+-   Go back to the prompt **before** the error occurred and edit it.
+-   Number steps in your plan so you can say: \> “Repeat step 4, but show the intermediate table before filtering.”
+-   Ask for explicit error reporting and logging.
+
+#### Spotting hallucinations
+
+Warning signs:
+
+-   **Input/output ratio is very small** – tiny context, huge confident answer.
+-   A lot of **artificial data is generated** without clear reason.
+-   Long conversation history with many state changes.
+
+Additional caution when:
+
+-   Using conversation history as implicit input.
+-   Re-running code cells on modified data without re-checking assumptions.
+
+### Consistency, Test Cases, and Source Linking
+
+To build more trustworthy workflows:
+
+-   Use identifiers and citations:
+    -   Page numbers, line numbers, section IDs.
+-   Preserve references to **original sources** when summarising.
+-   Build **test cases**:
+    -   Use synthetic data to test specific actions/conditions.
+    -   Check whether the workflow behaves as expected.
+
+### Breaking Down and Assembling Larger Projects
+
+#### Breaking down a large project
+
+-   Start by **creating an index**:
+    -   Sections, topics, questions.
+-   Then use the index to drive operations:
+    -   “Using this index, extract all content related to X.”
+
+#### Assembling output into a larger product
+
+Incremental workflow:
+
+1.  Run analyses chunk by chunk.
+2.  Produce **individual output files** (markdown, figures, tables).
+3.  At the end, combine them into:
+    -   A report
+    -   A slide deck
+    -   A book chapter
+
+This is particularly useful for **text analysis**:
+
+-   First build an outline.
+-   Then expand each section via incremental analysis.
+-   Finally assemble using the outline as a backbone.
+
+### Turning Conversations into Software
+
+You can move from interactive exploration to reusable tools. (From workflow to program)
+
+Prompt example:
+
+> “Turn this process into a Python program that I can download and run locally. Include clear comments and command-line arguments.”
+
+Good practice:
+
+-   Inspect the code **carefully** before running it.
+-   Prefer running in a **safe environment** (sandbox, container, virtualenv).
+-   Keep configuration (file paths, parameters) outside the core logic where possible.
+
+
+## Problem Selection and Trustworthy AI
+
+### Picking Good Problems for AI (ACHIEVE-aligned view)
+
+Good AI candidates:
+
+-   Easy to **check** whether the answer is correct.
+-   A **partial solution** already saves substantial time.
+-   The task benefits from **alternative perspectives** or reformulations.
+-   The workflow can be decomposed into clear steps with observable outputs.
+
+AI should **augment**, not replace, human judgment, creativity or intelligence.
+
+### The ACHIEVE Framework (Overview)
+
+ACHIEVE is a way to think about how AI can augment human intelligence:
+
+-   **A – Aid human coordination**
+-   **C – Cut tedium / Reduce tedious work**
+-   **H – Provide a safety net (spot errors/risks)**
+-   **I – Inspire creativity**
+-   **E – Execute and scale ideas**
+-   **V – Visibility and verification**
+-   **E – Experimentation and exploration**
+
+Below, concrete examples and use cases.
+
+### ACHIEVE – Detailed Use Cases
+
+#### Aid human coordination
+
+Example: planning a workshop series.
+
+-   Summarise meeting notes into key decisions and actions.
+-   Identify actors and assign responsibilities.
+-   Spot ambiguities and potential conflicts.
+-   Propose clarifications and conflict-resolution options.
+-   Draft follow-up emails and reminders.
+
+#### Cut tedium / Reduce tedious work
+
+Example: cleaning data from a registration form.
+
+-   Map similar free-text entries onto consistent categories.
+-   Create data dictionaries and lookup tables.
+-   Group related terms and suggest standardised labels.
+-   Generate code snippets for repetitive cleaning operations.
+-   Visualise distributions to check for odd patterns.
+
+#### Help provide a safety net
+
+Example: travel reimbursement workflows.
+
+-   Check forms for completeness and consistency.
+-   Compare entries against internal rules or policies.
+-   Highlight potential issues or missing information.
+-   Suggest corrections or follow-up questions.
+-   Important: **final approval remains human.**
+
+#### Inspire creativity
+
+Example: designing a workshop.
+
+-   Ask it questions about your content to rethink structure:
+    -   “What natural modules do you see in this outline?”
+-   Generate follow-up or bonus content ideas.
+-   Suggest logistic setups and communication strategies.
+-   Design templates for slides, handouts, and emails.
+-   Help develop ideas into more detailed formats (e.g. exercises, case studies).
+
+#### Execute and scale
+
+-   Turn proven workflows into reusable templates.
+-   Create “starter kits” (data + notebook + documentation).
+-   Generate parameterised scripts for common tasks.
+-   Build small internal tools that others can run with minimal effort.
+
+#### Visibility and verification
+
+-   Create diagrams of workflows and data flows.
+-   Summarise long documents and highlight key decisions.
+-   Create indexes and cross-reference tables.
+-   Keep a clear link between outputs and their sources (citations, IDs).
+
+#### Experimentation and exploration
+
+-   Quickly test multiple approaches (alternative prompts, models, parameters).
+-   Use synthetic data to explore edge cases safely.
+-   Compare strategies side-by-side and reflect on trade-offs.
+
+### ACHIEVE for Augmented Intelligence (Recap)
+
+The goal is to **augment and amplify** human creativity and problem-solving, not replace people.
+
+ACHIEVE helps you:
+
+-   Spend more time on high-value, human tasks.
+-   Use AI as a thinking partner and productivity booster.
+-   Support communication, alignment, and shared understanding.
+
+#### Aid human communications
+
+-   Draft email templates.
+-   Summarise meetings and highlight open questions.
+-   Clarify ambiguities and identify conflicts.
+-   Map actors and actions across a project.
+
+#### Cut tedious tasks
+
+-   Automate repetitive formatting and cleaning.
+-   Batch-generate routine outputs.
+-   Scaffold code and documentation.
+
+#### Help privide safety net
+
+AI can:
+
+-   Highlight ambiguities and potential conflict points.
+-   Surface missing information or inconsistent logic.
+-   Help evaluate risks and suggest mitigations.
+
+But:
+
+-   Humans remain responsible for final decisions.
+
+#### Ideation
+
+-   Generate many ideas quickly and cheaply.
+-   Use AI for **low-risk brainstorming** and exploration.
+-   Helpful for diagramming and visualising possibilities.
+-   The human user:
+    -   Selects promising ideas.
+    -   Combines and adapts them.
+    -   Maintains ownership and direction of the process.
+
+#### Extract and Filtering
+
+-   Filter context information so reasoning stays tractable.
+-   Summarise or analyse while keeping references to original sources.
+-   Ensure filtering is **immediately checkable** (quote, cite, link).
+
+### Building Trustworthy AI
+
+Dimensions of trustworthiness:
+
+-   **Veracity** – conformity to facts.
+-   **Accuracy** – numerical / logical correctness.
+-   **Cost of checking** vs **cost of producing** the answer.
+
+Remember:
+
+-   Generative AI is **not** a primary source of facts.
+-   Treat outputs as **drafts to be checked**, not final truth.
+
+Good practices:
+
+-   Mark outputs by certainty or evidence level.
+-   Use visual aids (flow diagrams, decision trees) to help reasoning.
+-   Apply risk assessments, especially for:
+    -   Physical risks
+    -   Social / psychological risks
+    -   Economic or career impacts
+    -   Data protection and privacy
+
+AI can: - Point you to relevant sections in documents (tracing) - Maintain a “trail of generation” – where information came from. - Spot missing or fragmented documentation and help mitigate consequences.
+
+This is **especially useful with sensitive data**, where you must know exactly:
+
+-   What was used.
+-   Why it was used.
+-   How outputs were derived.
+
+Remember the importance of expertise:
+
+-   Appropriate **domain expertise** is crucial to interpret outputs.
+-   AI cannot replace expertise; it can only **amplify** it.
+-   In biomedical and clinical research, expert review is non-negotiable.

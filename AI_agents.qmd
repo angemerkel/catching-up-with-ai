@@ -1,0 +1,91 @@
+# AI Agents
+
+— Web Research Notes
+
+## What are AI agents?
+
+**AI agents** are systems with the ability to **perceive and act on an environment** in a **goal-directed and autonomous** way.
+
+They often work by **connecting prompts to executable tools**, letting them take actions beyond text generation.
+
+**Example** 
+- Browse the web 
+- Make an online purchase on behalf of a user 
+- Compare prices 
+- Select items 
+- Complete checkout steps
+
+**Tooling example: “Google gigantic code generator” (as written)**
+
+-   Describe a use case in plain English
+-   System generates code
+-   User reviews/approves code
+-   No manual coding required
+
+## Core capabilities (high-level)
+
+-   Perceive the environment (e.g., webpages, files, user inputs)
+-   Reason and decide
+-   Use tools (APIs, browsers, databases)
+-   Use memory (short-term and sometimes long-term)
+-   Act autonomously toward a goal
+
+## 3) Risks and challenges
+
+AI agents inherit all risks and issues generative AI already has but add a new dimonsion due to their ability to 'act' 
+- e.g. the dependency on a social AI companion may increase as the AI agent responsible is purchasing gifts
+
+### 3.1 Alignment problem
+
+**Alignment problems** happen when instructions are: 
+- **Mis-specified**, or 
+- **Misinterpreted**
+
+**What can go wrong** 
+- The system follows instructions **too literally** 
+- It **overlooks important context** 
+- It reaches the goal in an **unexpected / potentially harmful** way
+
+**Example** 
+- If an agent is told to “minimize delivery time,” it might ignore safety constraints unless they’re explicitly included.
+
+**Mitigations mentioned**
+
+-   Safeguards / guardrails
+-   Checklists for high-stakes decisions
+-   Action logging
+-   Redress/rollback mechanisms when errors occur
+
+### Poorly defined goals + increasing capabilities
+
+When goals are vague and the agent’s capabilities increase (e.g., ability to modify its environment): 
+- It may take **dangerous shortcuts** 
+- It may act **outside intended bounds**
+
+**Example** 
+- An agent told to “increase engagement” might spam users or manipulate content unless constraints are specified.
+
+**Mitigations**
+
+-   Preference for **fine-tuning** vs. relying only on prompt fixes
+-   Use clear training examples for desirable behavior
+-   Emphasis on detecting **deceptive/manipulative** behavior
+-   Make reasoning more transparent where possible
+
+## Security risk: prompt injection
+
+AI agents (especially browser-based) can be susceptible to **prompt injection**.
+
+### How it works
+
+-   Malicious prompts are embedded in external content (e.g., webpages)
+-   Agents unknowingly follow harmful instructions
+
+**Example** - A hidden instruction on a webpage telling the agent to search for files, extract or filtrate data, or upload them.
+
+## Mitigsations:
+
+-   Safeguards should be implemented by developers
+-   Check source for maligous instructions
+-   Clear boundaries on acceptable behavior
+-   Limit access

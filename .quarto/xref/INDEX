@@ -1,0 +1,26 @@
+{
+  "Data_analysis_with_ChatGTP.qmd": {
+    "Data_analysis_with_ChatGTP.html": "06e58ee3"
+  },
+  "index.qmd": {
+    "index.html": "361504dc"
+  },
+  "Prompt_engineering.qmd": {
+    "Prompt_engineering.html": "c608fa35"
+  },
+  "Prompt_engineering.practical.qmd": {
+    "Prompt_engineering.practical.html": "afe5f018"
+  },
+  "Prompt_engineering.technical.qmd": {
+    "Prompt_engineering.technical.html": "bb1b8daf"
+  },
+  "Prompt_pattern.practical.qmd": {
+    "Prompt_pattern.practical.html": "00267a60"
+  },
+  "Prompt_pattern.technical.qmd": {
+    "Prompt_pattern.technical.html": "9365b0dc"
+  },
+  "CustomGPTs.qmd": {
+    "CustomGPTs.html": "688a985d"
+  }
+}

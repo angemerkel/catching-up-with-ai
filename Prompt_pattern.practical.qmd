@@ -1,0 +1,215 @@
+---
+title: "Prompt Pattern (practical)"
+subtitle: "– A practical, example-driven overview."
+---
+
+## Core Prompt Patterns
+
+### Persona Pattern
+
+Helps control tone, expertise, cultural assumptions.
+
+**Example:**
+
+“Act as a senior bioinformatician experienced in single-cell epigenomics. Provide actionable suggestions.”
+
+### Audience Persona Pattern
+
+Tell GPT *who you are* so explanations match your background.
+
+**Example:**
+
+“Assume I am new to machine learning but familiar with R and statistics. Explain what a transformer is.”
+
+### Question Refinement
+
+GPT improves your question. Useful for technical tasks where question quality matters.
+
+**Example:**
+
+“When I ask you something unclear, suggest a sharper version first and ask if I want to use it.”
+
+### Few-shot Prompting
+
+You show examples (introduce training data) → GPT follows your pattern. Useful for labeling, transformations, extraction tasks.
+
+**Example:**
+
+Input: ATGCGT
+
+Output: reversed sequence: TGCGTA
+
+\
+Prompt:
+
+Input: AACCAT
+
+Output:
+
+GPT continues with the intended pattern.
+
+### Flipped Interaction
+
+GPT asks *you* the questions.
+
+**Example:**
+
+“Ask me clarifying questions until you can design a workshop outline. When you have enough information, present the final outline.”
+
+### Chain of Thought
+
+Explicit reasoning steps.
+
+**Example:**
+
+“Show your reasoning in short bullet points and end with a boxed final answer.”
+
+Helps when solving problems or planning.
+
+### ReAct Prompting
+
+Reason → take external action → reason → answer.
+
+**Example:**
+
+“Search PubMed for recent papers on DNA methylation in HSCs, summarize top 3 findings, and explain how they relate to AML biology.”
+
+*(Assuming GPT has tools activated.)*
+
+### Alternative Approaches
+
+Ask for multiple solutions. (or strategy for approaches)
+
+**Example:**
+
+“Propose 5 different ways to create a metadata-capture workflow for a small lab, ranked by feasibility.”
+
+Great for brainstorming and problem solving.
+
+### Evaluation Pattern
+
+Use examples or rubrics to grade model output.
+
+**Example:**
+
+“Here are 3 example abstracts. Score the following abstract for clarity (1–5), structure (1–5), scientific accuracy (1–5). Provide justification.”
+
+### Game-play Pattern
+
+Turn tasks into structured exercises. Define rules.
+
+**Example:**
+
+“We are going to play a game:\
+I describe a lab workflow, you generate 5 mistakes a junior researcher might make, and how to fix them.”
+
+### Recipe Pattern
+
+Stepwise instructions with gaps.
+
+**Example:**
+
+“Fill in missing steps for this workflow:
+
+1.  
+
+2.  Load FASTQ files
+
+3.  
+
+4.  Align using BWA
+
+5.  
+
+6.  Generate BAM summary”
+
+7.  
+
+### Template Pattern
+
+Use placeholders → consistent output.
+
+**Example:**
+
+Mutation Summary
+
+Gene: \<GENE\>
+
+Variant: \<VARIANT\>
+
+Impact: \<IMPACT\>
+
+Evidence: \<QUOTES FROM ARTICLE\>
+
+## Text Manipulation Patterns
+
+### Semantic Filter
+
+Remove or replace specific elements.
+
+**Example:**
+
+“Remove all dates from the text but change as little as possible.”
+
+### Meta-language Pattern
+
+Define a micro-language the LLM should learn.
+
+**Example:**
+
+“When I write ‘QC-S1’, interpret it as: run initial QC on sequencing files and summarize FastQC results.”
+
+## Verifier Pattern
+
+### Cognitive Verifier Pattern
+
+Meta-reasoning pattern where the model is instructed to generate an answer, independently verify, critique, or test that answer and revise if needed. Focuses on error detection, not explanation.
+
+Typical prompt form:
+
+“First provide an answer. Then verify it by checking assumptions, edge cases, and alternative interpretations.” “Critically review your own solution and correct any mistakes.”
+
+What it does well - Reduces hallucinations - Improves factual and logical reliability - Surfaces hidden assumptions - Excellent for high-stakes outputs
+
+What it is not - Not primarily about explaining reasoning to the user - Verification may be concise or structured rather than narrative
+
+**Example:**
+
+Answer: X
+
+Verification: - Check assumptions → valid - Alternative method → same result - Edge cases → none violated
+
+Conclusion: Answer stands.
+
+### Fact Checking Pattern
+
+Force verification.
+
+Steps:
+
+2.  Extract facts
+3.  Compare with source
+4.  Flag inconsistencies
+5.  Insert verified fact list at the end
+
+**Example:**
+
+“Extract all factual statements from the text and list any that need verification.”
+
+## Workflows
+
+### Working on smaller pieces
+
+Outline Expansion Start small, expand in pieces.
+
+**Example:**
+
+“Here is the outline for a workshop. Expand only section 2. Keep the rest unchanged.”
+
+### Tail Generation
+
+Add automatic “post-processing.”
+
+**Example:**
+
+“When done summarizing, also produce a 3-item action list.”

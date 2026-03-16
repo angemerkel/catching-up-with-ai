@@ -1,0 +1,166 @@
+---
+title: "Prompt Pattern (technical)"
+subtitle: "Technical Summary (with Examples)"
+---
+
+*A compact, engineering-oriented overview*
+
+
+## Core Prompt Pattern
+
+### Persona Pattern (Functional Control)
+
+Define computational role + constraints.
+
+**Example:**
+
+“Act as a senior data engineer. Output only SQL, no explanations.”
+
+### Audience Persona Pattern (Adjust Explanation Level)
+
+Tells the model who the target reader is.
+
+**Example:**
+
+“Explain transformer attention to someone familiar with matrix multiplication but new to NLP.”
+
+### Flipped Interaction Pattern (Information Acquisition)
+
+Useful when task requires parameters or architecture definition.
+
+**Example:**
+
+“Ask me all required questions to define a Snakemake workflow. Then generate the final workflow.”
+
+### Question Refinement Pattern (Error Reduction)
+
+GPT rewrites your question to reduce ambiguity.
+
+**Example:**
+
+“Before answering, propose a more precise version of my question optimized for computational reproducibility.”
+
+### Cognitive Verifier Pattern (Structured Reasoning)
+
+Model decomposes problem → produces final synthesized answer.
+
+Useful to check the model’s reasoning. Improves the output.
+
+**Example:**
+
+“Break the question into technical sub-questions (≤5), answer them, then produce the final integrated explanation.”
+
+### Few-Shot Pattern (Pattern Imitation)
+
+Provide input/output examples → model induces rule.
+
+**Example:**
+
+Input: “ATGGCT”
+
+Output: reverse_complement: “AGCCAT”
+
+\
+Input: “CGTAAT”
+
+Output:
+
+GPT generalizes rule across new inputs.
+
+### Chain-of-Thought (CoT) Pattern (Explain Reasoning)
+
+Model outputs intermediate reasoning (optional).
+
+**Example:**
+
+“Show your reasoning in short bullet points and end with a boxed final answer.”
+
+### ReAct Pattern (Reason + Tool Use)
+
+LLM reasons → takes actions (search, code execution) → final answer.
+
+**Example:**
+
+“Search the latest ENCODE metadata for a DNase-seq dataset, summarize QC metrics, then evaluate quality.”
+
+### Evaluation Pattern (Auto-Grading Models)
+
+Provide criteria or examples → GPT scores candidates.
+
+**Example:**
+
+“Evaluate the following three pipeline descriptions for clarity (1–5), modularity (1–5), reproducibility (1–5). Justify each score.”
+
+### Template Pattern (Deterministic Structure)
+
+Force GPT to output in a machine-readable or human-readable schema.
+
+**Example:**
+
+{
+
+"task": "\<TASK\>",
+
+"inputs": $$"\<INPUT_1\>", "\<INPUT_2\>"$$,
+
+"steps": $$"\<STEP_1\>", "\<STEP_2\>"$$,
+
+"expected_output": "\<OUTPUT\>"
+
+}
+
+### Meta-Language Pattern (Define Custom Syntax)
+
+You define a symbolic shorthand → model learns mapping.
+
+**Example:**
+
+“Interpret ‘QC-S1’ as: run FastQC → summarize per-base content → output 3 metrics.”
+
+### Recipe Pattern (Pipeline Definition)
+
+Fill missing steps in a workflow.
+
+**Example:**
+
+“Insert the two missing steps in this pipeline:
+
+1.  Load FASTQ
+
+2.  Align with BWA
+
+3.  Generate BAM summary”
+
+### Alternative Approaches Pattern (Algorithmic Exploration)
+
+Generate multiple candidate solutions.
+
+**Example:**
+
+“Provide 4 alternative strategies for building a FAIR-compliant metadata capture workflow. Rank by implementation cost.”
+
+## Text & Data Manipulation Patterns
+
+### Semantic Filter
+
+Remove or transform only the targeted elements.
+
+**Example:**
+
+“Remove all patient identifiers but keep clinical meaning intact.”
+
+### Tail Pattern (Post-Processing)
+
+Append additional required content automatically.
+
+**Example:**
+
+“After summarizing the paper, append a list of unresolved questions.”
+
+### Fact-Checking Pattern
+
+Extract facts → verify → append fact list.
+
+**Example:**
+
+“Extract all factual claims from the text and mark those that require verification due to missing sources.”

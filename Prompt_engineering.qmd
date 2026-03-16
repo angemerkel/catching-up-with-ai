@@ -1,0 +1,64 @@
+---
+title: "Prompt Engineering"
+---
+
+Based on my notes from the coursera courses ‘*Prompt Engineering with ChatGTP’*, *‘Advanced Prompt Engineering’*, and *‘Build Your CustomGPT’* by Jules White(Vanderbuilt University). Adapted with ChatGTP.
+
+## How LLMs Work (Conceptual + Technical Basics)
+
+- **Large Language Models (LLMs)** generate text by predicting the *next token* based on patterns learned from training data.
+  
+  → They operate **autoregressively**: each generated token is appended to the context and used to predict the next one.
+
+- **ChatGPT** = *Chat Generative Pre-trained Transformer*:
+  
+  - **Self-attention** computes weighted relationships across all tokens, allowing the model to focus on the most relevant parts of the context.
+  - **Positional encodings** inject information about token order, enabling the model to represent sequences rather than bags of words.
+
+- **Internal processing pipeline**:
+  
+  - Text → **tokenization** → **numerical embeddings** → stacked **transformer layers** → probability distribution over the next token.
+
+- **Probability, not understanding**:
+  
+  - The model does not “know” facts; it estimates which continuation is most likely given the context and its training distribution.
+
+- **Training objective**:
+  
+  - Minimize **cross-entropy loss**, pushing predicted token probabilities closer to the tokens observed in large-scale text corpora.
+
+- **Determinism vs. randomness**:
+  
+  - Sampling parameters (e.g. temperature, top-k/top-p) influence how deterministic or creative the output appears.
+
+**Example:**  
+If you write *“The mitochondria is the …”*, the model predicts *“powerhouse of the cell”* because this phrase has a high probability in the training data.
+
+---
+
+## Prompt Engineering (Purpose and Practice)
+
+> *“The art of talking to the machine.”*
+
+**Prompt engineering aims to:**
+
+- Produce **reliable**, **repeatable**, and **useful** outputs despite inherent nondeterminism.
+- Increase **predictability**, **consistency**, and **task alignment**.
+- Clearly encode **task intent**, **context**, **constraints**, and **output structure**.
+- Reduce ambiguity and lower the risk of hallucinations.
+
+**Example 1 (general):**
+
+Instead of:  
+> “Explain CRISPR.”
+
+Better:  
+> “Act as a molecular biologist. Explain CRISPR to a motivated high-school student in 3 bullet points.”
+
+**Example 2 (technical):**
+
+Instead of:  
+> “Explain PCA.”
+
+Better:  
+> “Provide a mathematically grounded explanation of PCA for an R programmer. Include eigenvectors, variance decomposition, and a 3-line R code example.”

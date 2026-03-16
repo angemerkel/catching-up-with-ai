@@ -1,0 +1,13 @@
+# Preface {.unnumbered}
+
+This is a notebook about my personal journey into generative AI, which I started during a break from work in the fall and winter of 2025. Here’s the rough path I followed:
+
+- **A short history of generative AI** – I started by using [ChatGPT](https://chatgpt.com) and [Perplexity](https://www.perplexity.ai) to get some background: how we got here, which milestones really mattered, and who the main players and models are today.
+
+- **ChatGPT, the basics** – I subscribed to ChatGPT Pro (22 EUR/month) and worked through the beginner tutorials at the [OpenAI Academy](https://academy.openai.com) (free). This was quick but surprisingly solid to build a foundation and understand what the tool can do (and what not) and how to use the interface.
+
+- **Prompt engineering** – To learn what I call *The art of talking to the machine*, I subscribed to [Coursera](https://www.coursera.org) (42 EUR/month) and took some basic and advanced courses on prompt engineering by Jules White, including how to create custom AI assistants (Custom GPTs) and build trustworthy genAI. This is where I started to get some real insights
+
+- **Data analysis with ChatGPT** – Also by Jules White, these courses go deeper into practical workflows, showing how to use ChatGPT (via Code Interpreter) together with external tools for real data analysis tasks (and real magic).
+ 
+- **Risks and Ethics of generative AI** - A complication of insights and resources on how to provide appropriate rail guards for generative AI, AI agents and agentic AI and how (in my opinion) generative AI should be used ethically 

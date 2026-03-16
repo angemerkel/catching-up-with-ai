@@ -1,0 +1,188 @@
+---
+title: "CustomGPTs"
+---
+
+## Intro
+
+User-configured versions of ChatGPT that behave like a specialized assistant for a specific task, domain, or workflow—without writing code. Persistent behaviour.
+
+Can be created through the ChatGTP app.
+
+| Aspect | ChatGPT | Custom GPT |
+|------------------|-----------------------|-------------------------------|
+| Purpose | General-purpose assistant | Task- or domain-specific assistant |
+| Instructions | Provided ad hoc per chat | Persistent, predefined instructions |
+| Knowledge | Generic model knowledge | Optional uploaded documents & references |
+| Consistency | Varies between chats | Stable, repeatable behavior |
+| Prompting effort | Repeated each session | One-time setup |
+| Tool access | User-controlled per chat | Preconfigured tools |
+| Hallucination risk | Higher (open-ended) | Lower (scoped + constrained) |
+| Best use case | Exploration, quick questions | Workflows, training, institutional use |
+/
+
+**Components:**
+
+-   *Personality:* tone + style
+
+-   *Prompt template:* instructions, constraints
+
+-   *Data sources:* files, knowledge bases
+
+-   *Actions:* external tools
+
+**Use cases:**
+
+-   Automating bioinformatics reports
+
+-   Turning handwritten notes into Google Docs
+
+-   Cleaning up metadata
+
+## Personality
+
+Customize how your chatbot interacts:
+
+-   Confidence: a) assured, b) measured
+-   Amicability: a)friendly, b) neutral
+-   Professionalism: a) formal, b) casual
+-   Interactivity: a) engaging, b) informative
+-   Transparency: a) adaptive, b) consistent
+-   Lexicography: a) specialized, b) universal
+
+## Structuring Input & Output
+
+### Input Pattern
+
+Prompt instructs GPT to ask for missing info.
+
+**Example:**
+
+“Before writing, ask me for the dataset description.”
+
+### Structured Output (tables, checklists, format)**
+
+Makes results more usable.
+
+**Example (table):**
+
+\| Step \| Description \| Tools \|
+
+\|------\|-------------\|-------\|
+
+\| 1 \| QC \| FastQC \|
+
+\| 2 \| Alignment \| BWA \|
+
+Use markdown formatting options (headers, tables, links, footnotes)!
+
+This is useful when prompting for **reusable**, **clean**, **publication-ready** output.
+
+## Tabular data analysis
+
+LLMs can understand tables if provided clearly.
+
+**Example:**
+
+“Using the table below, predict the missing column 'Cell type'.”
+
+They can also create synthetic datasets to help test pipelines.
+
+## In-Context Learning with Tabular Data
+
+Provide columns + examples → model deduces hidden rules.
+
+**Example:**
+
+“Given columns A and B, predict column C (protein class) based on observed patterns.”
+
+## Synthetic Data Generation
+
+Bootstrap ML experiments or testing.
+
+**Example:**
+
+“Generate a synthetic metadata table of 50 samples with fields: donor_age, diagnosis, cell_type, library_size.”
+
+## ML with Prompts (Your Course Notes)
+
+**Classification via Prompting**
+
+-   Good for simple yes/no or category labeling.
+
+**Example:**
+
+“Label each comment as ‘informative’, ‘spam’, or ‘uncertain’.”
+
+**Clustering via Prompting**
+
+-   Model groups items into meaningful clusters.
+
+**Example:**
+
+“Cluster the following 30 job descriptions into 5 roles and output an ASCII taxonomy tree.”
+
+**Prediction via Prompting**
+
+-   Model extrapolates patterns.
+
+**Example:**
+
+“Given the engagement metrics for existing workshop titles, propose 3 new course titles likely to perform well.”
+
+## Benchmarking GPT (Your “Test the GPT” Notes)
+
+Things to test:
+
+-   Factual accuracy
+-   Reasoning
+-   Creativity
+-   Cultural/linguistic alignment
+-   Output structure
+-   Handling of adversarial or ambiguous input
+
+**Example:**
+
+“Test whether the model stays consistent when given conflicting instructions.”
+
+Built your own testerGPT to benchmark other customGPTs!
+
+### Reliability & Safety
+
+**Preventing hallucinations**
+
+-   Provide all key information first.
+-   Ask user to confirm before acting.
+
+**Escape Valves** to avoid forced answers.
+
+**Example:**
+
+“If missing, respond with \<N/A\>.”
+
+**Boundaries**
+
+-   For safety, compliance, correctness.
+-   Useful in regulated areas (e.g., healthcare, legal, institutional guidelines).
+
+**Example:**
+
+“Do not provide clinical guidance. If asked, offer general information and suggest contacting a medical professional.”
+
+**Ambiguity Handling**
+
+1.  Identify it
+2.  Ask for clarification or fall back on \<N/A\>
+
+### Conflict Resolution
+
+When documents/ inputs conflict:
+
+-   Use newest
+-   If one contains the needed topic and the other not, use the relevant one
+-   State uncertainty explicitly
+
+### Adversarial Input Prevention
+
+-   Add railguards
+-   Disable functionality beyond scope
+-   Avoid being tricked into harmful or nonsensical replies
