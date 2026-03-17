@@ -1,0 +1,272 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Notebook: GenAI",
+    "section": "",
+    "text": "Preface\nThis is a notebook about my personal journey into generative AI, which I started during a break from work in the fall and winter of 2025. Here’s the rough path I followed:\n\nA short history of generative AI – I started by using ChatGPT and Perplexity to get some background: how we got here, which milestones really mattered, and who the main players and models are today.\nChatGPT, the basics – I subscribed to ChatGPT Pro (22 EUR/month) and worked through the beginner tutorials at the OpenAI Academy (free). This was quick but surprisingly solid to build a foundation and understand what the tool can do (and what not) and how to use the interface.\nPrompt engineering – To learn what I call The art of talking to the machine, I subscribed to Coursera (42 EUR/month) and took some basic and advanced courses on prompt engineering by Jules White, including how to create custom AI assistants (Custom GPTs) and build trustworthy genAI. This is where I started to get some real insights\nData analysis with ChatGPT – Also by Jules White, these courses go deeper into practical workflows, showing how to use ChatGPT (via Code Interpreter) together with external tools for real data analysis tasks (and real magic).\nRisks and Ethics of generative AI - A complication of insights and resources on how to provide appropriate rail guards for generative AI, AI agents and agentic AI and how (in my opinion) generative AI should be used ethically",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "Prompt_engineering.html",
+    "href": "Prompt_engineering.html",
+    "title": "1  Prompt Engineering",
+    "section": "",
+    "text": "1.1 How LLMs Work (Conceptual + Technical Basics)\nBased on my notes from the coursera courses ’Prompt Engineering with ChatGTP’, ‘Advanced Prompt Engineering’, and ‘Build Your CustomGPT’ by Jules White(Vanderbuilt University). Adapted with ChatGTP.\nExample:\nIf you write “The mitochondria is the …”, the model predicts “powerhouse of the cell” because this phrase has a high probability in the training data.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Prompt Engineering</span>"
+    ]
+  },
+  {
+    "objectID": "Prompt_engineering.html#how-llms-work-conceptual-technical-basics",
+    "href": "Prompt_engineering.html#how-llms-work-conceptual-technical-basics",
+    "title": "1  Prompt Engineering",
+    "section": "",
+    "text": "Large Language Models (LLMs) generate text by predicting the next token based on patterns learned from training data.\n→ They operate autoregressively: each generated token is appended to the context and used to predict the next one.\nChatGPT = Chat Generative Pre-trained Transformer:\n\nSelf-attention computes weighted relationships across all tokens, allowing the model to focus on the most relevant parts of the context.\nPositional encodings inject information about token order, enabling the model to represent sequences rather than bags of words.\n\nInternal processing pipeline:\n\nText → tokenization → numerical embeddings → stacked transformer layers → probability distribution over the next token.\n\nProbability, not understanding:\n\nThe model does not “know” facts; it estimates which continuation is most likely given the context and its training distribution.\n\nTraining objective:\n\nMinimize cross-entropy loss, pushing predicted token probabilities closer to the tokens observed in large-scale text corpora.\n\nDeterminism vs. randomness:\n\nSampling parameters (e.g. temperature, top-k/top-p) influence how deterministic or creative the output appears.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Prompt Engineering</span>"
+    ]
+  },
+  {
+    "objectID": "Prompt_engineering.html#prompt-engineering-purpose-and-practice",
+    "href": "Prompt_engineering.html#prompt-engineering-purpose-and-practice",
+    "title": "1  Prompt Engineering",
+    "section": "1.2 Prompt Engineering (Purpose and Practice)",
+    "text": "1.2 Prompt Engineering (Purpose and Practice)\n\n“The art of talking to the machine.”\n\nPrompt engineering aims to:\n\nProduce reliable, repeatable, and useful outputs despite inherent nondeterminism.\nIncrease predictability, consistency, and task alignment.\nClearly encode task intent, context, constraints, and output structure.\nReduce ambiguity and lower the risk of hallucinations.\n\nExample 1 (general):\nInstead of:\n&gt; “Explain CRISPR.”\nBetter:\n&gt; “Act as a molecular biologist. Explain CRISPR to a motivated high-school student in 3 bullet points.”\nExample 2 (technical):\nInstead of:\n&gt; “Explain PCA.”\nBetter:\n&gt; “Provide a mathematically grounded explanation of PCA for an R programmer. Include eigenvectors, variance decomposition, and a 3-line R code example.”",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Prompt Engineering</span>"
+    ]
+  },
+  {
+    "objectID": "Prompt_pattern.practical.html",
+    "href": "Prompt_pattern.practical.html",
+    "title": "2  Prompt Pattern (practical)",
+    "section": "",
+    "text": "2.1 Core Prompt Patterns",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Prompt Pattern (practical)</span>"
+    ]
+  },
+  {
+    "objectID": "Prompt_pattern.practical.html#core-prompt-patterns",
+    "href": "Prompt_pattern.practical.html#core-prompt-patterns",
+    "title": "2  Prompt Pattern (practical)",
+    "section": "",
+    "text": "2.1.1 Persona Pattern\nHelps control tone, expertise, cultural assumptions.\nExample:\n“Act as a senior bioinformatician experienced in single-cell epigenomics. Provide actionable suggestions.”\n\n\n2.1.2 Audience Persona Pattern\nTell GPT who you are so explanations match your background.\nExample:\n“Assume I am new to machine learning but familiar with R and statistics. Explain what a transformer is.”\n\n\n2.1.3 Question Refinement\nGPT improves your question. Useful for technical tasks where question quality matters.\nExample:\n“When I ask you something unclear, suggest a sharper version first and ask if I want to use it.”\n\n\n2.1.4 Few-shot Prompting\nYou show examples (introduce training data) → GPT follows your pattern. Useful for labeling, transformations, extraction tasks.\nExample:\nInput: ATGCGT\nOutput: reversed sequence: TGCGTA\n\nPrompt:\nInput: AACCAT\nOutput:\nGPT continues with the intended pattern.\n\n\n2.1.5 Flipped Interaction\nGPT asks you the questions.\nExample:\n“Ask me clarifying questions until you can design a workshop outline. When you have enough information, present the final outline.”\n\n\n2.1.6 Chain of Thought\nExplicit reasoning steps.\nExample:\n“Show your reasoning in short bullet points and end with a boxed final answer.”\nHelps when solving problems or planning.\n\n\n2.1.7 ReAct Prompting\nReason → take external action → reason → answer.\nExample:\n“Search PubMed for recent papers on DNA methylation in HSCs, summarize top 3 findings, and explain how they relate to AML biology.”\n(Assuming GPT has tools activated.)\n\n\n2.1.8 Alternative Approaches\nAsk for multiple solutions. (or strategy for approaches)\nExample:\n“Propose 5 different ways to create a metadata-capture workflow for a small lab, ranked by feasibility.”\nGreat for brainstorming and problem solving.\n\n\n2.1.9 Evaluation Pattern\nUse examples or rubrics to grade model output.\nExample:\n“Here are 3 example abstracts. Score the following abstract for clarity (1–5), structure (1–5), scientific accuracy (1–5). Provide justification.”\n\n\n2.1.10 Game-play Pattern\nTurn tasks into structured exercises. Define rules.\nExample:\n“We are going to play a game:\nI describe a lab workflow, you generate 5 mistakes a junior researcher might make, and how to fix them.”\n\n\n2.1.11 Recipe Pattern\nStepwise instructions with gaps.\nExample:\n“Fill in missing steps for this workflow:\n\n\nLoad FASTQ files\n\nAlign using BWA\n\nGenerate BAM summary”\n\n\n\n\n2.1.12 Template Pattern\nUse placeholders → consistent output.\nExample:\nMutation Summary\nGene: &lt;GENE&gt;\nVariant: &lt;VARIANT&gt;\nImpact: &lt;IMPACT&gt;\nEvidence: &lt;QUOTES FROM ARTICLE&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Prompt Pattern (practical)</span>"
+    ]
+  },
+  {
+    "objectID": "Prompt_pattern.practical.html#text-manipulation-patterns",
+    "href": "Prompt_pattern.practical.html#text-manipulation-patterns",
+    "title": "2  Prompt Pattern (practical)",
+    "section": "2.2 Text Manipulation Patterns",
+    "text": "2.2 Text Manipulation Patterns\n\n2.2.1 Semantic Filter\nRemove or replace specific elements.\nExample:\n“Remove all dates from the text but change as little as possible.”\n\n\n2.2.2 Meta-language Pattern\nDefine a micro-language the LLM should learn.\nExample:\n“When I write ‘QC-S1’, interpret it as: run initial QC on sequencing files and summarize FastQC results.”",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Prompt Pattern (practical)</span>"
+    ]
+  },
+  {
+    "objectID": "Prompt_pattern.practical.html#verifier-pattern",
+    "href": "Prompt_pattern.practical.html#verifier-pattern",
+    "title": "2  Prompt Pattern (practical)",
+    "section": "2.3 Verifier Pattern",
+    "text": "2.3 Verifier Pattern\n\n2.3.1 Cognitive Verifier Pattern\nMeta-reasoning pattern where the model is instructed to generate an answer, independently verify, critique, or test that answer and revise if needed. Focuses on error detection, not explanation.\nTypical prompt form:\n“First provide an answer. Then verify it by checking assumptions, edge cases, and alternative interpretations.” “Critically review your own solution and correct any mistakes.”\nWhat it does well - Reduces hallucinations - Improves factual and logical reliability - Surfaces hidden assumptions - Excellent for high-stakes outputs\nWhat it is not - Not primarily about explaining reasoning to the user - Verification may be concise or structured rather than narrative\nExample:\nAnswer: X\nVerification: - Check assumptions → valid - Alternative method → same result - Edge cases → none violated\nConclusion: Answer stands.\n\n\n2.3.2 Fact Checking Pattern\nForce verification.\nSteps:\n\nExtract facts\nCompare with source\nFlag inconsistencies\nInsert verified fact list at the end\n\nExample:\n“Extract all factual statements from the text and list any that need verification.”",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Prompt Pattern (practical)</span>"
+    ]
+  },
+  {
+    "objectID": "Prompt_pattern.practical.html#workflows",
+    "href": "Prompt_pattern.practical.html#workflows",
+    "title": "2  Prompt Pattern (practical)",
+    "section": "2.4 Workflows",
+    "text": "2.4 Workflows\n\n2.4.1 Working on smaller pieces\nOutline Expansion Start small, expand in pieces.\nExample:\n“Here is the outline for a workshop. Expand only section 2. Keep the rest unchanged.”\n\n\n2.4.2 Tail Generation\nAdd automatic “post-processing.”\nExample:\n“When done summarizing, also produce a 3-item action list.”",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Prompt Pattern (practical)</span>"
+    ]
+  },
+  {
+    "objectID": "Prompt_pattern.technical.html",
+    "href": "Prompt_pattern.technical.html",
+    "title": "3  Prompt Pattern (technical)",
+    "section": "",
+    "text": "3.1 Core Prompt Pattern\nA compact, engineering-oriented overview",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Prompt Pattern (technical)</span>"
+    ]
+  },
+  {
+    "objectID": "Prompt_pattern.technical.html#core-prompt-pattern",
+    "href": "Prompt_pattern.technical.html#core-prompt-pattern",
+    "title": "3  Prompt Pattern (technical)",
+    "section": "",
+    "text": "3.1.1 Persona Pattern (Functional Control)\nDefine computational role + constraints.\nExample:\n“Act as a senior data engineer. Output only SQL, no explanations.”\n\n\n3.1.2 Audience Persona Pattern (Adjust Explanation Level)\nTells the model who the target reader is.\nExample:\n“Explain transformer attention to someone familiar with matrix multiplication but new to NLP.”\n\n\n3.1.3 Flipped Interaction Pattern (Information Acquisition)\nUseful when task requires parameters or architecture definition.\nExample:\n“Ask me all required questions to define a Snakemake workflow. Then generate the final workflow.”\n\n\n3.1.4 Question Refinement Pattern (Error Reduction)\nGPT rewrites your question to reduce ambiguity.\nExample:\n“Before answering, propose a more precise version of my question optimized for computational reproducibility.”\n\n\n3.1.5 Cognitive Verifier Pattern (Structured Reasoning)\nModel decomposes problem → produces final synthesized answer.\nUseful to check the model’s reasoning. Improves the output.\nExample:\n“Break the question into technical sub-questions (≤5), answer them, then produce the final integrated explanation.”\n\n\n3.1.6 Few-Shot Pattern (Pattern Imitation)\nProvide input/output examples → model induces rule.\nExample:\nInput: “ATGGCT”\nOutput: reverse_complement: “AGCCAT”\n\nInput: “CGTAAT”\nOutput:\nGPT generalizes rule across new inputs.\n\n\n3.1.7 Chain-of-Thought (CoT) Pattern (Explain Reasoning)\nModel outputs intermediate reasoning (optional).\nExample:\n“Show your reasoning in short bullet points and end with a boxed final answer.”\n\n\n3.1.8 ReAct Pattern (Reason + Tool Use)\nLLM reasons → takes actions (search, code execution) → final answer.\nExample:\n“Search the latest ENCODE metadata for a DNase-seq dataset, summarize QC metrics, then evaluate quality.”\n\n\n3.1.9 Evaluation Pattern (Auto-Grading Models)\nProvide criteria or examples → GPT scores candidates.\nExample:\n“Evaluate the following three pipeline descriptions for clarity (1–5), modularity (1–5), reproducibility (1–5). Justify each score.”\n\n\n3.1.10 Template Pattern (Deterministic Structure)\nForce GPT to output in a machine-readable or human-readable schema.\nExample:\n{\n“task”: “&lt;TASK&gt;”,\n“inputs”: \\[\"\\&lt;INPUT_1\\&gt;\", \"\\&lt;INPUT_2\\&gt;\"\\],\n“steps”: \\[\"\\&lt;STEP_1\\&gt;\", \"\\&lt;STEP_2\\&gt;\"\\],\n“expected_output”: “&lt;OUTPUT&gt;”\n}\n\n\n3.1.11 Meta-Language Pattern (Define Custom Syntax)\nYou define a symbolic shorthand → model learns mapping.\nExample:\n“Interpret ‘QC-S1’ as: run FastQC → summarize per-base content → output 3 metrics.”\n\n\n3.1.12 Recipe Pattern (Pipeline Definition)\nFill missing steps in a workflow.\nExample:\n“Insert the two missing steps in this pipeline:\n\nLoad FASTQ\nAlign with BWA\nGenerate BAM summary”\n\n\n\n3.1.13 Alternative Approaches Pattern (Algorithmic Exploration)\nGenerate multiple candidate solutions.\nExample:\n“Provide 4 alternative strategies for building a FAIR-compliant metadata capture workflow. Rank by implementation cost.”",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Prompt Pattern (technical)</span>"
+    ]
+  },
+  {
+    "objectID": "Prompt_pattern.technical.html#text-data-manipulation-patterns",
+    "href": "Prompt_pattern.technical.html#text-data-manipulation-patterns",
+    "title": "3  Prompt Pattern (technical)",
+    "section": "3.2 Text & Data Manipulation Patterns",
+    "text": "3.2 Text & Data Manipulation Patterns\n\n3.2.1 Semantic Filter\nRemove or transform only the targeted elements.\nExample:\n“Remove all patient identifiers but keep clinical meaning intact.”\n\n\n3.2.2 Tail Pattern (Post-Processing)\nAppend additional required content automatically.\nExample:\n“After summarizing the paper, append a list of unresolved questions.”\n\n\n3.2.3 Fact-Checking Pattern\nExtract facts → verify → append fact list.\nExample:\n“Extract all factual claims from the text and mark those that require verification due to missing sources.”",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Prompt Pattern (technical)</span>"
+    ]
+  },
+  {
+    "objectID": "CustomGPTs.html",
+    "href": "CustomGPTs.html",
+    "title": "4  CustomGPTs",
+    "section": "",
+    "text": "4.1 Intro\nUser-configured versions of ChatGPT that behave like a specialized assistant for a specific task, domain, or workflow—without writing code. Persistent behaviour.\nCan be created through the ChatGTP app.\n/\nComponents:\nUse cases:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>CustomGPTs</span>"
+    ]
+  },
+  {
+    "objectID": "CustomGPTs.html#intro",
+    "href": "CustomGPTs.html#intro",
+    "title": "4  CustomGPTs",
+    "section": "",
+    "text": "Aspect\nChatGPT\nCustom GPT\n\n\n\n\nPurpose\nGeneral-purpose assistant\nTask- or domain-specific assistant\n\n\nInstructions\nProvided ad hoc per chat\nPersistent, predefined instructions\n\n\nKnowledge\nGeneric model knowledge\nOptional uploaded documents & references\n\n\nConsistency\nVaries between chats\nStable, repeatable behavior\n\n\nPrompting effort\nRepeated each session\nOne-time setup\n\n\nTool access\nUser-controlled per chat\nPreconfigured tools\n\n\nHallucination risk\nHigher (open-ended)\nLower (scoped + constrained)\n\n\nBest use case\nExploration, quick questions\nWorkflows, training, institutional use\n\n\n\n\n\n\nPersonality: tone + style\nPrompt template: instructions, constraints\nData sources: files, knowledge bases\nActions: external tools\n\n\n\nAutomating bioinformatics reports\nTurning handwritten notes into Google Docs\nCleaning up metadata",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>CustomGPTs</span>"
+    ]
+  },
+  {
+    "objectID": "CustomGPTs.html#personality",
+    "href": "CustomGPTs.html#personality",
+    "title": "4  CustomGPTs",
+    "section": "4.2 Personality",
+    "text": "4.2 Personality\nCustomize how your chatbot interacts:\n\nConfidence: a) assured, b) measured\nAmicability: a)friendly, b) neutral\nProfessionalism: a) formal, b) casual\nInteractivity: a) engaging, b) informative\nTransparency: a) adaptive, b) consistent\nLexicography: a) specialized, b) universal",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>CustomGPTs</span>"
+    ]
+  },
+  {
+    "objectID": "CustomGPTs.html#structuring-input-output",
+    "href": "CustomGPTs.html#structuring-input-output",
+    "title": "4  CustomGPTs",
+    "section": "4.3 Structuring Input & Output",
+    "text": "4.3 Structuring Input & Output\n\n4.3.1 Input Pattern\nPrompt instructs GPT to ask for missing info.\nExample:\n“Before writing, ask me for the dataset description.”\n\n\n4.3.2 Structured Output (tables, checklists, format)**\nMakes results more usable.\nExample (table):\n| Step | Description | Tools |\n|——|————-|——-|\n| 1 | QC | FastQC |\n| 2 | Alignment | BWA |\nUse markdown formatting options (headers, tables, links, footnotes)!\nThis is useful when prompting for reusable, clean, publication-ready output.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>CustomGPTs</span>"
+    ]
+  },
+  {
+    "objectID": "CustomGPTs.html#tabular-data-analysis",
+    "href": "CustomGPTs.html#tabular-data-analysis",
+    "title": "4  CustomGPTs",
+    "section": "4.4 Tabular data analysis",
+    "text": "4.4 Tabular data analysis\nLLMs can understand tables if provided clearly.\nExample:\n“Using the table below, predict the missing column ‘Cell type’.”\nThey can also create synthetic datasets to help test pipelines.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>CustomGPTs</span>"
+    ]
+  },
+  {
+    "objectID": "CustomGPTs.html#in-context-learning-with-tabular-data",
+    "href": "CustomGPTs.html#in-context-learning-with-tabular-data",
+    "title": "4  CustomGPTs",
+    "section": "4.5 In-Context Learning with Tabular Data",
+    "text": "4.5 In-Context Learning with Tabular Data\nProvide columns + examples → model deduces hidden rules.\nExample:\n“Given columns A and B, predict column C (protein class) based on observed patterns.”",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>CustomGPTs</span>"
+    ]
+  },
+  {
+    "objectID": "CustomGPTs.html#synthetic-data-generation",
+    "href": "CustomGPTs.html#synthetic-data-generation",
+    "title": "4  CustomGPTs",
+    "section": "4.6 Synthetic Data Generation",
+    "text": "4.6 Synthetic Data Generation\nBootstrap ML experiments or testing.\nExample:\n“Generate a synthetic metadata table of 50 samples with fields: donor_age, diagnosis, cell_type, library_size.”",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>CustomGPTs</span>"
+    ]
+  },
+  {
+    "objectID": "CustomGPTs.html#ml-with-prompts-your-course-notes",
+    "href": "CustomGPTs.html#ml-with-prompts-your-course-notes",
+    "title": "4  CustomGPTs",
+    "section": "4.7 ML with Prompts (Your Course Notes)",
+    "text": "4.7 ML with Prompts (Your Course Notes)\nClassification via Prompting\n\nGood for simple yes/no or category labeling.\n\nExample:\n“Label each comment as ‘informative’, ‘spam’, or ‘uncertain’.”\nClustering via Prompting\n\nModel groups items into meaningful clusters.\n\nExample:\n“Cluster the following 30 job descriptions into 5 roles and output an ASCII taxonomy tree.”\nPrediction via Prompting\n\nModel extrapolates patterns.\n\nExample:\n“Given the engagement metrics for existing workshop titles, propose 3 new course titles likely to perform well.”",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>CustomGPTs</span>"
+    ]
+  },
+  {
+    "objectID": "CustomGPTs.html#benchmarking-gpt-your-test-the-gpt-notes",
+    "href": "CustomGPTs.html#benchmarking-gpt-your-test-the-gpt-notes",
+    "title": "4  CustomGPTs",
+    "section": "4.8 Benchmarking GPT (Your “Test the GPT” Notes)",
+    "text": "4.8 Benchmarking GPT (Your “Test the GPT” Notes)\nThings to test:\n\nFactual accuracy\nReasoning\nCreativity\nCultural/linguistic alignment\nOutput structure\nHandling of adversarial or ambiguous input\n\nExample:\n“Test whether the model stays consistent when given conflicting instructions.”\nBuilt your own testerGPT to benchmark other customGPTs!\n\n4.8.1 Reliability & Safety\nPreventing hallucinations\n\nProvide all key information first.\nAsk user to confirm before acting.\n\nEscape Valves to avoid forced answers.\nExample:\n“If missing, respond with &lt;N/A&gt;.”\nBoundaries\n\nFor safety, compliance, correctness.\nUseful in regulated areas (e.g., healthcare, legal, institutional guidelines).\n\nExample:\n“Do not provide clinical guidance. If asked, offer general information and suggest contacting a medical professional.”\nAmbiguity Handling\n\nIdentify it\nAsk for clarification or fall back on &lt;N/A&gt;\n\n\n\n4.8.2 Conflict Resolution\nWhen documents/ inputs conflict:\n\nUse newest\nIf one contains the needed topic and the other not, use the relevant one\nState uncertainty explicitly\n\n\n\n4.8.3 Adversarial Input Prevention\n\nAdd railguards\nDisable functionality beyond scope\nAvoid being tricked into harmful or nonsensical replies",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>CustomGPTs</span>"
+    ]
+  },
+  {
+    "objectID": "Data_analysis_with_ChatGTP.html",
+    "href": "Data_analysis_with_ChatGTP.html",
+    "title": "5  Data analysis with ChatGTP",
+    "section": "",
+    "text": "5.1 General Principles of Working with generative AI\nMy notes from the Coursera courses Advanced Data Analysis with ChatGPT and Building Trustworthy AI (Code Interpreter) by Jules White. Digitized from handwritten material via mobile photos and organized into a coherent structure using ChatGPT (customGPT: “Notes Organizer”).\nSynopsis: How to use ChatGPT effectively for data analysis, document processing, workflow planning, and creative problem-solving, and outline key principles, tools, and frameworks (such as ACHIEVE and ETAC) that help AI augment human reasoning while maintaining accuracy and control.\nFundamentals\nTreat Code Interpreter as an internal assistant\nThink of the Code Interpreter as a smart intern that needs clear instructions:",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data analysis with ChatGTP</span>"
+    ]
+  },
+  {
+    "objectID": "Data_analysis_with_ChatGTP.html#general-principles-of-working-with-generative-ai",
+    "href": "Data_analysis_with_ChatGTP.html#general-principles-of-working-with-generative-ai",
+    "title": "5  Data analysis with ChatGTP",
+    "section": "",
+    "text": "“LLMs do not generate answers, LLMs generate text. Some of the text might provide useful answers”(Jules White)\nLLM output has an inherent random component (LLMs predict, and the same prompt may not provide the exact same output)\nUsing generative AI implys taking ownership of the output.\n\n\n\n\nBreak tasks down step-by-step.\nProvide all necessary context and information upfront – data files, constraints, goals, examples.\nAsk for detailed feedback, e.g. “What could be improved about this figure?”\nDon’t expect perfection. Plan to iterate with it.\nAlways review results for accuracy, plausibility, and errors.\nBe explicit about:\n\nWhat you want to achieve.\nHow you want results presented (tables, plots, summaries, slides).\nAny constraints (runtime, file formats, colour schemes, etc.).\n\nProvide escape valves",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data analysis with ChatGTP</span>"
+    ]
+  },
+  {
+    "objectID": "Data_analysis_with_ChatGTP.html#working-with-data-files-documents-media-and-zip-files",
+    "href": "Data_analysis_with_ChatGTP.html#working-with-data-files-documents-media-and-zip-files",
+    "title": "5  Data analysis with ChatGTP",
+    "section": "5.2 Working with Data Files, Documents, Media and Zip Files",
+    "text": "5.2 Working with Data Files, Documents, Media and Zip Files\n\n5.2.1 Working with Data Files and Visualizations\n\n5.2.1.1 Uploading and exploring data\nTypical workflow with Code Interpreter:\n\nUpload a dataset (csv) and ask:\n\n“Read this file and explain the structure of the data.”\n“Show me the columns, data types, and basic statistics.”\n\nAsk for interesting visualizations:\n\n“Create several interesting plots that could be useful for exploratory analysis.”\n“Try a histogram, a boxplot, and a scatterplot matrix.”\n\n\nYou can then iterate:\n\n“Refine the labels and axes.”\n“Use a harmonized colour scheme.”\n“Order categories in a meaningful way.”\n\n\n\n5.2.1.2 Adding narrative text and presentations\nYou can ask ChatGPT to help with presentation-ready outputs:\n\n“Insert each visualization into a slide and write a short caption explaining what it shows.”\n“Update my existing slides with a short narrative for each plot.”\n“Use consistent terminology and colour coding across all slides.”\n\nExample prompt:\n\n“Create a one-slide summary for each of these plots, explaining what the viewer should take away. Use clear language suitable for a multidisciplinary biomedical audience.”\n\n\n\n\n5.2.2 Working with Documents\n\n5.2.2.1 Documents as objects vs. documents as knowledge\nTwo levels of interaction with documents:\n\nDocument as an object\n\nOperations: rename, move, download, edit, zip/unzip.\n\nDocument as knowledge\n\nOperations: analyze, summarize, outline, extract key statements, compare sections, etc.\n\n\nBeing aware of this distinction helps you design useful prompts.\n\n\n5.2.2.2 Useful document prompts\nExamples:\n\n“Extract this PDF to plain text and tell me what it contains at a high level.”\n“Reread the text and break it down into the smallest meaningful sections with headings.”\n“Create an outline of the document.”\n“Identify contradictions, gaps, or redundancies.”\n“Highlight all places where inclusion criteria are mentioned and summarise them.”\n\nThis improves:\n\nReasoning – you understand the structure more clearly.\nVerification – easier to check that all key information is captured.\nNavigation – easier to find where specific concepts live.\n\n\n\n\n5.2.3 Using Canvas in ChatGPT\nCanvas is useful for interactive editing and document development.\n\n5.2.3.1 Basic Canvas workflow\n\nOpen Canvas.\nPaste or import your text (or upload a document to extract text).\nEnter a prompt to modify the text or to ask for comments/suggestions.\nEdit the text manually or accept/reject suggested changes.\nOptionally upload additional documents for context (e.g. guidelines, previous drafts).\nEnter more prompts to adjust tone, clarity, length, or structure.\nUse the Canvas controls (e.g. icons in the lower corner) to adjust text length and polish.\n\n\n\n5.2.3.2 Two main Canvas entry paths\n\nUpload a document + prompt\n&gt; “Extract the text from this document into Canvas and clean up formatting.”\nCopy & paste text directly\nThen iterate with prompts to refine.\n\n\n\n\n5.2.4 Structured Data Workflows\n\n5.2.4.1 Understanding tables\nUseful prompts:\n\n“Read and explain the structure of this table.”\n“Describe each column, including data type and potential problems.”\n“Identify missing values, inconsistent labels, and outliers.”\n\nThen:\n\n“Calculate derived variables step-by-step and show intermediate tables.”\n“Visualise the relationship between variable X and Y, including confidence intervals.”\n\n\n\n5.2.4.2 Example workflow\n\nLoad dataset (CSV, TSV, Excel, etc.).\nAsk for an overview (dimensions, column types, missingness).\nClean: standardise categories, handle missing values.\nDerive new variables (ratios, differences, grouping codes).\nVisualise key relationships.\nSummarise results in natural language.\n\n\n\n\n5.2.5 Working with Media and Zip Archives\n\n5.2.5.1 Video workflows\nTypical operations:\n\n“Extract N frames from this video, evenly spaced.”\n“Display the extracted frames.”\n“Resize each image to 300 px wide while preserving aspect ratio.”\n“Convert to grayscale and increase contrast by 30%.”\n\nThis is useful for:\n\nCreating thumbnails.\nQuick quality checks.\nPreparing training data for image models.\n\n\n\n5.2.5.2 Zip archives\nZip archives are handy for batch operations:\n\nZip multiple outputs into a single file for download.\nAsk ChatGPT to propose a folder structure and better filenames.\n\nExample prompt:\n\n“Resize all images to 300 px width, rename them systematically, and put them into a zip file for download. Suggest a clear naming scheme based on sample ID and time point.”",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data analysis with ChatGTP</span>"
+    ]
+  },
+  {
+    "objectID": "Data_analysis_with_ChatGTP.html#workflows-and-planning",
+    "href": "Data_analysis_with_ChatGTP.html#workflows-and-planning",
+    "title": "5  Data analysis with ChatGTP",
+    "section": "5.3 Workflows and Planning",
+    "text": "5.3 Workflows and Planning",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data analysis with ChatGTP</span>"
+    ]
+  },
+  {
+    "objectID": "Data_analysis_with_ChatGTP.html#check-bringing-information-into-the-conversation",
+    "href": "Data_analysis_with_ChatGTP.html#check-bringing-information-into-the-conversation",
+    "title": "5  Data analysis with ChatGTP",
+    "section": "5.4 Check: Bringing Information into the Conversation",
+    "text": "5.4 Check: Bringing Information into the Conversation\nUseful operations:\n\n“Read this long text.”\n“Summarize it in X bullet points.”\n“Present the key information back to me in a way that I can quickly verify.”\n“Create an index of where specific information (e.g. inclusion criteria, endpoints) can be found.”\n\nThis helps to:\n\nImprove reasoning.\nSupport verification and auditing.\nCreate better documentation and overviews.\n\n\n5.4.1 The ETAC Framework for workflows Human + AI Process Planning\nThink of the overall human–AI workflow as:\nE – Extract → T – Transform → A – AI / Analyze → C – Create\n\n5.4.1.1 Extract: modalities and operations\n\nDocuments (docx, pdf, txt)\n\nText extraction\nMetadata extraction\nEntity recognition\n\nVideo (mp4, avi)\n\nFrame extraction\nObject detection\n(Sometimes) face recognition\n\nAudio (mp3, wav)\n\nSpeech-to-text\nNoise reduction\nFeature extraction\n\nDatasets (csv, tsv, json, xlsx)\n\nLoad data\nPreprocess\nFeature engineering\n\nImages (jpg, png, etc.)\n\nObject detection\nSegmentation\nFeature extraction\n\n\n\n\n5.4.1.2 Transform: data and images\n\nStructured data\n\nClean and normalise\nDrop or merge columns\nRecode values\nCompute derived features\n\nImages\n\nSubselect regions (ROI)\nCrop and resize\nAdjust contrast, brightness, etc.\n\n\nAlways prefer small, controlled steps that you can undo or repeat.\n\n\n\n5.4.2 Analyze: From raw material to insight\nAnalysis-related operations include:\n\nFind ambiguities and inconsistencies.\nAnalyse and summarise content.\nRaise clarifying questions for the user.\nGenerate examples and counter-examples.\n\nYou can also maintain a “library” or mental catalogue of:\n\nFile types\nCommon operations\nGood default workflows\n\n\n\n5.4.3 Planning Workflows – Human and AI Roles\n\n5.4.3.1 Human planning\n\nLay out the process manually first:\n\nInputs\nIntermediate artefacts\nOutputs\n\nDecide what you want to control vs. what AI can suggest.\n\n\n\n5.4.3.2 AI planning\nAsk ChatGPT:\n\n“Propose a detailed step-by-step plan for this task.”\n\nThen refine:\n\nExpand each bullet into 2–3 actionable substeps.\nEnsure each step is something:\n\nYou can perform, or\nThe Python environment can perform.\n\nTurn the result into an actionable plan or checklist.\nVerify that the sequence of step is executable\n\n\n\n\n5.4.4 AI Planning Techniques and Iteration\nGood practice when executing a plan with Code Interpreter:\n\nExecute steps one by one.\nSave results of each step into separate files (for reproducibility and debugging).\nAt the beginning of each step:\n\nReflect on prior output.\nCheck alignment with goals.\n\nIf something breaks:\n\nStop, diagnose, fix the step.\nThen continue.\n\n\nYou can also:\n\nStore the plan itself in a separate file for later reuse.\nUse “flipped interaction”: ask AI to improve your plan, rather than just proposing its own.\n\n\n\n5.4.5 Alternative Approaches and Tool Choice\nNot all plans will work on the first try:\n\nSome approaches will fail due to limitations of the model or tools.\nIt’s valuable to try alternative methods and compare.\n\nTool choice matters:\n\nGPT / ChatGPT – reasoning, summarising, planning, generating text.\nPython / other tools – computation, heavy data processing, integration with external systems.\n\nOften you manually choose when to ask the LLM to “do something” and when to switch to specialised tools.\n\n\n5.4.6 Fixing and Spotting Errors\n\n5.4.6.1 Fixing errors\n\nGo back to the prompt before the error occurred and edit it.\nNumber steps in your plan so you can say: &gt; “Repeat step 4, but show the intermediate table before filtering.”\nAsk for explicit error reporting and logging.\n\n\n\n5.4.6.2 Spotting hallucinations\nWarning signs:\n\nInput/output ratio is very small – tiny context, huge confident answer.\nA lot of artificial data is generated without clear reason.\nLong conversation history with many state changes.\n\nAdditional caution when:\n\nUsing conversation history as implicit input.\nRe-running code cells on modified data without re-checking assumptions.\n\n\n\n\n5.4.7 Consistency, Test Cases, and Source Linking\nTo build more trustworthy workflows:\n\nUse identifiers and citations:\n\nPage numbers, line numbers, section IDs.\n\nPreserve references to original sources when summarising.\nBuild test cases:\n\nUse synthetic data to test specific actions/conditions.\nCheck whether the workflow behaves as expected.\n\n\n\n\n5.4.8 Breaking Down and Assembling Larger Projects\n\n5.4.8.1 Breaking down a large project\n\nStart by creating an index:\n\nSections, topics, questions.\n\nThen use the index to drive operations:\n\n“Using this index, extract all content related to X.”\n\n\n\n\n5.4.8.2 Assembling output into a larger product\nIncremental workflow:\n\nRun analyses chunk by chunk.\nProduce individual output files (markdown, figures, tables).\nAt the end, combine them into:\n\nA report\nA slide deck\nA book chapter\n\n\nThis is particularly useful for text analysis:\n\nFirst build an outline.\nThen expand each section via incremental analysis.\nFinally assemble using the outline as a backbone.\n\n\n\n\n5.4.9 Turning Conversations into Software\nYou can move from interactive exploration to reusable tools. (From workflow to program)\nPrompt example:\n\n“Turn this process into a Python program that I can download and run locally. Include clear comments and command-line arguments.”\n\nGood practice:\n\nInspect the code carefully before running it.\nPrefer running in a safe environment (sandbox, container, virtualenv).\nKeep configuration (file paths, parameters) outside the core logic where possible.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data analysis with ChatGTP</span>"
+    ]
+  },
+  {
+    "objectID": "Data_analysis_with_ChatGTP.html#problem-selection-and-trustworthy-ai",
+    "href": "Data_analysis_with_ChatGTP.html#problem-selection-and-trustworthy-ai",
+    "title": "5  Data analysis with ChatGTP",
+    "section": "5.5 Problem Selection and Trustworthy AI",
+    "text": "5.5 Problem Selection and Trustworthy AI\n\n5.5.1 Picking Good Problems for AI (ACHIEVE-aligned view)\nGood AI candidates:\n\nEasy to check whether the answer is correct.\nA partial solution already saves substantial time.\nThe task benefits from alternative perspectives or reformulations.\nThe workflow can be decomposed into clear steps with observable outputs.\n\nAI should augment, not replace, human judgment, creativity or intelligence.\n\n\n5.5.2 The ACHIEVE Framework (Overview)\nACHIEVE is a way to think about how AI can augment human intelligence:\n\nA – Aid human coordination\nC – Cut tedium / Reduce tedious work\nH – Provide a safety net (spot errors/risks)\nI – Inspire creativity\nE – Execute and scale ideas\nV – Visibility and verification\nE – Experimentation and exploration\n\nBelow, concrete examples and use cases.\n\n\n5.5.3 ACHIEVE – Detailed Use Cases\n\n5.5.3.1 Aid human coordination\nExample: planning a workshop series.\n\nSummarise meeting notes into key decisions and actions.\nIdentify actors and assign responsibilities.\nSpot ambiguities and potential conflicts.\nPropose clarifications and conflict-resolution options.\nDraft follow-up emails and reminders.\n\n\n\n5.5.3.2 Cut tedium / Reduce tedious work\nExample: cleaning data from a registration form.\n\nMap similar free-text entries onto consistent categories.\nCreate data dictionaries and lookup tables.\nGroup related terms and suggest standardised labels.\nGenerate code snippets for repetitive cleaning operations.\nVisualise distributions to check for odd patterns.\n\n\n\n5.5.3.3 Help provide a safety net\nExample: travel reimbursement workflows.\n\nCheck forms for completeness and consistency.\nCompare entries against internal rules or policies.\nHighlight potential issues or missing information.\nSuggest corrections or follow-up questions.\nImportant: final approval remains human.\n\n\n\n5.5.3.4 Inspire creativity\nExample: designing a workshop.\n\nAsk it questions about your content to rethink structure:\n\n“What natural modules do you see in this outline?”\n\nGenerate follow-up or bonus content ideas.\nSuggest logistic setups and communication strategies.\nDesign templates for slides, handouts, and emails.\nHelp develop ideas into more detailed formats (e.g. exercises, case studies).\n\n\n\n5.5.3.5 Execute and scale\n\nTurn proven workflows into reusable templates.\nCreate “starter kits” (data + notebook + documentation).\nGenerate parameterised scripts for common tasks.\nBuild small internal tools that others can run with minimal effort.\n\n\n\n5.5.3.6 Visibility and verification\n\nCreate diagrams of workflows and data flows.\nSummarise long documents and highlight key decisions.\nCreate indexes and cross-reference tables.\nKeep a clear link between outputs and their sources (citations, IDs).\n\n\n\n5.5.3.7 Experimentation and exploration\n\nQuickly test multiple approaches (alternative prompts, models, parameters).\nUse synthetic data to explore edge cases safely.\nCompare strategies side-by-side and reflect on trade-offs.\n\n\n\n\n5.5.4 ACHIEVE for Augmented Intelligence (Recap)\nThe goal is to augment and amplify human creativity and problem-solving, not replace people.\nACHIEVE helps you:\n\nSpend more time on high-value, human tasks.\nUse AI as a thinking partner and productivity booster.\nSupport communication, alignment, and shared understanding.\n\n\n5.5.4.1 Aid human communications\n\nDraft email templates.\nSummarise meetings and highlight open questions.\nClarify ambiguities and identify conflicts.\nMap actors and actions across a project.\n\n\n\n5.5.4.2 Cut tedious tasks\n\nAutomate repetitive formatting and cleaning.\nBatch-generate routine outputs.\nScaffold code and documentation.\n\n\n\n5.5.4.3 Help privide safety net\nAI can:\n\nHighlight ambiguities and potential conflict points.\nSurface missing information or inconsistent logic.\nHelp evaluate risks and suggest mitigations.\n\nBut:\n\nHumans remain responsible for final decisions.\n\n\n\n5.5.4.4 Ideation\n\nGenerate many ideas quickly and cheaply.\nUse AI for low-risk brainstorming and exploration.\nHelpful for diagramming and visualising possibilities.\nThe human user:\n\nSelects promising ideas.\nCombines and adapts them.\nMaintains ownership and direction of the process.\n\n\n\n\n5.5.4.5 Extract and Filtering\n\nFilter context information so reasoning stays tractable.\nSummarise or analyse while keeping references to original sources.\nEnsure filtering is immediately checkable (quote, cite, link).\n\n\n\n\n5.5.5 Building Trustworthy AI\nDimensions of trustworthiness:\n\nVeracity – conformity to facts.\nAccuracy – numerical / logical correctness.\nCost of checking vs cost of producing the answer.\n\nRemember:\n\nGenerative AI is not a primary source of facts.\nTreat outputs as drafts to be checked, not final truth.\n\nGood practices:\n\nMark outputs by certainty or evidence level.\nUse visual aids (flow diagrams, decision trees) to help reasoning.\nApply risk assessments, especially for:\n\nPhysical risks\nSocial / psychological risks\nEconomic or career impacts\nData protection and privacy\n\n\nAI can: - Point you to relevant sections in documents (tracing) - Maintain a “trail of generation” – where information came from. - Spot missing or fragmented documentation and help mitigate consequences.\nThis is especially useful with sensitive data, where you must know exactly:\n\nWhat was used.\nWhy it was used.\nHow outputs were derived.\n\nRemember the importance of expertise:\n\nAppropriate domain expertise is crucial to interpret outputs.\nAI cannot replace expertise; it can only amplify it.\nIn biomedical and clinical research, expert review is non-negotiable.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data analysis with ChatGTP</span>"
+    ]
+  }
+]

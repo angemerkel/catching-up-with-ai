@@ -1,13 +1,14 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "Notebook: GenAI"
   author: "Angelika Merkel"
-  date: "12/4/2025"
+  date: "2025-12-04"
   page-footer:
     center: |
-      This book was build with curiosity and <a href="https://quarto.org/">Quarto</a>.
+      This book was built with curiosity and <a href="https://quarto.org/">Quarto</a>.
       
   chapters:
     - index.qmd
@@ -35,6 +36,8 @@ format:
     theme:
       - cosmo
       - brand
+    toc: true
+    code-copy: true
   pdf:
     documentclass: scrreprt
 
