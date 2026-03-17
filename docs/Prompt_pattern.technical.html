@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Prompt Pattern (technical) – Notebook: GenAI</title>
+<title>4&nbsp; Prompt Pattern (technical) – Notebook: GenAI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,7 +111,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Prompt_pattern.technical.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Prompt_pattern.technical.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -139,37 +139,37 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notebook: My Path into Generative AI</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Prompt_engineering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Prompt Engineering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prompt Engineering</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Prompt_pattern.practical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prompt Pattern (practical)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (practical)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Prompt_pattern.technical.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./CustomGPTs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CustomGPTs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CustomGPTs</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Data_analysis_with_ChatGTP.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data analysis with ChatGTP</span></span></a>
+  <a href="./Data_analysis_with_ChatGPT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data analysis with ChatGTP</span></span></a>
   </div>
 </li>
     </ul>
@@ -182,27 +182,27 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#core-prompt-pattern" id="toc-core-prompt-pattern" class="nav-link active" data-scroll-target="#core-prompt-pattern"><span class="header-section-number">3.1</span> Core Prompt Pattern</a>
+  <li><a href="#core-prompt-pattern" id="toc-core-prompt-pattern" class="nav-link active" data-scroll-target="#core-prompt-pattern"><span class="header-section-number">4.1</span> Core Prompt Pattern</a>
   <ul class="collapse">
-  <li><a href="#persona-pattern-functional-control" id="toc-persona-pattern-functional-control" class="nav-link" data-scroll-target="#persona-pattern-functional-control"><span class="header-section-number">3.1.1</span> Persona Pattern (Functional Control)</a></li>
-  <li><a href="#audience-persona-pattern-adjust-explanation-level" id="toc-audience-persona-pattern-adjust-explanation-level" class="nav-link" data-scroll-target="#audience-persona-pattern-adjust-explanation-level"><span class="header-section-number">3.1.2</span> Audience Persona Pattern (Adjust Explanation Level)</a></li>
-  <li><a href="#flipped-interaction-pattern-information-acquisition" id="toc-flipped-interaction-pattern-information-acquisition" class="nav-link" data-scroll-target="#flipped-interaction-pattern-information-acquisition"><span class="header-section-number">3.1.3</span> Flipped Interaction Pattern (Information Acquisition)</a></li>
-  <li><a href="#question-refinement-pattern-error-reduction" id="toc-question-refinement-pattern-error-reduction" class="nav-link" data-scroll-target="#question-refinement-pattern-error-reduction"><span class="header-section-number">3.1.4</span> Question Refinement Pattern (Error Reduction)</a></li>
-  <li><a href="#cognitive-verifier-pattern-structured-reasoning" id="toc-cognitive-verifier-pattern-structured-reasoning" class="nav-link" data-scroll-target="#cognitive-verifier-pattern-structured-reasoning"><span class="header-section-number">3.1.5</span> Cognitive Verifier Pattern (Structured Reasoning)</a></li>
-  <li><a href="#few-shot-pattern-pattern-imitation" id="toc-few-shot-pattern-pattern-imitation" class="nav-link" data-scroll-target="#few-shot-pattern-pattern-imitation"><span class="header-section-number">3.1.6</span> Few-Shot Pattern (Pattern Imitation)</a></li>
-  <li><a href="#chain-of-thought-cot-pattern-explain-reasoning" id="toc-chain-of-thought-cot-pattern-explain-reasoning" class="nav-link" data-scroll-target="#chain-of-thought-cot-pattern-explain-reasoning"><span class="header-section-number">3.1.7</span> Chain-of-Thought (CoT) Pattern (Explain Reasoning)</a></li>
-  <li><a href="#react-pattern-reason-tool-use" id="toc-react-pattern-reason-tool-use" class="nav-link" data-scroll-target="#react-pattern-reason-tool-use"><span class="header-section-number">3.1.8</span> ReAct Pattern (Reason + Tool Use)</a></li>
-  <li><a href="#evaluation-pattern-auto-grading-models" id="toc-evaluation-pattern-auto-grading-models" class="nav-link" data-scroll-target="#evaluation-pattern-auto-grading-models"><span class="header-section-number">3.1.9</span> Evaluation Pattern (Auto-Grading Models)</a></li>
-  <li><a href="#template-pattern-deterministic-structure" id="toc-template-pattern-deterministic-structure" class="nav-link" data-scroll-target="#template-pattern-deterministic-structure"><span class="header-section-number">3.1.10</span> Template Pattern (Deterministic Structure)</a></li>
-  <li><a href="#meta-language-pattern-define-custom-syntax" id="toc-meta-language-pattern-define-custom-syntax" class="nav-link" data-scroll-target="#meta-language-pattern-define-custom-syntax"><span class="header-section-number">3.1.11</span> Meta-Language Pattern (Define Custom Syntax)</a></li>
-  <li><a href="#recipe-pattern-pipeline-definition" id="toc-recipe-pattern-pipeline-definition" class="nav-link" data-scroll-target="#recipe-pattern-pipeline-definition"><span class="header-section-number">3.1.12</span> Recipe Pattern (Pipeline Definition)</a></li>
-  <li><a href="#alternative-approaches-pattern-algorithmic-exploration" id="toc-alternative-approaches-pattern-algorithmic-exploration" class="nav-link" data-scroll-target="#alternative-approaches-pattern-algorithmic-exploration"><span class="header-section-number">3.1.13</span> Alternative Approaches Pattern (Algorithmic Exploration)</a></li>
+  <li><a href="#persona-pattern-functional-control" id="toc-persona-pattern-functional-control" class="nav-link" data-scroll-target="#persona-pattern-functional-control"><span class="header-section-number">4.1.1</span> Persona Pattern (Functional Control)</a></li>
+  <li><a href="#audience-persona-pattern-adjust-explanation-level" id="toc-audience-persona-pattern-adjust-explanation-level" class="nav-link" data-scroll-target="#audience-persona-pattern-adjust-explanation-level"><span class="header-section-number">4.1.2</span> Audience Persona Pattern (Adjust Explanation Level)</a></li>
+  <li><a href="#flipped-interaction-pattern-information-acquisition" id="toc-flipped-interaction-pattern-information-acquisition" class="nav-link" data-scroll-target="#flipped-interaction-pattern-information-acquisition"><span class="header-section-number">4.1.3</span> Flipped Interaction Pattern (Information Acquisition)</a></li>
+  <li><a href="#question-refinement-pattern-error-reduction" id="toc-question-refinement-pattern-error-reduction" class="nav-link" data-scroll-target="#question-refinement-pattern-error-reduction"><span class="header-section-number">4.1.4</span> Question Refinement Pattern (Error Reduction)</a></li>
+  <li><a href="#cognitive-verifier-pattern-structured-reasoning" id="toc-cognitive-verifier-pattern-structured-reasoning" class="nav-link" data-scroll-target="#cognitive-verifier-pattern-structured-reasoning"><span class="header-section-number">4.1.5</span> Cognitive Verifier Pattern (Structured Reasoning)</a></li>
+  <li><a href="#few-shot-pattern-pattern-imitation" id="toc-few-shot-pattern-pattern-imitation" class="nav-link" data-scroll-target="#few-shot-pattern-pattern-imitation"><span class="header-section-number">4.1.6</span> Few-Shot Pattern (Pattern Imitation)</a></li>
+  <li><a href="#chain-of-thought-cot-pattern-explain-reasoning" id="toc-chain-of-thought-cot-pattern-explain-reasoning" class="nav-link" data-scroll-target="#chain-of-thought-cot-pattern-explain-reasoning"><span class="header-section-number">4.1.7</span> Chain-of-Thought (CoT) Pattern (Explain Reasoning)</a></li>
+  <li><a href="#react-pattern-reason-tool-use" id="toc-react-pattern-reason-tool-use" class="nav-link" data-scroll-target="#react-pattern-reason-tool-use"><span class="header-section-number">4.1.8</span> ReAct Pattern (Reason + Tool Use)</a></li>
+  <li><a href="#evaluation-pattern-auto-grading-models" id="toc-evaluation-pattern-auto-grading-models" class="nav-link" data-scroll-target="#evaluation-pattern-auto-grading-models"><span class="header-section-number">4.1.9</span> Evaluation Pattern (Auto-Grading Models)</a></li>
+  <li><a href="#template-pattern-deterministic-structure" id="toc-template-pattern-deterministic-structure" class="nav-link" data-scroll-target="#template-pattern-deterministic-structure"><span class="header-section-number">4.1.10</span> Template Pattern (Deterministic Structure)</a></li>
+  <li><a href="#meta-language-pattern-define-custom-syntax" id="toc-meta-language-pattern-define-custom-syntax" class="nav-link" data-scroll-target="#meta-language-pattern-define-custom-syntax"><span class="header-section-number">4.1.11</span> Meta-Language Pattern (Define Custom Syntax)</a></li>
+  <li><a href="#recipe-pattern-pipeline-definition" id="toc-recipe-pattern-pipeline-definition" class="nav-link" data-scroll-target="#recipe-pattern-pipeline-definition"><span class="header-section-number">4.1.12</span> Recipe Pattern (Pipeline Definition)</a></li>
+  <li><a href="#alternative-approaches-pattern-algorithmic-exploration" id="toc-alternative-approaches-pattern-algorithmic-exploration" class="nav-link" data-scroll-target="#alternative-approaches-pattern-algorithmic-exploration"><span class="header-section-number">4.1.13</span> Alternative Approaches Pattern (Algorithmic Exploration)</a></li>
   </ul></li>
-  <li><a href="#text-data-manipulation-patterns" id="toc-text-data-manipulation-patterns" class="nav-link" data-scroll-target="#text-data-manipulation-patterns"><span class="header-section-number">3.2</span> Text &amp; Data Manipulation Patterns</a>
+  <li><a href="#text-data-manipulation-patterns" id="toc-text-data-manipulation-patterns" class="nav-link" data-scroll-target="#text-data-manipulation-patterns"><span class="header-section-number">4.2</span> Text &amp; Data Manipulation Patterns</a>
   <ul class="collapse">
-  <li><a href="#semantic-filter" id="toc-semantic-filter" class="nav-link" data-scroll-target="#semantic-filter"><span class="header-section-number">3.2.1</span> Semantic Filter</a></li>
-  <li><a href="#tail-pattern-post-processing" id="toc-tail-pattern-post-processing" class="nav-link" data-scroll-target="#tail-pattern-post-processing"><span class="header-section-number">3.2.2</span> Tail Pattern (Post-Processing)</a></li>
-  <li><a href="#fact-checking-pattern" id="toc-fact-checking-pattern" class="nav-link" data-scroll-target="#fact-checking-pattern"><span class="header-section-number">3.2.3</span> Fact-Checking Pattern</a></li>
+  <li><a href="#semantic-filter" id="toc-semantic-filter" class="nav-link" data-scroll-target="#semantic-filter"><span class="header-section-number">4.2.1</span> Semantic Filter</a></li>
+  <li><a href="#tail-pattern-post-processing" id="toc-tail-pattern-post-processing" class="nav-link" data-scroll-target="#tail-pattern-post-processing"><span class="header-section-number">4.2.2</span> Tail Pattern (Post-Processing)</a></li>
+  <li><a href="#fact-checking-pattern" id="toc-fact-checking-pattern" class="nav-link" data-scroll-target="#fact-checking-pattern"><span class="header-section-number">4.2.3</span> Fact-Checking Pattern</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -212,7 +212,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></h1>
 <p class="subtitle lead">Technical Summary (with Examples)</p>
 </div>
 
@@ -231,41 +231,41 @@ window.Quarto = {
 
 
 <p><em>A compact, engineering-oriented overview</em></p>
-<section id="core-prompt-pattern" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="core-prompt-pattern"><span class="header-section-number">3.1</span> Core Prompt Pattern</h2>
-<section id="persona-pattern-functional-control" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="persona-pattern-functional-control"><span class="header-section-number">3.1.1</span> Persona Pattern (Functional Control)</h3>
+<section id="core-prompt-pattern" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="core-prompt-pattern"><span class="header-section-number">4.1</span> Core Prompt Pattern</h2>
+<section id="persona-pattern-functional-control" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="persona-pattern-functional-control"><span class="header-section-number">4.1.1</span> Persona Pattern (Functional Control)</h3>
 <p>Define computational role + constraints.</p>
 <p><strong>Example:</strong></p>
 <p>“Act as a senior data engineer. Output only SQL, no explanations.”</p>
 </section>
-<section id="audience-persona-pattern-adjust-explanation-level" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="audience-persona-pattern-adjust-explanation-level"><span class="header-section-number">3.1.2</span> Audience Persona Pattern (Adjust Explanation Level)</h3>
+<section id="audience-persona-pattern-adjust-explanation-level" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="audience-persona-pattern-adjust-explanation-level"><span class="header-section-number">4.1.2</span> Audience Persona Pattern (Adjust Explanation Level)</h3>
 <p>Tells the model who the target reader is.</p>
 <p><strong>Example:</strong></p>
 <p>“Explain transformer attention to someone familiar with matrix multiplication but new to NLP.”</p>
 </section>
-<section id="flipped-interaction-pattern-information-acquisition" class="level3" data-number="3.1.3">
-<h3 data-number="3.1.3" class="anchored" data-anchor-id="flipped-interaction-pattern-information-acquisition"><span class="header-section-number">3.1.3</span> Flipped Interaction Pattern (Information Acquisition)</h3>
+<section id="flipped-interaction-pattern-information-acquisition" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="flipped-interaction-pattern-information-acquisition"><span class="header-section-number">4.1.3</span> Flipped Interaction Pattern (Information Acquisition)</h3>
 <p>Useful when task requires parameters or architecture definition.</p>
 <p><strong>Example:</strong></p>
 <p>“Ask me all required questions to define a Snakemake workflow. Then generate the final workflow.”</p>
 </section>
-<section id="question-refinement-pattern-error-reduction" class="level3" data-number="3.1.4">
-<h3 data-number="3.1.4" class="anchored" data-anchor-id="question-refinement-pattern-error-reduction"><span class="header-section-number">3.1.4</span> Question Refinement Pattern (Error Reduction)</h3>
+<section id="question-refinement-pattern-error-reduction" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="question-refinement-pattern-error-reduction"><span class="header-section-number">4.1.4</span> Question Refinement Pattern (Error Reduction)</h3>
 <p>GPT rewrites your question to reduce ambiguity.</p>
 <p><strong>Example:</strong></p>
 <p>“Before answering, propose a more precise version of my question optimized for computational reproducibility.”</p>
 </section>
-<section id="cognitive-verifier-pattern-structured-reasoning" class="level3" data-number="3.1.5">
-<h3 data-number="3.1.5" class="anchored" data-anchor-id="cognitive-verifier-pattern-structured-reasoning"><span class="header-section-number">3.1.5</span> Cognitive Verifier Pattern (Structured Reasoning)</h3>
+<section id="cognitive-verifier-pattern-structured-reasoning" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="cognitive-verifier-pattern-structured-reasoning"><span class="header-section-number">4.1.5</span> Cognitive Verifier Pattern (Structured Reasoning)</h3>
 <p>Model decomposes problem → produces final synthesized answer.</p>
 <p>Useful to check the model’s reasoning. Improves the output.</p>
 <p><strong>Example:</strong></p>
 <p>“Break the question into technical sub-questions (≤5), answer them, then produce the final integrated explanation.”</p>
 </section>
-<section id="few-shot-pattern-pattern-imitation" class="level3" data-number="3.1.6">
-<h3 data-number="3.1.6" class="anchored" data-anchor-id="few-shot-pattern-pattern-imitation"><span class="header-section-number">3.1.6</span> Few-Shot Pattern (Pattern Imitation)</h3>
+<section id="few-shot-pattern-pattern-imitation" class="level3" data-number="4.1.6">
+<h3 data-number="4.1.6" class="anchored" data-anchor-id="few-shot-pattern-pattern-imitation"><span class="header-section-number">4.1.6</span> Few-Shot Pattern (Pattern Imitation)</h3>
 <p>Provide input/output examples → model induces rule.</p>
 <p><strong>Example:</strong></p>
 <p>Input: “ATGGCT”</p>
@@ -275,26 +275,26 @@ Input: “CGTAAT”</p>
 <p>Output:</p>
 <p>GPT generalizes rule across new inputs.</p>
 </section>
-<section id="chain-of-thought-cot-pattern-explain-reasoning" class="level3" data-number="3.1.7">
-<h3 data-number="3.1.7" class="anchored" data-anchor-id="chain-of-thought-cot-pattern-explain-reasoning"><span class="header-section-number">3.1.7</span> Chain-of-Thought (CoT) Pattern (Explain Reasoning)</h3>
+<section id="chain-of-thought-cot-pattern-explain-reasoning" class="level3" data-number="4.1.7">
+<h3 data-number="4.1.7" class="anchored" data-anchor-id="chain-of-thought-cot-pattern-explain-reasoning"><span class="header-section-number">4.1.7</span> Chain-of-Thought (CoT) Pattern (Explain Reasoning)</h3>
 <p>Model outputs intermediate reasoning (optional).</p>
 <p><strong>Example:</strong></p>
 <p>“Show your reasoning in short bullet points and end with a boxed final answer.”</p>
 </section>
-<section id="react-pattern-reason-tool-use" class="level3" data-number="3.1.8">
-<h3 data-number="3.1.8" class="anchored" data-anchor-id="react-pattern-reason-tool-use"><span class="header-section-number">3.1.8</span> ReAct Pattern (Reason + Tool Use)</h3>
+<section id="react-pattern-reason-tool-use" class="level3" data-number="4.1.8">
+<h3 data-number="4.1.8" class="anchored" data-anchor-id="react-pattern-reason-tool-use"><span class="header-section-number">4.1.8</span> ReAct Pattern (Reason + Tool Use)</h3>
 <p>LLM reasons → takes actions (search, code execution) → final answer.</p>
 <p><strong>Example:</strong></p>
 <p>“Search the latest ENCODE metadata for a DNase-seq dataset, summarize QC metrics, then evaluate quality.”</p>
 </section>
-<section id="evaluation-pattern-auto-grading-models" class="level3" data-number="3.1.9">
-<h3 data-number="3.1.9" class="anchored" data-anchor-id="evaluation-pattern-auto-grading-models"><span class="header-section-number">3.1.9</span> Evaluation Pattern (Auto-Grading Models)</h3>
+<section id="evaluation-pattern-auto-grading-models" class="level3" data-number="4.1.9">
+<h3 data-number="4.1.9" class="anchored" data-anchor-id="evaluation-pattern-auto-grading-models"><span class="header-section-number">4.1.9</span> Evaluation Pattern (Auto-Grading Models)</h3>
 <p>Provide criteria or examples → GPT scores candidates.</p>
 <p><strong>Example:</strong></p>
 <p>“Evaluate the following three pipeline descriptions for clarity (1–5), modularity (1–5), reproducibility (1–5). Justify each score.”</p>
 </section>
-<section id="template-pattern-deterministic-structure" class="level3" data-number="3.1.10">
-<h3 data-number="3.1.10" class="anchored" data-anchor-id="template-pattern-deterministic-structure"><span class="header-section-number">3.1.10</span> Template Pattern (Deterministic Structure)</h3>
+<section id="template-pattern-deterministic-structure" class="level3" data-number="4.1.10">
+<h3 data-number="4.1.10" class="anchored" data-anchor-id="template-pattern-deterministic-structure"><span class="header-section-number">4.1.10</span> Template Pattern (Deterministic Structure)</h3>
 <p>Force GPT to output in a machine-readable or human-readable schema.</p>
 <p><strong>Example:</strong></p>
 <p>{</p>
@@ -304,14 +304,14 @@ Input: “CGTAAT”</p>
 <p>“expected_output”: “&lt;OUTPUT&gt;”</p>
 <p>}</p>
 </section>
-<section id="meta-language-pattern-define-custom-syntax" class="level3" data-number="3.1.11">
-<h3 data-number="3.1.11" class="anchored" data-anchor-id="meta-language-pattern-define-custom-syntax"><span class="header-section-number">3.1.11</span> Meta-Language Pattern (Define Custom Syntax)</h3>
+<section id="meta-language-pattern-define-custom-syntax" class="level3" data-number="4.1.11">
+<h3 data-number="4.1.11" class="anchored" data-anchor-id="meta-language-pattern-define-custom-syntax"><span class="header-section-number">4.1.11</span> Meta-Language Pattern (Define Custom Syntax)</h3>
 <p>You define a symbolic shorthand → model learns mapping.</p>
 <p><strong>Example:</strong></p>
 <p>“Interpret ‘QC-S1’ as: run FastQC → summarize per-base content → output 3 metrics.”</p>
 </section>
-<section id="recipe-pattern-pipeline-definition" class="level3" data-number="3.1.12">
-<h3 data-number="3.1.12" class="anchored" data-anchor-id="recipe-pattern-pipeline-definition"><span class="header-section-number">3.1.12</span> Recipe Pattern (Pipeline Definition)</h3>
+<section id="recipe-pattern-pipeline-definition" class="level3" data-number="4.1.12">
+<h3 data-number="4.1.12" class="anchored" data-anchor-id="recipe-pattern-pipeline-definition"><span class="header-section-number">4.1.12</span> Recipe Pattern (Pipeline Definition)</h3>
 <p>Fill missing steps in a workflow.</p>
 <p><strong>Example:</strong></p>
 <p>“Insert the two missing steps in this pipeline:</p>
@@ -321,29 +321,29 @@ Input: “CGTAAT”</p>
 <li><p>Generate BAM summary”</p></li>
 </ol>
 </section>
-<section id="alternative-approaches-pattern-algorithmic-exploration" class="level3" data-number="3.1.13">
-<h3 data-number="3.1.13" class="anchored" data-anchor-id="alternative-approaches-pattern-algorithmic-exploration"><span class="header-section-number">3.1.13</span> Alternative Approaches Pattern (Algorithmic Exploration)</h3>
+<section id="alternative-approaches-pattern-algorithmic-exploration" class="level3" data-number="4.1.13">
+<h3 data-number="4.1.13" class="anchored" data-anchor-id="alternative-approaches-pattern-algorithmic-exploration"><span class="header-section-number">4.1.13</span> Alternative Approaches Pattern (Algorithmic Exploration)</h3>
 <p>Generate multiple candidate solutions.</p>
 <p><strong>Example:</strong></p>
 <p>“Provide 4 alternative strategies for building a FAIR-compliant metadata capture workflow. Rank by implementation cost.”</p>
 </section>
 </section>
-<section id="text-data-manipulation-patterns" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="text-data-manipulation-patterns"><span class="header-section-number">3.2</span> Text &amp; Data Manipulation Patterns</h2>
-<section id="semantic-filter" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="semantic-filter"><span class="header-section-number">3.2.1</span> Semantic Filter</h3>
+<section id="text-data-manipulation-patterns" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="text-data-manipulation-patterns"><span class="header-section-number">4.2</span> Text &amp; Data Manipulation Patterns</h2>
+<section id="semantic-filter" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="semantic-filter"><span class="header-section-number">4.2.1</span> Semantic Filter</h3>
 <p>Remove or transform only the targeted elements.</p>
 <p><strong>Example:</strong></p>
 <p>“Remove all patient identifiers but keep clinical meaning intact.”</p>
 </section>
-<section id="tail-pattern-post-processing" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="tail-pattern-post-processing"><span class="header-section-number">3.2.2</span> Tail Pattern (Post-Processing)</h3>
+<section id="tail-pattern-post-processing" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="tail-pattern-post-processing"><span class="header-section-number">4.2.2</span> Tail Pattern (Post-Processing)</h3>
 <p>Append additional required content automatically.</p>
 <p><strong>Example:</strong></p>
 <p>“After summarizing the paper, append a list of unresolved questions.”</p>
 </section>
-<section id="fact-checking-pattern" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="fact-checking-pattern"><span class="header-section-number">3.2.3</span> Fact-Checking Pattern</h3>
+<section id="fact-checking-pattern" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="fact-checking-pattern"><span class="header-section-number">4.2.3</span> Fact-Checking Pattern</h3>
 <p>Extract facts → verify → append fact list.</p>
 <p><strong>Example:</strong></p>
 <p>“Extract all factual claims from the text and mark those that require verification due to missing sources.”</p>
@@ -755,12 +755,12 @@ Input: “CGTAAT”</p>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Prompt_pattern.practical.html" class="pagination-link" aria-label="Prompt Pattern (practical)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prompt Pattern (practical)</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (practical)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./CustomGPTs.html" class="pagination-link" aria-label="CustomGPTs">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CustomGPTs</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CustomGPTs</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

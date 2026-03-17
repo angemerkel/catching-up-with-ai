@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; CustomGPTs – Notebook: GenAI</title>
+<title>5&nbsp; CustomGPTs – Notebook: GenAI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Data_analysis_with_ChatGTP.html" rel="next">
+<link href="./Data_analysis_with_ChatGPT.html" rel="next">
 <link href="./Prompt_pattern.technical.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./CustomGPTs.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CustomGPTs</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./CustomGPTs.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CustomGPTs</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -110,37 +110,37 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notebook: My Path into Generative AI</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Prompt_engineering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Prompt Engineering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prompt Engineering</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Prompt_pattern.practical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prompt Pattern (practical)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (practical)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Prompt_pattern.technical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./CustomGPTs.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CustomGPTs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CustomGPTs</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Data_analysis_with_ChatGTP.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data analysis with ChatGTP</span></span></a>
+  <a href="./Data_analysis_with_ChatGPT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data analysis with ChatGTP</span></span></a>
   </div>
 </li>
     </ul>
@@ -153,22 +153,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro"><span class="header-section-number">4.1</span> Intro</a></li>
-  <li><a href="#personality" id="toc-personality" class="nav-link" data-scroll-target="#personality"><span class="header-section-number">4.2</span> Personality</a></li>
-  <li><a href="#structuring-input-output" id="toc-structuring-input-output" class="nav-link" data-scroll-target="#structuring-input-output"><span class="header-section-number">4.3</span> Structuring Input &amp; Output</a>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro"><span class="header-section-number">5.1</span> Intro</a></li>
+  <li><a href="#personality" id="toc-personality" class="nav-link" data-scroll-target="#personality"><span class="header-section-number">5.2</span> Personality</a></li>
+  <li><a href="#structuring-input-output" id="toc-structuring-input-output" class="nav-link" data-scroll-target="#structuring-input-output"><span class="header-section-number">5.3</span> Structuring Input &amp; Output</a>
   <ul class="collapse">
-  <li><a href="#input-pattern" id="toc-input-pattern" class="nav-link" data-scroll-target="#input-pattern"><span class="header-section-number">4.3.1</span> Input Pattern</a></li>
-  <li><a href="#structured-output-tables-checklists-format" id="toc-structured-output-tables-checklists-format" class="nav-link" data-scroll-target="#structured-output-tables-checklists-format"><span class="header-section-number">4.3.2</span> Structured Output (tables, checklists, format)**</a></li>
+  <li><a href="#input-pattern" id="toc-input-pattern" class="nav-link" data-scroll-target="#input-pattern"><span class="header-section-number">5.3.1</span> Input Pattern</a></li>
+  <li><a href="#structured-output-tables-checklists-format" id="toc-structured-output-tables-checklists-format" class="nav-link" data-scroll-target="#structured-output-tables-checklists-format"><span class="header-section-number">5.3.2</span> Structured Output (tables, checklists, format)**</a></li>
   </ul></li>
-  <li><a href="#tabular-data-analysis" id="toc-tabular-data-analysis" class="nav-link" data-scroll-target="#tabular-data-analysis"><span class="header-section-number">4.4</span> Tabular data analysis</a></li>
-  <li><a href="#in-context-learning-with-tabular-data" id="toc-in-context-learning-with-tabular-data" class="nav-link" data-scroll-target="#in-context-learning-with-tabular-data"><span class="header-section-number">4.5</span> In-Context Learning with Tabular Data</a></li>
-  <li><a href="#synthetic-data-generation" id="toc-synthetic-data-generation" class="nav-link" data-scroll-target="#synthetic-data-generation"><span class="header-section-number">4.6</span> Synthetic Data Generation</a></li>
-  <li><a href="#ml-with-prompts-your-course-notes" id="toc-ml-with-prompts-your-course-notes" class="nav-link" data-scroll-target="#ml-with-prompts-your-course-notes"><span class="header-section-number">4.7</span> ML with Prompts (Your Course Notes)</a></li>
-  <li><a href="#benchmarking-gpt-your-test-the-gpt-notes" id="toc-benchmarking-gpt-your-test-the-gpt-notes" class="nav-link" data-scroll-target="#benchmarking-gpt-your-test-the-gpt-notes"><span class="header-section-number">4.8</span> Benchmarking GPT (Your “Test the GPT” Notes)</a>
+  <li><a href="#tabular-data-analysis" id="toc-tabular-data-analysis" class="nav-link" data-scroll-target="#tabular-data-analysis"><span class="header-section-number">5.4</span> Tabular data analysis</a></li>
+  <li><a href="#in-context-learning-with-tabular-data" id="toc-in-context-learning-with-tabular-data" class="nav-link" data-scroll-target="#in-context-learning-with-tabular-data"><span class="header-section-number">5.5</span> In-Context Learning with Tabular Data</a></li>
+  <li><a href="#synthetic-data-generation" id="toc-synthetic-data-generation" class="nav-link" data-scroll-target="#synthetic-data-generation"><span class="header-section-number">5.6</span> Synthetic Data Generation</a></li>
+  <li><a href="#ml-with-prompts-your-course-notes" id="toc-ml-with-prompts-your-course-notes" class="nav-link" data-scroll-target="#ml-with-prompts-your-course-notes"><span class="header-section-number">5.7</span> ML with Prompts (Your Course Notes)</a></li>
+  <li><a href="#benchmarking-gpt-your-test-the-gpt-notes" id="toc-benchmarking-gpt-your-test-the-gpt-notes" class="nav-link" data-scroll-target="#benchmarking-gpt-your-test-the-gpt-notes"><span class="header-section-number">5.8</span> Benchmarking GPT (Your “Test the GPT” Notes)</a>
   <ul class="collapse">
-  <li><a href="#reliability-safety" id="toc-reliability-safety" class="nav-link" data-scroll-target="#reliability-safety"><span class="header-section-number">4.8.1</span> Reliability &amp; Safety</a></li>
-  <li><a href="#conflict-resolution" id="toc-conflict-resolution" class="nav-link" data-scroll-target="#conflict-resolution"><span class="header-section-number">4.8.2</span> Conflict Resolution</a></li>
-  <li><a href="#adversarial-input-prevention" id="toc-adversarial-input-prevention" class="nav-link" data-scroll-target="#adversarial-input-prevention"><span class="header-section-number">4.8.3</span> Adversarial Input Prevention</a></li>
+  <li><a href="#reliability-safety" id="toc-reliability-safety" class="nav-link" data-scroll-target="#reliability-safety"><span class="header-section-number">5.8.1</span> Reliability &amp; Safety</a></li>
+  <li><a href="#conflict-resolution" id="toc-conflict-resolution" class="nav-link" data-scroll-target="#conflict-resolution"><span class="header-section-number">5.8.2</span> Conflict Resolution</a></li>
+  <li><a href="#adversarial-input-prevention" id="toc-adversarial-input-prevention" class="nav-link" data-scroll-target="#adversarial-input-prevention"><span class="header-section-number">5.8.3</span> Adversarial Input Prevention</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -178,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CustomGPTs</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CustomGPTs</span></h1>
 </div>
 
 
@@ -195,8 +195,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="intro" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="intro"><span class="header-section-number">4.1</span> Intro</h2>
+<section id="intro" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="intro"><span class="header-section-number">5.1</span> Intro</h2>
 <p>User-configured versions of ChatGPT that behave like a specialized assistant for a specific task, domain, or workflow—without writing code. Persistent behaviour.</p>
 <p>Can be created through the ChatGTP app.</p>
 <table class="caption-top table">
@@ -270,8 +270,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Cleaning up metadata</p></li>
 </ul>
 </section>
-<section id="personality" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="personality"><span class="header-section-number">4.2</span> Personality</h2>
+<section id="personality" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="personality"><span class="header-section-number">5.2</span> Personality</h2>
 <p>Customize how your chatbot interacts:</p>
 <ul>
 <li>Confidence: a) assured, b) measured</li>
@@ -282,16 +282,16 @@ ul.task-list li input[type="checkbox"] {
 <li>Lexicography: a) specialized, b) universal</li>
 </ul>
 </section>
-<section id="structuring-input-output" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="structuring-input-output"><span class="header-section-number">4.3</span> Structuring Input &amp; Output</h2>
-<section id="input-pattern" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="input-pattern"><span class="header-section-number">4.3.1</span> Input Pattern</h3>
+<section id="structuring-input-output" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="structuring-input-output"><span class="header-section-number">5.3</span> Structuring Input &amp; Output</h2>
+<section id="input-pattern" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="input-pattern"><span class="header-section-number">5.3.1</span> Input Pattern</h3>
 <p>Prompt instructs GPT to ask for missing info.</p>
 <p><strong>Example:</strong></p>
 <p>“Before writing, ask me for the dataset description.”</p>
 </section>
-<section id="structured-output-tables-checklists-format" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="structured-output-tables-checklists-format"><span class="header-section-number">4.3.2</span> Structured Output (tables, checklists, format)**</h3>
+<section id="structured-output-tables-checklists-format" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="structured-output-tables-checklists-format"><span class="header-section-number">5.3.2</span> Structured Output (tables, checklists, format)**</h3>
 <p>Makes results more usable.</p>
 <p><strong>Example (table):</strong></p>
 <p>| Step | Description | Tools |</p>
@@ -302,27 +302,27 @@ ul.task-list li input[type="checkbox"] {
 <p>This is useful when prompting for <strong>reusable</strong>, <strong>clean</strong>, <strong>publication-ready</strong> output.</p>
 </section>
 </section>
-<section id="tabular-data-analysis" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="tabular-data-analysis"><span class="header-section-number">4.4</span> Tabular data analysis</h2>
+<section id="tabular-data-analysis" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="tabular-data-analysis"><span class="header-section-number">5.4</span> Tabular data analysis</h2>
 <p>LLMs can understand tables if provided clearly.</p>
 <p><strong>Example:</strong></p>
 <p>“Using the table below, predict the missing column ‘Cell type’.”</p>
 <p>They can also create synthetic datasets to help test pipelines.</p>
 </section>
-<section id="in-context-learning-with-tabular-data" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="in-context-learning-with-tabular-data"><span class="header-section-number">4.5</span> In-Context Learning with Tabular Data</h2>
+<section id="in-context-learning-with-tabular-data" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="in-context-learning-with-tabular-data"><span class="header-section-number">5.5</span> In-Context Learning with Tabular Data</h2>
 <p>Provide columns + examples → model deduces hidden rules.</p>
 <p><strong>Example:</strong></p>
 <p>“Given columns A and B, predict column C (protein class) based on observed patterns.”</p>
 </section>
-<section id="synthetic-data-generation" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="synthetic-data-generation"><span class="header-section-number">4.6</span> Synthetic Data Generation</h2>
+<section id="synthetic-data-generation" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="synthetic-data-generation"><span class="header-section-number">5.6</span> Synthetic Data Generation</h2>
 <p>Bootstrap ML experiments or testing.</p>
 <p><strong>Example:</strong></p>
 <p>“Generate a synthetic metadata table of 50 samples with fields: donor_age, diagnosis, cell_type, library_size.”</p>
 </section>
-<section id="ml-with-prompts-your-course-notes" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="ml-with-prompts-your-course-notes"><span class="header-section-number">4.7</span> ML with Prompts (Your Course Notes)</h2>
+<section id="ml-with-prompts-your-course-notes" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="ml-with-prompts-your-course-notes"><span class="header-section-number">5.7</span> ML with Prompts (Your Course Notes)</h2>
 <p><strong>Classification via Prompting</strong></p>
 <ul>
 <li>Good for simple yes/no or category labeling.</li>
@@ -342,8 +342,8 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Example:</strong></p>
 <p>“Given the engagement metrics for existing workshop titles, propose 3 new course titles likely to perform well.”</p>
 </section>
-<section id="benchmarking-gpt-your-test-the-gpt-notes" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="benchmarking-gpt-your-test-the-gpt-notes"><span class="header-section-number">4.8</span> Benchmarking GPT (Your “Test the GPT” Notes)</h2>
+<section id="benchmarking-gpt-your-test-the-gpt-notes" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="benchmarking-gpt-your-test-the-gpt-notes"><span class="header-section-number">5.8</span> Benchmarking GPT (Your “Test the GPT” Notes)</h2>
 <p>Things to test:</p>
 <ul>
 <li>Factual accuracy</li>
@@ -356,8 +356,8 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Example:</strong></p>
 <p>“Test whether the model stays consistent when given conflicting instructions.”</p>
 <p>Built your own testerGPT to benchmark other customGPTs!</p>
-<section id="reliability-safety" class="level3" data-number="4.8.1">
-<h3 data-number="4.8.1" class="anchored" data-anchor-id="reliability-safety"><span class="header-section-number">4.8.1</span> Reliability &amp; Safety</h3>
+<section id="reliability-safety" class="level3" data-number="5.8.1">
+<h3 data-number="5.8.1" class="anchored" data-anchor-id="reliability-safety"><span class="header-section-number">5.8.1</span> Reliability &amp; Safety</h3>
 <p><strong>Preventing hallucinations</strong></p>
 <ul>
 <li>Provide all key information first.</li>
@@ -379,8 +379,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Ask for clarification or fall back on &lt;N/A&gt;</li>
 </ol>
 </section>
-<section id="conflict-resolution" class="level3" data-number="4.8.2">
-<h3 data-number="4.8.2" class="anchored" data-anchor-id="conflict-resolution"><span class="header-section-number">4.8.2</span> Conflict Resolution</h3>
+<section id="conflict-resolution" class="level3" data-number="5.8.2">
+<h3 data-number="5.8.2" class="anchored" data-anchor-id="conflict-resolution"><span class="header-section-number">5.8.2</span> Conflict Resolution</h3>
 <p>When documents/ inputs conflict:</p>
 <ul>
 <li>Use newest</li>
@@ -388,8 +388,8 @@ ul.task-list li input[type="checkbox"] {
 <li>State uncertainty explicitly</li>
 </ul>
 </section>
-<section id="adversarial-input-prevention" class="level3" data-number="4.8.3">
-<h3 data-number="4.8.3" class="anchored" data-anchor-id="adversarial-input-prevention"><span class="header-section-number">4.8.3</span> Adversarial Input Prevention</h3>
+<section id="adversarial-input-prevention" class="level3" data-number="5.8.3">
+<h3 data-number="5.8.3" class="anchored" data-anchor-id="adversarial-input-prevention"><span class="header-section-number">5.8.3</span> Adversarial Input Prevention</h3>
 <ul>
 <li>Add railguards</li>
 <li>Disable functionality beyond scope</li>
@@ -803,12 +803,12 @@ ul.task-list li input[type="checkbox"] {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Prompt_pattern.technical.html" class="pagination-link" aria-label="Prompt Pattern (technical)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Data_analysis_with_ChatGTP.html" class="pagination-link" aria-label="Data analysis with ChatGTP">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data analysis with ChatGTP</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Data_analysis_with_ChatGPT.html" class="pagination-link" aria-label="Data analysis with ChatGTP">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data analysis with ChatGTP</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

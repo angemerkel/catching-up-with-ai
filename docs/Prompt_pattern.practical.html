@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Prompt Pattern (practical) – Notebook: GenAI</title>
+<title>3&nbsp; Prompt Pattern (practical) – Notebook: GenAI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Prompt_pattern.practical.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prompt Pattern (practical)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Prompt_pattern.practical.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (practical)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -110,37 +110,37 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Notebook: My Path into Generative AI</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Prompt_engineering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Prompt Engineering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prompt Engineering</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Prompt_pattern.practical.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prompt Pattern (practical)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (practical)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Prompt_pattern.technical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./CustomGPTs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">CustomGPTs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">CustomGPTs</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Data_analysis_with_ChatGTP.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data analysis with ChatGTP</span></span></a>
+  <a href="./Data_analysis_with_ChatGPT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data analysis with ChatGTP</span></span></a>
   </div>
 </li>
     </ul>
@@ -153,35 +153,35 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#core-prompt-patterns" id="toc-core-prompt-patterns" class="nav-link active" data-scroll-target="#core-prompt-patterns"><span class="header-section-number">2.1</span> Core Prompt Patterns</a>
+  <li><a href="#core-prompt-patterns" id="toc-core-prompt-patterns" class="nav-link active" data-scroll-target="#core-prompt-patterns"><span class="header-section-number">3.1</span> Core Prompt Patterns</a>
   <ul class="collapse">
-  <li><a href="#persona-pattern" id="toc-persona-pattern" class="nav-link" data-scroll-target="#persona-pattern"><span class="header-section-number">2.1.1</span> Persona Pattern</a></li>
-  <li><a href="#audience-persona-pattern" id="toc-audience-persona-pattern" class="nav-link" data-scroll-target="#audience-persona-pattern"><span class="header-section-number">2.1.2</span> Audience Persona Pattern</a></li>
-  <li><a href="#question-refinement" id="toc-question-refinement" class="nav-link" data-scroll-target="#question-refinement"><span class="header-section-number">2.1.3</span> Question Refinement</a></li>
-  <li><a href="#few-shot-prompting" id="toc-few-shot-prompting" class="nav-link" data-scroll-target="#few-shot-prompting"><span class="header-section-number">2.1.4</span> Few-shot Prompting</a></li>
-  <li><a href="#flipped-interaction" id="toc-flipped-interaction" class="nav-link" data-scroll-target="#flipped-interaction"><span class="header-section-number">2.1.5</span> Flipped Interaction</a></li>
-  <li><a href="#chain-of-thought" id="toc-chain-of-thought" class="nav-link" data-scroll-target="#chain-of-thought"><span class="header-section-number">2.1.6</span> Chain of Thought</a></li>
-  <li><a href="#react-prompting" id="toc-react-prompting" class="nav-link" data-scroll-target="#react-prompting"><span class="header-section-number">2.1.7</span> ReAct Prompting</a></li>
-  <li><a href="#alternative-approaches" id="toc-alternative-approaches" class="nav-link" data-scroll-target="#alternative-approaches"><span class="header-section-number">2.1.8</span> Alternative Approaches</a></li>
-  <li><a href="#evaluation-pattern" id="toc-evaluation-pattern" class="nav-link" data-scroll-target="#evaluation-pattern"><span class="header-section-number">2.1.9</span> Evaluation Pattern</a></li>
-  <li><a href="#game-play-pattern" id="toc-game-play-pattern" class="nav-link" data-scroll-target="#game-play-pattern"><span class="header-section-number">2.1.10</span> Game-play Pattern</a></li>
-  <li><a href="#recipe-pattern" id="toc-recipe-pattern" class="nav-link" data-scroll-target="#recipe-pattern"><span class="header-section-number">2.1.11</span> Recipe Pattern</a></li>
-  <li><a href="#template-pattern" id="toc-template-pattern" class="nav-link" data-scroll-target="#template-pattern"><span class="header-section-number">2.1.12</span> Template Pattern</a></li>
+  <li><a href="#persona-pattern" id="toc-persona-pattern" class="nav-link" data-scroll-target="#persona-pattern"><span class="header-section-number">3.1.1</span> Persona Pattern</a></li>
+  <li><a href="#audience-persona-pattern" id="toc-audience-persona-pattern" class="nav-link" data-scroll-target="#audience-persona-pattern"><span class="header-section-number">3.1.2</span> Audience Persona Pattern</a></li>
+  <li><a href="#question-refinement" id="toc-question-refinement" class="nav-link" data-scroll-target="#question-refinement"><span class="header-section-number">3.1.3</span> Question Refinement</a></li>
+  <li><a href="#few-shot-prompting" id="toc-few-shot-prompting" class="nav-link" data-scroll-target="#few-shot-prompting"><span class="header-section-number">3.1.4</span> Few-shot Prompting</a></li>
+  <li><a href="#flipped-interaction" id="toc-flipped-interaction" class="nav-link" data-scroll-target="#flipped-interaction"><span class="header-section-number">3.1.5</span> Flipped Interaction</a></li>
+  <li><a href="#chain-of-thought" id="toc-chain-of-thought" class="nav-link" data-scroll-target="#chain-of-thought"><span class="header-section-number">3.1.6</span> Chain of Thought</a></li>
+  <li><a href="#react-prompting" id="toc-react-prompting" class="nav-link" data-scroll-target="#react-prompting"><span class="header-section-number">3.1.7</span> ReAct Prompting</a></li>
+  <li><a href="#alternative-approaches" id="toc-alternative-approaches" class="nav-link" data-scroll-target="#alternative-approaches"><span class="header-section-number">3.1.8</span> Alternative Approaches</a></li>
+  <li><a href="#evaluation-pattern" id="toc-evaluation-pattern" class="nav-link" data-scroll-target="#evaluation-pattern"><span class="header-section-number">3.1.9</span> Evaluation Pattern</a></li>
+  <li><a href="#game-play-pattern" id="toc-game-play-pattern" class="nav-link" data-scroll-target="#game-play-pattern"><span class="header-section-number">3.1.10</span> Game-play Pattern</a></li>
+  <li><a href="#recipe-pattern" id="toc-recipe-pattern" class="nav-link" data-scroll-target="#recipe-pattern"><span class="header-section-number">3.1.11</span> Recipe Pattern</a></li>
+  <li><a href="#template-pattern" id="toc-template-pattern" class="nav-link" data-scroll-target="#template-pattern"><span class="header-section-number">3.1.12</span> Template Pattern</a></li>
   </ul></li>
-  <li><a href="#text-manipulation-patterns" id="toc-text-manipulation-patterns" class="nav-link" data-scroll-target="#text-manipulation-patterns"><span class="header-section-number">2.2</span> Text Manipulation Patterns</a>
+  <li><a href="#text-manipulation-patterns" id="toc-text-manipulation-patterns" class="nav-link" data-scroll-target="#text-manipulation-patterns"><span class="header-section-number">3.2</span> Text Manipulation Patterns</a>
   <ul class="collapse">
-  <li><a href="#semantic-filter" id="toc-semantic-filter" class="nav-link" data-scroll-target="#semantic-filter"><span class="header-section-number">2.2.1</span> Semantic Filter</a></li>
-  <li><a href="#meta-language-pattern" id="toc-meta-language-pattern" class="nav-link" data-scroll-target="#meta-language-pattern"><span class="header-section-number">2.2.2</span> Meta-language Pattern</a></li>
+  <li><a href="#semantic-filter" id="toc-semantic-filter" class="nav-link" data-scroll-target="#semantic-filter"><span class="header-section-number">3.2.1</span> Semantic Filter</a></li>
+  <li><a href="#meta-language-pattern" id="toc-meta-language-pattern" class="nav-link" data-scroll-target="#meta-language-pattern"><span class="header-section-number">3.2.2</span> Meta-language Pattern</a></li>
   </ul></li>
-  <li><a href="#verifier-pattern" id="toc-verifier-pattern" class="nav-link" data-scroll-target="#verifier-pattern"><span class="header-section-number">2.3</span> Verifier Pattern</a>
+  <li><a href="#verifier-pattern" id="toc-verifier-pattern" class="nav-link" data-scroll-target="#verifier-pattern"><span class="header-section-number">3.3</span> Verifier Pattern</a>
   <ul class="collapse">
-  <li><a href="#cognitive-verifier-pattern" id="toc-cognitive-verifier-pattern" class="nav-link" data-scroll-target="#cognitive-verifier-pattern"><span class="header-section-number">2.3.1</span> Cognitive Verifier Pattern</a></li>
-  <li><a href="#fact-checking-pattern" id="toc-fact-checking-pattern" class="nav-link" data-scroll-target="#fact-checking-pattern"><span class="header-section-number">2.3.2</span> Fact Checking Pattern</a></li>
+  <li><a href="#cognitive-verifier-pattern" id="toc-cognitive-verifier-pattern" class="nav-link" data-scroll-target="#cognitive-verifier-pattern"><span class="header-section-number">3.3.1</span> Cognitive Verifier Pattern</a></li>
+  <li><a href="#fact-checking-pattern" id="toc-fact-checking-pattern" class="nav-link" data-scroll-target="#fact-checking-pattern"><span class="header-section-number">3.3.2</span> Fact Checking Pattern</a></li>
   </ul></li>
-  <li><a href="#workflows" id="toc-workflows" class="nav-link" data-scroll-target="#workflows"><span class="header-section-number">2.4</span> Workflows</a>
+  <li><a href="#workflows" id="toc-workflows" class="nav-link" data-scroll-target="#workflows"><span class="header-section-number">3.4</span> Workflows</a>
   <ul class="collapse">
-  <li><a href="#working-on-smaller-pieces" id="toc-working-on-smaller-pieces" class="nav-link" data-scroll-target="#working-on-smaller-pieces"><span class="header-section-number">2.4.1</span> Working on smaller pieces</a></li>
-  <li><a href="#tail-generation" id="toc-tail-generation" class="nav-link" data-scroll-target="#tail-generation"><span class="header-section-number">2.4.2</span> Tail Generation</a></li>
+  <li><a href="#working-on-smaller-pieces" id="toc-working-on-smaller-pieces" class="nav-link" data-scroll-target="#working-on-smaller-pieces"><span class="header-section-number">3.4.1</span> Working on smaller pieces</a></li>
+  <li><a href="#tail-generation" id="toc-tail-generation" class="nav-link" data-scroll-target="#tail-generation"><span class="header-section-number">3.4.2</span> Tail Generation</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -191,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prompt Pattern (practical)</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (practical)</span></h1>
 <p class="subtitle lead">– A practical, example-driven overview.</p>
 </div>
 
@@ -209,28 +209,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="core-prompt-patterns" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="core-prompt-patterns"><span class="header-section-number">2.1</span> Core Prompt Patterns</h2>
-<section id="persona-pattern" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="persona-pattern"><span class="header-section-number">2.1.1</span> Persona Pattern</h3>
+<section id="core-prompt-patterns" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="core-prompt-patterns"><span class="header-section-number">3.1</span> Core Prompt Patterns</h2>
+<section id="persona-pattern" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="persona-pattern"><span class="header-section-number">3.1.1</span> Persona Pattern</h3>
 <p>Helps control tone, expertise, cultural assumptions.</p>
 <p><strong>Example:</strong></p>
 <p>“Act as a senior bioinformatician experienced in single-cell epigenomics. Provide actionable suggestions.”</p>
 </section>
-<section id="audience-persona-pattern" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="audience-persona-pattern"><span class="header-section-number">2.1.2</span> Audience Persona Pattern</h3>
+<section id="audience-persona-pattern" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="audience-persona-pattern"><span class="header-section-number">3.1.2</span> Audience Persona Pattern</h3>
 <p>Tell GPT <em>who you are</em> so explanations match your background.</p>
 <p><strong>Example:</strong></p>
 <p>“Assume I am new to machine learning but familiar with R and statistics. Explain what a transformer is.”</p>
 </section>
-<section id="question-refinement" class="level3" data-number="2.1.3">
-<h3 data-number="2.1.3" class="anchored" data-anchor-id="question-refinement"><span class="header-section-number">2.1.3</span> Question Refinement</h3>
+<section id="question-refinement" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="question-refinement"><span class="header-section-number">3.1.3</span> Question Refinement</h3>
 <p>GPT improves your question. Useful for technical tasks where question quality matters.</p>
 <p><strong>Example:</strong></p>
 <p>“When I ask you something unclear, suggest a sharper version first and ask if I want to use it.”</p>
 </section>
-<section id="few-shot-prompting" class="level3" data-number="2.1.4">
-<h3 data-number="2.1.4" class="anchored" data-anchor-id="few-shot-prompting"><span class="header-section-number">2.1.4</span> Few-shot Prompting</h3>
+<section id="few-shot-prompting" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="few-shot-prompting"><span class="header-section-number">3.1.4</span> Few-shot Prompting</h3>
 <p>You show examples (introduce training data) → GPT follows your pattern. Useful for labeling, transformations, extraction tasks.</p>
 <p><strong>Example:</strong></p>
 <p>Input: ATGCGT</p>
@@ -241,48 +241,48 @@ Prompt:</p>
 <p>Output:</p>
 <p>GPT continues with the intended pattern.</p>
 </section>
-<section id="flipped-interaction" class="level3" data-number="2.1.5">
-<h3 data-number="2.1.5" class="anchored" data-anchor-id="flipped-interaction"><span class="header-section-number">2.1.5</span> Flipped Interaction</h3>
+<section id="flipped-interaction" class="level3" data-number="3.1.5">
+<h3 data-number="3.1.5" class="anchored" data-anchor-id="flipped-interaction"><span class="header-section-number">3.1.5</span> Flipped Interaction</h3>
 <p>GPT asks <em>you</em> the questions.</p>
 <p><strong>Example:</strong></p>
 <p>“Ask me clarifying questions until you can design a workshop outline. When you have enough information, present the final outline.”</p>
 </section>
-<section id="chain-of-thought" class="level3" data-number="2.1.6">
-<h3 data-number="2.1.6" class="anchored" data-anchor-id="chain-of-thought"><span class="header-section-number">2.1.6</span> Chain of Thought</h3>
+<section id="chain-of-thought" class="level3" data-number="3.1.6">
+<h3 data-number="3.1.6" class="anchored" data-anchor-id="chain-of-thought"><span class="header-section-number">3.1.6</span> Chain of Thought</h3>
 <p>Explicit reasoning steps.</p>
 <p><strong>Example:</strong></p>
 <p>“Show your reasoning in short bullet points and end with a boxed final answer.”</p>
 <p>Helps when solving problems or planning.</p>
 </section>
-<section id="react-prompting" class="level3" data-number="2.1.7">
-<h3 data-number="2.1.7" class="anchored" data-anchor-id="react-prompting"><span class="header-section-number">2.1.7</span> ReAct Prompting</h3>
+<section id="react-prompting" class="level3" data-number="3.1.7">
+<h3 data-number="3.1.7" class="anchored" data-anchor-id="react-prompting"><span class="header-section-number">3.1.7</span> ReAct Prompting</h3>
 <p>Reason → take external action → reason → answer.</p>
 <p><strong>Example:</strong></p>
 <p>“Search PubMed for recent papers on DNA methylation in HSCs, summarize top 3 findings, and explain how they relate to AML biology.”</p>
 <p><em>(Assuming GPT has tools activated.)</em></p>
 </section>
-<section id="alternative-approaches" class="level3" data-number="2.1.8">
-<h3 data-number="2.1.8" class="anchored" data-anchor-id="alternative-approaches"><span class="header-section-number">2.1.8</span> Alternative Approaches</h3>
+<section id="alternative-approaches" class="level3" data-number="3.1.8">
+<h3 data-number="3.1.8" class="anchored" data-anchor-id="alternative-approaches"><span class="header-section-number">3.1.8</span> Alternative Approaches</h3>
 <p>Ask for multiple solutions. (or strategy for approaches)</p>
 <p><strong>Example:</strong></p>
 <p>“Propose 5 different ways to create a metadata-capture workflow for a small lab, ranked by feasibility.”</p>
 <p>Great for brainstorming and problem solving.</p>
 </section>
-<section id="evaluation-pattern" class="level3" data-number="2.1.9">
-<h3 data-number="2.1.9" class="anchored" data-anchor-id="evaluation-pattern"><span class="header-section-number">2.1.9</span> Evaluation Pattern</h3>
+<section id="evaluation-pattern" class="level3" data-number="3.1.9">
+<h3 data-number="3.1.9" class="anchored" data-anchor-id="evaluation-pattern"><span class="header-section-number">3.1.9</span> Evaluation Pattern</h3>
 <p>Use examples or rubrics to grade model output.</p>
 <p><strong>Example:</strong></p>
 <p>“Here are 3 example abstracts. Score the following abstract for clarity (1–5), structure (1–5), scientific accuracy (1–5). Provide justification.”</p>
 </section>
-<section id="game-play-pattern" class="level3" data-number="2.1.10">
-<h3 data-number="2.1.10" class="anchored" data-anchor-id="game-play-pattern"><span class="header-section-number">2.1.10</span> Game-play Pattern</h3>
+<section id="game-play-pattern" class="level3" data-number="3.1.10">
+<h3 data-number="3.1.10" class="anchored" data-anchor-id="game-play-pattern"><span class="header-section-number">3.1.10</span> Game-play Pattern</h3>
 <p>Turn tasks into structured exercises. Define rules.</p>
 <p><strong>Example:</strong></p>
 <p>“We are going to play a game:<br>
 I describe a lab workflow, you generate 5 mistakes a junior researcher might make, and how to fix them.”</p>
 </section>
-<section id="recipe-pattern" class="level3" data-number="2.1.11">
-<h3 data-number="2.1.11" class="anchored" data-anchor-id="recipe-pattern"><span class="header-section-number">2.1.11</span> Recipe Pattern</h3>
+<section id="recipe-pattern" class="level3" data-number="3.1.11">
+<h3 data-number="3.1.11" class="anchored" data-anchor-id="recipe-pattern"><span class="header-section-number">3.1.11</span> Recipe Pattern</h3>
 <p>Stepwise instructions with gaps.</p>
 <p><strong>Example:</strong></p>
 <p>“Fill in missing steps for this workflow:</p>
@@ -296,8 +296,8 @@ I describe a lab workflow, you generate 5 mistakes a junior researcher might mak
 <li></li>
 </ol>
 </section>
-<section id="template-pattern" class="level3" data-number="2.1.12">
-<h3 data-number="2.1.12" class="anchored" data-anchor-id="template-pattern"><span class="header-section-number">2.1.12</span> Template Pattern</h3>
+<section id="template-pattern" class="level3" data-number="3.1.12">
+<h3 data-number="3.1.12" class="anchored" data-anchor-id="template-pattern"><span class="header-section-number">3.1.12</span> Template Pattern</h3>
 <p>Use placeholders → consistent output.</p>
 <p><strong>Example:</strong></p>
 <p>Mutation Summary</p>
@@ -307,25 +307,25 @@ I describe a lab workflow, you generate 5 mistakes a junior researcher might mak
 <p>Evidence: &lt;QUOTES FROM ARTICLE&gt;</p>
 </section>
 </section>
-<section id="text-manipulation-patterns" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="text-manipulation-patterns"><span class="header-section-number">2.2</span> Text Manipulation Patterns</h2>
-<section id="semantic-filter" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="semantic-filter"><span class="header-section-number">2.2.1</span> Semantic Filter</h3>
+<section id="text-manipulation-patterns" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="text-manipulation-patterns"><span class="header-section-number">3.2</span> Text Manipulation Patterns</h2>
+<section id="semantic-filter" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="semantic-filter"><span class="header-section-number">3.2.1</span> Semantic Filter</h3>
 <p>Remove or replace specific elements.</p>
 <p><strong>Example:</strong></p>
 <p>“Remove all dates from the text but change as little as possible.”</p>
 </section>
-<section id="meta-language-pattern" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="meta-language-pattern"><span class="header-section-number">2.2.2</span> Meta-language Pattern</h3>
+<section id="meta-language-pattern" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="meta-language-pattern"><span class="header-section-number">3.2.2</span> Meta-language Pattern</h3>
 <p>Define a micro-language the LLM should learn.</p>
 <p><strong>Example:</strong></p>
 <p>“When I write ‘QC-S1’, interpret it as: run initial QC on sequencing files and summarize FastQC results.”</p>
 </section>
 </section>
-<section id="verifier-pattern" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="verifier-pattern"><span class="header-section-number">2.3</span> Verifier Pattern</h2>
-<section id="cognitive-verifier-pattern" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="cognitive-verifier-pattern"><span class="header-section-number">2.3.1</span> Cognitive Verifier Pattern</h3>
+<section id="verifier-pattern" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="verifier-pattern"><span class="header-section-number">3.3</span> Verifier Pattern</h2>
+<section id="cognitive-verifier-pattern" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="cognitive-verifier-pattern"><span class="header-section-number">3.3.1</span> Cognitive Verifier Pattern</h3>
 <p>Meta-reasoning pattern where the model is instructed to generate an answer, independently verify, critique, or test that answer and revise if needed. Focuses on error detection, not explanation.</p>
 <p>Typical prompt form:</p>
 <p>“First provide an answer. Then verify it by checking assumptions, edge cases, and alternative interpretations.” “Critically review your own solution and correct any mistakes.”</p>
@@ -336,8 +336,8 @@ I describe a lab workflow, you generate 5 mistakes a junior researcher might mak
 <p>Verification: - Check assumptions → valid - Alternative method → same result - Edge cases → none violated</p>
 <p>Conclusion: Answer stands.</p>
 </section>
-<section id="fact-checking-pattern" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="fact-checking-pattern"><span class="header-section-number">2.3.2</span> Fact Checking Pattern</h3>
+<section id="fact-checking-pattern" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="fact-checking-pattern"><span class="header-section-number">3.3.2</span> Fact Checking Pattern</h3>
 <p>Force verification.</p>
 <p>Steps:</p>
 <ol start="2" type="1">
@@ -350,16 +350,16 @@ I describe a lab workflow, you generate 5 mistakes a junior researcher might mak
 <p>“Extract all factual statements from the text and list any that need verification.”</p>
 </section>
 </section>
-<section id="workflows" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="workflows"><span class="header-section-number">2.4</span> Workflows</h2>
-<section id="working-on-smaller-pieces" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="working-on-smaller-pieces"><span class="header-section-number">2.4.1</span> Working on smaller pieces</h3>
+<section id="workflows" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="workflows"><span class="header-section-number">3.4</span> Workflows</h2>
+<section id="working-on-smaller-pieces" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="working-on-smaller-pieces"><span class="header-section-number">3.4.1</span> Working on smaller pieces</h3>
 <p>Outline Expansion Start small, expand in pieces.</p>
 <p><strong>Example:</strong></p>
 <p>“Here is the outline for a workshop. Expand only section 2. Keep the rest unchanged.”</p>
 </section>
-<section id="tail-generation" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="tail-generation"><span class="header-section-number">2.4.2</span> Tail Generation</h3>
+<section id="tail-generation" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="tail-generation"><span class="header-section-number">3.4.2</span> Tail Generation</h3>
 <p>Add automatic “post-processing.”</p>
 <p><strong>Example:</strong></p>
 <p>“When done summarizing, also produce a 3-item action list.”</p>
@@ -771,12 +771,12 @@ I describe a lab workflow, you generate 5 mistakes a junior researcher might mak
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Prompt_engineering.html" class="pagination-link" aria-label="Prompt Engineering">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Prompt Engineering</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Prompt Engineering</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./Prompt_pattern.technical.html" class="pagination-link" aria-label="Prompt Pattern (technical)">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Prompt Pattern (technical)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

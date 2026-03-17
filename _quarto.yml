@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "Notebook: GenAI"
+  title: "Catching up with AI"
   author: "Angelika Merkel"
   date: "2025-12-04"
   page-footer:
@@ -17,7 +17,7 @@ book:
     - Prompt_pattern.practical.qmd
     - Prompt_pattern.technical.qmd
     - CustomGPTs.qmd
-    - Data_analysis_with_ChatGTP.qmd
+    - Data_analysis_with_ChatGPT.qmd
     
 
 #  TO DO chapters:
@@ -38,8 +38,8 @@ format:
       - brand
     toc: true
     code-copy: true
-  pdf:
-    documentclass: scrreprt
+ # pdf:
+ #  documentclass: scrreprt
 
 editor: visual
 

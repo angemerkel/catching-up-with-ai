@@ -1,13 +1,26 @@
-# Preface {.unnumbered}
+---
+title: "Catching up with AI"
+subtitle: "A learning notebook on generative AI"
+---
 
-This is a notebook about my personal journey into generative AI, which I started during a break from work in the fall and winter of 2025. Here’s the rough path I followed:
 
-- **A short history of generative AI** – I started by using [ChatGPT](https://chatgpt.com) and [Perplexity](https://www.perplexity.ai) to get some background: how we got here, which milestones really mattered, and who the main players and models are today.
+## Why this site exists {.unnumbered}
 
-- **ChatGPT, the basics** – I subscribed to ChatGPT Pro (22 EUR/month) and worked through the beginner tutorials at the [OpenAI Academy](https://academy.openai.com) (free). This was quick but surprisingly solid to build a foundation and understand what the tool can do (and what not) and how to use the interface.
 
-- **Prompt engineering** – To learn what I call *The art of talking to the machine*, I subscribed to [Coursera](https://www.coursera.org) (42 EUR/month) and took some basic and advanced courses on prompt engineering by Jules White, including how to create custom AI assistants (Custom GPTs) and build trustworthy genAI. This is where I started to get some real insights
+For the last 15 years I have worked in **bioinformatics** and **biomedical data science**, building data analysis pipelines and supporting scientific research. During that time, artificial intelligence evolved rapidly — especially in areas like **deep learning** and, more recently, **generative AI**.
 
-- **Data analysis with ChatGPT** – Also by Jules White, these courses go deeper into practical workflows, showing how to use ChatGPT (via Code Interpreter) together with external tools for real data analysis tasks (and real magic).
+Like many scientists working with data, I realized at some point that I had developed a **knowledge gap**. I was comfortable with statistical modeling, genomics data analysis, and scientific computing — but the whole ecosystem around **large language models (LLMs)** and **AI-assisted workflows** had largely evolved outside my day-to-day work.
+
+This notebook is my way of catching up. It collects my notes along the way — part learning log, part technical guide.  I try to document not just *what* I learn, but also *how* I do it, what I find confusing, and what actually turns out to be useful in practice. 
+
+Here is the rough path I followed:
+
+- [A short history of generative AI](History.qmd) – I started by simply using using tools *ChatGPT* [[link]](https://chatgpt.com) and *Perplexity* [[link]](https://www.perplexity.ai) to get some background: how we got here, which milestones really mattered, and who the main players and models are today.
+
+- [ChatGPT, the basics](Prompt_engineering.qmd) – I subscribed to ChatGPT Pro (22 EUR/month) and worked through the beginner tutorials at the *OpenAI Academy* [[link]](https://academy.openai.com) (free). This was quick but surprisingly solid to build a foundation and understand what the tool can do (and what not) and how to use the interface.
+
+- [Prompt engineering](Prompt_engineering.qmd) – To learn what I call *"The art of talking to the machine"*, I subscribed to *Coursera* [[link]](https://www.coursera.org) (42 EUR/month) and took some basic and advanced courses on prompt engineering by Jules White, including how to create custom AI assistants (Custom GPTs) and build trustworthy genAI. This is where I started to get some real insights
+
+- [Data analysis workflows with ChatGPT](Data_analysis_with_ChatGPT.qmd) – Also by Jules White, these courses go deeper into practical workflows, showing how to use *ChatGPT (via Code Interpreter)* together with external tools for real data analysis tasks (and real magic).
  
-- **Risks and Ethics of generative AI** - A complication of insights and resources on how to provide appropriate rail guards for generative AI, AI agents and agentic AI and how (in my opinion) generative AI should be used ethically 
+- [Reflections](Risks_and_ethics.qmd) - A complication of insights and resources on how to provide appropriate rail guards for generative AI, AI agents and agentic AI and how (in my opinion) generative AI should be used ethically 
