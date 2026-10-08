@@ -1,0 +1,195 @@
+---
+title: 3.1 Configured AI assistants
+date: "2025-12-04"
+---
+
+These notes are based on courses from [*OpenAI Academy*](https://academy.openai.com) and the Coursera course [*OpenAI GPTs: Creating your own custom AI assistant*](https://www.coursera.org/learn/openai-custom-gpts) by Jules White at Vanderbilt University. After exploring different ways of working with general-purpose AI assistants, I became interested in how they could be configured for more specific tasks and contexts.
+
+**General-purpose AI assistants** can support a wide range of tasks, but using them repeatedly for a particular purpose often involves providing the same instructions, preferences and contextual information again and again.
+
+**Configured AI assistants** offer a way to make these interactions more consistent. Rather than starting with a general-purpose assistant each time, we can define its purpose, behaviour and available information in advance.
+
+One approach I explored was **Custom GPTs**, which allowed users to configure specialised versions of ChatGPT without programming. My interest was not yet in building sophisticated applications, but in starting with a more accessible approach and understanding how far configuration alone could take me and where its limitations became apparent.
+
+
+# What makes an assistant configurable?
+
+A configured assistant typically combines several elements:
+
+| Component | Purpose |
+|--------------------|----------------------------------------------------|
+| **Instructions** | Define the assistant's role, scope, behaviour and constraints |
+| **Context and knowledge** | Provide task-specific information, preferences or reference documents |
+| **Capabilities and tools** | Extend what the assistant can do beyond generating text |
+| **Interaction design** | Specify what information to request and how to guide the conversation |
+| **Output requirements** | Define the structure, format and level of detail of responses |
+
+These components serve different purposes.
+
+Instructions influence how the assistant behaves, while contextual information and reference documents provide material it can use when responding. Tools may allow the assistant to perform additional operations, such as working with files, analysing data or accessing external information.
+
+Importantly, configuring an assistant does not ordinarily involve retraining the underlying language model. The model remains the same; what changes is the information and instructions provided to it, along with the capabilities made available through the surrounding application.
+
+This distinction is relevant when considering reliability. A configured assistant may behave more consistently within its intended scope, but configuration alone does not guarantee factual accuracy or successful task completion.
+
+# Designing instructions and workflows
+
+Configuring an assistant involves more than assigning it a role or defining a preferred tone.
+
+For recurring tasks, it can be useful to specify how the assistant should interact with the user, which information it should collect, what decisions it should make and how the results should be presented.
+
+For example, instructions may require an assistant to:
+
+-   Ask for missing information before proceeding.
+-   Follow a sequence of steps rather than immediately producing a final answer.
+-   Use particular rules or criteria when generating recommendations.
+-   Produce outputs in a specified format.
+-   Indicate uncertainty instead of inventing missing information.
+-   Request human review or approval before continuing.
+
+These instructions resemble a workflow, but there is an important distinction between **describing a workflow in natural language and enforcing it programmatically**.
+
+A language model may follow a carefully written sequence of instructions, but its behaviour is not guaranteed. Similarly, instructing an assistant to avoid unsupported claims does not ensure that it will always do so.
+
+The effectiveness of a configuration therefore needs to be assessed through use and testing rather than assumed from the instructions themselves.
+
+# Practical experiments with Custom GPTs
+
+I experimented with three Custom GPTs designed to support different recurring tasks. Each had a defined purpose, interaction rules and output requirements.
+
+Although the applications were quite different, they provided useful opportunities to examine how well a language model follows persistent instructions and what happens when those instructions are insufficient.
+
+### Experiment 1: Fit & Fun MealBuddy
+
+My first experiment was **Fit & Fun MealBuddy**, a family meal-planning assistant.
+
+The aim was to simplify everyday meal planning by incorporating information about family members, dietary preferences, physical activities and available cooking time.
+
+The configuration included:
+
+-   User profiles and dietary preferences.
+-   Questions about planned activities and who would be eating.
+-   Rules for adapting meals to sport and rest days.
+-   Requirements for quick, practical weekday meals.
+-   Output formats for daily plans, weekly plans and grocery lists.
+-   An example conversation illustrating the intended interaction.
+
+The assistant was instructed to ask a series of questions before suggesting meals. It would first establish whether the day involved sporting activities, then identify who would be eating and finally determine the desired output format.
+
+It also included nutritional guidance and rules for adapting meals to different circumstances.
+
+**Observations and limitations**
+
+Overall, MealBuddy followed its configuration well. It consistently asked the intended questions, accounted for dietary requirements, including vegetarian preferences, and produced outputs in the requested formats.
+
+The initial meal suggestions were generally practical and varied. However, I noticed that new conversations often started with the same or very similar recommendations.
+
+Asking for alternatives revealed another limitation. The first alternative was usually still reasonable, but subsequent suggestions became increasingly impractical. Some combinations of ingredients did not work particularly well together, while others were difficult to prepare.
+
+This was an interesting example of the difference between **instruction adherence and recommendation quality**. The assistant followed the intended interaction structure, but that did not guarantee diversity, practicality or culinary coherence across repeated requests.
+
+It also showed that testing an assistant with a single successful interaction is insufficient. Some limitations only became apparent through repeated use.
+
+### Experiment 2: Note Organizer
+
+My second experiment was **Note Organizer**, an assistant designed to convert photographs of handwritten notes into structured digital documents.
+
+The motivation was to reduce the effort involved in transcribing and reorganising handwritten material.
+
+The configuration defined three main tasks:
+
+1.  Extract text from photographs of handwritten pages.
+2.  Organise and edit the extracted material into coherent sections.
+3.  Produce structured text, with Markdown or R Markdown available on request.
+
+The assistant was also instructed to follow a sequential workflow: collect the photographs, ask for contextual information and wait until all pages had been uploaded before processing the notes.
+
+An important part of the configuration concerned preserving the original information. The assistant was instructed not to introduce new concepts, to mark uncertain passages as `[unclear]` and to add explanatory examples only with explicit permission.
+
+**Observations and limitations**
+
+The assistant performed surprisingly well at recognising my handwriting. It also generally followed the intended page-by-page workflow.
+
+However, preserving the original content proved more difficult. Despite explicit instructions not to invent information, the assistant occasionally introduced details that were not present in my notes.
+
+The resulting documents also required several rounds of review and restructuring before I was satisfied with them.
+
+Nevertheless, I found the assistant very useful. It substantially reduced the effort involved in creating an initial digital version of handwritten notes, even though the output still required careful editing.
+
+This experiment highlighted the distinction between **recognising information and faithfully interpreting it**. Accurate transcription does not necessarily imply that the model will preserve the meaning of incomplete or ambiguous notes when reorganising them into coherent text.
+
+It also demonstrated that instructions intended to prevent unsupported additions do not always work as expected.
+
+### Experiment 3: Job Application Assistant
+
+My third experiment was a Custom GPT designed to support job applications in bioinformatics, biomedical data science and related research or leadership positions.
+
+Unlike the previous assistants, this one was configured to support a more complex workflow involving document analysis, critical assessment, iterative editing and document generation.
+
+The assistant was intended to work with my existing CV and a specific job advertisement.
+
+Its workflow included:
+
+1.  Analyse the job advertisement and identify its requirements.
+2.  Assess how well my experience matched the position, including gaps and potential mismatches.
+3.  Save the original job advertisement.
+4.  Adapt my CV to the position without inventing or exaggerating qualifications.
+5.  Present the revised CV for review and approval.
+6.  Prepare a tailored cover letter if requested.
+7.  Export the approved documents to Word.
+
+I explicitly instructed the assistant to provide critical rather than overly supportive feedback. It was also asked to distinguish between established expertise and areas in which I was developing my skills, and to avoid generic, overly polished language.
+
+The configuration included several **human review and approval stages**, with the intention of retaining control over the final application documents.
+
+**Observations and limitations**
+
+The assistant generally performed well at critically assessing my suitability for different positions. It identified relevant experience and gaps without inventing qualifications or exaggerating my background.
+
+It also respected the intended review stages.
+
+However, the generated CVs and cover letters still required substantial editing. Some formulations were vague or unnecessarily technical, and the writing often had a recognisably AI-generated quality. I needed to revise the text to reflect my own voice and accurately position my experience for each application.
+
+Document generation proved particularly unreliable. Despite explicit instructions to produce complete Word documents and preserve the original formatting, the results were inconsistent. Sometimes documents contained only part of the content, formatting was incorrect, or no Word document was produced.
+
+Eventually, I switched to working with **Markdown**, which proved considerably more reliable for reviewing and editing the text.
+
+This experiment highlighted several distinctions:
+
+-   **Factual accuracy is not the same as writing quality.** An assistant can avoid inventing information while still producing generic or poorly tailored text.
+-   **Following a workflow is not the same as completing it successfully.** The assistant respected the review stages but struggled with document production.
+-   **Content generation and document export are separate capabilities.** Producing useful text does not guarantee that a correctly formatted document can be generated.
+
+Overall, the assistant was useful for analysing job requirements and developing initial drafts, but the final applications still depended heavily on human judgement and editing.
+
+# What did these experiments teach me?
+
+The three experiments differed considerably in purpose, but they revealed some common strengths and limitations.
+
+| Experiment | What worked well | Main limitation |
+|-----------------|---------------------------|----------------------------|
+| **MealBuddy** | Following instructions and generating initial recommendations | Repetitive suggestions and declining quality of alternatives |
+| **Note Organizer** | Handwriting recognition and initial document organisation | Occasional invented information and substantial editing required |
+| **Job Application Assistant** | Critical analysis and structured review workflow | Generic wording and unreliable Word export |
+
+The most obvious advantage of configured assistants was that they reduced the need to repeat instructions and made recurring tasks easier to initiate.
+
+They were also generally successful at following structured interaction patterns, including asking questions and waiting for input or approval.
+
+However, their limitations differed depending on the task. MealBuddy struggled to maintain the quality of generated recommendations, Note Organizer sometimes altered the information it was supposed to preserve, and the Job Application Assistant encountered difficulties with writing quality and document production.
+
+These are not necessarily the same kind of failure. Some concern the model's generated content, while others relate to the tools and functionality of the surrounding application.
+
+One particularly useful lesson was that **a successful initial response does not necessarily indicate reliable performance across repeated interactions or more demanding requests**.
+
+The experiments also reinforced the importance of keeping a human involved, not simply to approve the final result but to assess whether it is accurate, appropriate and useful.
+
+# From configured assistants to AI-enabled systems
+
+Custom GPTs provided an accessible way to experiment with task-specific AI assistants without writing code. They helped me understand the role of instructions, contextual information, interaction design and tools in shaping an assistant's behaviour.
+
+At the same time, these experiments exposed limitations that cannot necessarily be resolved by writing more detailed instructions.
+
+More reliable systems may require explicit workflow control, better ways of providing and retrieving information, validation of intermediate results, and mechanisms for evaluating performance over time.
+
+These are some of the questions I want to explore next as I move from configuring assistants towards understanding how AI-enabled applications and workflows are built.

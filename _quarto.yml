@@ -1,3 +1,4 @@
+
 project:
   type: book
   output-dir: docs
@@ -5,41 +6,97 @@ project:
 book:
   title: "Catching up with AI"
   author: "Angelika Merkel"
-  date: "2025-12-04"
+
   page-footer:
     center: |
-      This book was built with curiosity and <a href="https://quarto.org/">Quarto</a>.
-      
+      This book was built with curiosity and
+      <a href="https://quarto.org/">Quarto</a>.
+
   chapters:
     - index.qmd
-    
-    - Prompt_engineering.qmd
-    - Prompt_pattern.practical.qmd
-    - Prompt_pattern.technical.qmd
-    - CustomGPTs.qmd
-    - Data_analysis_with_ChatGPT.qmd
-    
 
-#  TO DO chapters:
-#  - Building_trustworthy_AI.qmd
-#  - ChatGTP_basics.qmd
-#  - AI_agents.qmd
-#  - History_of_generative_AI.qmd
-#  - Ethiks_and_Risks.qmd
-#  - GenAI_for_code_development.qmd
-#  - references.qmd
+    # ----------------------------------------
+    # 01 — Foundations
+    # ----------------------------------------
+    # - part: "01 — Foundations"
+    #   chapters:
+    #     - chapters/01-foundations/1.1-machine-learning.md
+    #     - chapters/01-foundations/1.2-neural-networks.md
+    #     - chapters/01-foundations/1.3-generative-ai.md
+
+    # ----------------------------------------
+    # 02 — Working with AI
+    # Completed
+    # ----------------------------------------
+    - part: "02 — Working with AI"
+      chapters:
+        - chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.qmd
+        - chapters/02-working-with-ai/2.2-working-with-data-documents-and-files.qmd
+        - chapters/02-working-with-ai/2.3-human-ai-workflow.qmd
+        - chapters/02-working-with-ai/2.4-verification-and-critical-use.qmd
+
+    # ----------------------------------------
+    # 03 — Building with AI
+    # In progress
+    # ----------------------------------------
+    - part: "03 — Building with AI"
+      chapters:
+        - chapters/03-building-with-ai/3.1-configured-ai-assistants.qmd
+
+        # - chapters/03-building-with-ai/3.2-ai-assisted-coding.md
+        # - chapters/03-building-with-ai/3.3-grounding-ai-with-data.md
+        # - chapters/03-building-with-ai/3.4-ai-enabled-workflows-and-agents.md
+        # - chapters/03-building-with-ai/3.5-evaluating-ai-systems.md
+
+    # ----------------------------------------
+    # 04 — AI for Science
+    # Planned
+    # ----------------------------------------
+    # - part: "04 — AI for Science"
+    #   chapters:
+    #     - chapters/04-ai-for-science/4.1-ai-as-scientific-method.md
+    #     - chapters/04-ai-for-science/4.2-literature-and-knowledge-discovery.md
+    #     - chapters/04-ai-for-science/4.3-scientific-reasoning.md
+    #     - chapters/04-ai-for-science/4.4-scientific-data-analysis.md
+    #     - chapters/04-ai-for-science/4.5-scientific-writing.md
+    #     - chapters/04-ai-for-science/4.6-evaluating-ai-research-assistants.md
+
+    # ----------------------------------------
+    # 05 — Responsible AI
+    # Planned
+    # ----------------------------------------
+    # - part: "05 — Responsible AI"
+    #   chapters:
+    #     - chapters/05-responsible-ai/5.1-ethical-principles.md
+    #     - chapters/05-responsible-ai/5.2-risks-and-limitations.md
+    #     - chapters/05-responsible-ai/5.3-legal-frameworks.md
+    #     - chapters/05-responsible-ai/5.4-ai-governance.md
+    #     - chapters/05-responsible-ai/5.5-responsible-ai-in-science.md
+
+    # ----------------------------------------
+    # Notebook — Ongoing notes and updates
+    # ----------------------------------------
+    - part: "Notebook"
+      chapters:
+        - notebook/notes-reflections-updates.qmd
+        - notebook/ai-developments-updates.qmd
 
 bibliography: references.bib
 
+date-format: "D MMMM YYYY"
+
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
     toc: true
     code-copy: true
- # pdf:
- #  documentclass: scrreprt
+    code-overflow: wrap
+    number-sections: false
+    
+    grid:
+      sidebar-width: 340px
+      body-width: 800px
+      margin-width: 250px
+      gutter-width: 1.5rem
 
 editor: visual
-

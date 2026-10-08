@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Angelika Merkel">
+<meta name="dcterms.date" content="2025-11-20">
 
-<title>Catching up with AI</title>
+<title>2.3 Human–AI workflows – Catching up with AI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +24,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-44a412e410507888c4469fe221759d6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../chapters/02-working-with-ai/2.4-verification-and-critical-use.html" rel="next">
+<link href="../../chapters/02-working-with-ai/2.2-working-with-data-documents-and-files.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-44a412e410507888c4469fe221759d6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -82,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Catching up with AI</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html">02 — Working with AI</a></li><li class="breadcrumb-item"><a href="../../chapters/02-working-with-ai/2.3-human-ai-workflow.html"><span class="chapter-title">2.3 Human–AI workflows</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -97,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Catching up with AI</a> 
+      <a href="../../">Catching up with AI</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -109,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Catching up with AI</span></a>
+  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Catching up with AI</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -123,22 +124,22 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.1 Prompt engineering and prompt patterns</span></a>
+  <a href="../../chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.1 Prompt engineering and prompt patterns</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/02-working-with-ai/2.2-working-with-data-documents-and-files.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.2 Working with data, documents and files</span></a>
+  <a href="../../chapters/02-working-with-ai/2.2-working-with-data-documents-and-files.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.2 Working with data, documents and files</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/02-working-with-ai/2.3-human-ai-workflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.3 Human–AI workflows</span></a>
+  <a href="../../chapters/02-working-with-ai/2.3-human-ai-workflow.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">2.3 Human–AI workflows</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/02-working-with-ai/2.4-verification-and-critical-use.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.4 Verification and critical use</span></a>
+  <a href="../../chapters/02-working-with-ai/2.4-verification-and-critical-use.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.4 Verification and critical use</span></a>
   </div>
 </li>
       </ul>
@@ -154,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/03-building-with-ai/3.1-configured-ai-assistants.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.1 Configured AI assistants</span></a>
+  <a href="../../chapters/03-building-with-ai/3.1-configured-ai-assistants.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.1 Configured AI assistants</span></a>
   </div>
 </li>
       </ul>
@@ -170,12 +171,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebook/notes-reflections-updates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notes, reflections &amp; updates</span></a>
+  <a href="../../notebook/notes-reflections-updates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notes, reflections &amp; updates</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebook/ai-developments-updates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI developments &amp; updates</span></a>
+  <a href="../../notebook/ai-developments-updates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI developments &amp; updates</span></a>
   </div>
 </li>
       </ul>
@@ -190,33 +191,33 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-this-site-exists" id="toc-why-this-site-exists" class="nav-link active" data-scroll-target="#why-this-site-exists">Why this site exists</a></li>
-  <li><a href="#how-i-started" id="toc-how-i-started" class="nav-link" data-scroll-target="#how-i-started">How I started</a></li>
-  <li><a href="#how-this-notebook-is-organised" id="toc-how-this-notebook-is-organised" class="nav-link" data-scroll-target="#how-this-notebook-is-organised">How this notebook is organised</a></li>
-  <li><a href="#notes-reflections-and-updates" id="toc-notes-reflections-and-updates" class="nav-link" data-scroll-target="#notes-reflections-and-updates">Notes, reflections and updates</a></li>
+  <li><a href="#from-prompts-to-workflows" id="toc-from-prompts-to-workflows" class="nav-link active" data-scroll-target="#from-prompts-to-workflows">From prompts to workflows</a></li>
+  <li><a href="#etac-structuring-a-larger-task" id="toc-etac-structuring-a-larger-task" class="nav-link" data-scroll-target="#etac-structuring-a-larger-task">ETAC: structuring a larger task</a></li>
+  <li><a href="#dividing-work-between-humans-ai-and-tools" id="toc-dividing-work-between-humans-ai-and-tools" class="nav-link" data-scroll-target="#dividing-work-between-humans-ai-and-tools">Dividing work between humans, AI and tools</a></li>
+  <li><a href="#working-iteratively" id="toc-working-iteratively" class="nav-link" data-scroll-target="#working-iteratively">Working iteratively</a></li>
+  <li><a href="#assembling-larger-tasks" id="toc-assembling-larger-tasks" class="nav-link" data-scroll-target="#assembling-larger-tasks">Assembling larger tasks</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html">02 — Working with AI</a></li><li class="breadcrumb-item"><a href="../../chapters/02-working-with-ai/2.3-human-ai-workflow.html"><span class="chapter-title">2.3 Human–AI workflows</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Catching up with AI</h1>
-<p class="subtitle lead">A learning notebook on generative AI</p>
+<h1 class="title"><span class="chapter-title">2.3 Human–AI workflows</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Angelika Merkel </p>
-          </div>
-  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">20 November 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -226,49 +227,122 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="why-this-site-exists" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="why-this-site-exists">Why this site exists</h2>
-<p>For the last 15 years, I have worked in <strong>bioinformatics</strong> and <strong>biomedical data science</strong>, developing data analysis pipelines and supporting scientific research. During that time, artificial intelligence evolved rapidly — particularly in areas such as deep learning and, more recently, generative AI.</p>
-<p>Like many scientists working with data, I realised at some point that I had developed a <strong>knowledge gap</strong>. I was comfortable with statistical modelling, genomic data analysis and scientific computing, but the knowledge around <strong>large language models (LLMs)</strong> and <strong>AI-assisted workflows</strong> had largely evolved outside my day-to-day work.</p>
-<p>This notebook is my way of catching up. It collects my notes along the way — part learning log, part technical guide. I try to document not just <em>what</em> I learn, but also <em>how</em> I learn it, what I find confusing and what actually turns out to be useful in practice.</p>
+<p>These notes are also based on the Coursera course <a href="https://www.coursera.org/learn/advanced-data-analysis-with-chatgpt"><em>Advanced Data Analysis with ChatGPT</em></a> by Jules White at Vanderbilt University. While the previous section focused on working with data, documents and files, this section takes a broader view of how more complex tasks can be organised as workflows involving humans, AI and other computational tools.</p>
+<p>Working with a language model becomes more complicated when a task involves several steps. Rather than describing the entire task in a single prompt, it can be useful to think in terms of a <strong>workflow</strong>: how the task can be divided into steps, what each step requires and produces, and which parts should be performed by humans, AI or other computational tools.</p>
+<section id="from-prompts-to-workflows" class="level1">
+<h1>From prompts to workflows</h1>
+<p>A larger task can usually be divided into a sequence of smaller steps, where the output of one step becomes the input for another.</p>
+<p>For example, analysing a collection of scientific papers might involve:</p>
+<p><strong>identify relevant papers → extract information → organise the information → compare findings → interpret differences → produce a summary</strong></p>
+<p>Not all of these steps necessarily require the same approach. Some may involve a language model, others may require search or computational tools, and some depend on human judgement.</p>
 </section>
-<section id="how-i-started" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="how-i-started">How I started</h2>
-<p>I started exploring generative AI with tools such as <a href="https://chatgpt.com">ChatGPT</a> and <a href="https://www.perplexity.ai">Perplexity</a>, followed tutorials from the <a href="https://academy.openai.com">OpenAI Academy</a> and took online courses on prompt engineering, custom AI assistants and AI-assisted data analysis.</p>
-<p>But I wanted to understand more than just how to use these tools. How do they actually work? How reliable are they? And how might they be integrated into computational and scientific workflows? This also made me realise that I needed a more systematic understanding of machine learning and neural networks. Over the years, I had picked up bits and pieces, but never really developed a solid foundation in either.</p>
-<p>At the same time, I wanted to learn how to work with AI coding assistants, as this is clearly becoming an increasingly relevant skill in software development. I was also particularly interested in understanding what AI could actually contribute to scientific research.</p>
-<p>AI is often presented as something that will fundamentally change how we work and do research. Undoubtedly, it is a powerful technology, but generative AI is still relatively young. Many of the tools, methods and skills for working with it are still being developed, and the field itself is still taking shape. At the same time, the limitations and risks of AI — from unreliable outputs and bias to questions around privacy, accountability and responsible use — are becoming increasingly important to understand. It is therefore not always easy to distinguish genuine progress from the surrounding hype.</p>
-<!-- For me, this notebook is about **understanding AI beyond the hype: how it works, what it can and cannot do, how to work with it, and what it might actually contribute to scientific research.** -->
+<section id="etac-structuring-a-larger-task" class="level1">
+<h1>ETAC: structuring a larger task</h1>
+<p>One framework suggested by Jules White for breaking down larger tasks is <strong>ETAC</strong>:</p>
+<p><strong>Extract → Transform → Analyze → Create</strong></p>
+<p>The four stages describe different operations that may occur within a workflow. For example, when working with a collection of scientific papers:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stage</th>
+<th>Purpose</th>
+<th>Scientific-paper example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Extract</strong></td>
+<td>Retrieve relevant information</td>
+<td>Identify findings and retain their sources</td>
+</tr>
+<tr class="even">
+<td><strong>Transform</strong></td>
+<td>Organise, clean or convert information</td>
+<td>Structure findings for comparison</td>
+</tr>
+<tr class="odd">
+<td><strong>Analyze</strong></td>
+<td>Examine patterns and relationships</td>
+<td>Compare findings and supporting evidence</td>
+</tr>
+<tr class="even">
+<td><strong>Create</strong></td>
+<td>Produce an output</td>
+<td>Prepare a summary or report</td>
+</tr>
+</tbody>
+</table>
+<p>ETAC provides a simple way of thinking about the different stages of a task. In practice, however, a workflow does not always proceed neatly from Extract to Transform to Analyze to Create. Individual steps may need to be repeated, intermediate results inspected, and earlier decisions revised before moving on.</p>
 </section>
-<section id="how-this-notebook-is-organised" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="how-this-notebook-is-organised">How this notebook is organised</h2>
-<p>The material is organised into five broad areas:</p>
-<ol type="1">
-<li><strong>Foundations</strong> — Learning the foundations of machine learning and neural networks, and understanding the concepts behind modern generative AI.</li>
-<li><strong>Working with AI</strong> — Exploring prompt engineering, human–AI workflows, data analysis and the critical use of AI assistants.</li>
-<li><strong>Building with AI</strong> — Learning how AI can become part of computational work, from configured assistants and AI-assisted coding to grounding models with data and building AI-enabled workflows.</li>
-<li><strong>AI for Science</strong> — Exploring how AI can support literature discovery, scientific reasoning, data analysis and communication, and where it may become useful as a research tool.</li>
-<li><strong>Responsible AI</strong> — Examining the limitations, risks, ethical considerations and legal frameworks surrounding AI, particularly in scientific research.</li>
-</ol>
-<p>This notebook is not intended as a comprehensive guide to artificial intelligence. The chapters simply reflect the topics I am interested in and want to learn more about.</p>
-<!--
-TODO: Activate once new entries are being added regularly.
-
-## Latest entry {.unnumbered}
-
-**DATE — [TITLE](path/to/page.qmd)**
-
-Short description.
--->
+<section id="dividing-work-between-humans-ai-and-tools" class="level1">
+<h1>Dividing work between humans, AI and tools</h1>
+<p>Breaking a task into steps also makes it possible to consider <strong>who or what should perform each step</strong>. A workflow can combine human judgement, language models and other computational tools.</p>
+<p>Different parts of a task are suited to different approaches. A language model can help extract and organise information, generate alternatives, explain results or plan the next step. Python or other computational tools can perform calculations, manipulate data and create visualisations, while specialised software may be needed for domain-specific analyses.</p>
+<p>The human remains responsible for directing the workflow: defining the objective, providing relevant context, deciding which approaches are appropriate, inspecting intermediate results and judging whether the final result makes sense.</p>
+<p>For example, in a data-analysis workflow, the work might be divided like this:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Possible role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Define the scientific question</td>
+<td>Human</td>
+</tr>
+<tr class="even">
+<td>Inspect the structure of the dataset</td>
+<td>AI + computational tools</td>
+</tr>
+<tr class="odd">
+<td>Decide on an appropriate analysis</td>
+<td>Human + AI</td>
+</tr>
+<tr class="even">
+<td>Perform calculations</td>
+<td>Computational tools</td>
+</tr>
+<tr class="odd">
+<td>Inspect and visualise results</td>
+<td>Human + AI + computational tools</td>
+</tr>
+<tr class="even">
+<td>Interpret the results</td>
+<td>Human + AI</td>
+</tr>
+<tr class="odd">
+<td>Evaluate whether the conclusions are justified</td>
+<td>Human</td>
+</tr>
+</tbody>
+</table>
+<p>These roles are not fixed. They depend on the task, available tools and consequences of an error. The important question is not whether a task should be performed by AI or a human, but <strong>how their capabilities can be combined effectively</strong>.</p>
 </section>
-<section id="notes-reflections-and-updates" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="notes-reflections-and-updates">Notes, reflections and updates</h2>
-<p>AI is developing quickly, and my own understanding is (hopefully) evolving with it. Rather than continually rewriting earlier material, I want to preserve the context in which I learned something and add new observations or corrections as my understanding changes.</p>
-<p>In addition to the main chapters, I have included two sections for notes and updates:</p>
-<ul>
-<li><strong>Notes, Reflections &amp; Updates</strong> — Personal observations, experiments, open questions and changes in my understanding.</li>
-<li><strong>AI Developments &amp; Updates</strong> — Selected developments in AI technology, scientific applications and regulation that are relevant to the subjects explored here.</li>
-</ul>
+<section id="working-iteratively" class="level1">
+<h1>Working iteratively</h1>
+<p>Larger tasks do not necessarily need to be planned completely before starting. A useful approach is to work iteratively:</p>
+<p><strong>plan → execute → inspect → adjust → continue</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/2.3-iterative-workflow.png" class="img-fluid figure-img" style="width:80.0%" alt="Circular workflow showing Plan, Execute, Inspect and Adjust as an iterative cycle."></p>
+<figcaption>An iterative human–AI workflow: plan, execute, inspect and adjust, then continue with the next step.</figcaption>
+</figure>
+</div>
+<p>A first plan provides a starting point, but each step can produce new information that changes what should happen next. Intermediate results can be inspected before continuing, and the workflow adjusted when something unexpected appears.</p>
+<p>For example, a data-analysis task might begin with a plan to inspect the data, clean it, perform an analysis and visualise the results. Inspecting the data may reveal missing values, unexpected distributions or problems with the experimental groups. These observations can change the next step rather than simply continuing with the original plan.</p>
+<p>Working in smaller steps also makes it easier to identify where something has gone wrong. If the final result is unexpected, intermediate outputs provide points at which the workflow can be examined and revised.</p>
+</section>
+<section id="assembling-larger-tasks" class="level1">
+<h1>Assembling larger tasks</h1>
+<p>Breaking a larger task into smaller pieces makes the individual steps easier to manage, but the results eventually need to be brought together again.</p>
+<p>For example, preparing a report from several sources might involve extracting information, organising tables, performing analyses and drafting individual sections. These intermediate outputs can be saved as files or structured data and then assembled into the final report.</p>
 
 
 </section>
@@ -675,10 +749,13 @@ Short description.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../chapters/02-working-with-ai/2.2-working-with-data-documents-and-files.html" class="pagination-link" aria-label="2.2 Working with data, documents and files">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">2.2 Working with data, documents and files</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html" class="pagination-link" aria-label="2.1 Prompt engineering and prompt patterns">
-        <span class="nav-page-text"><span class="chapter-title">2.1 Prompt engineering and prompt patterns</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../chapters/02-working-with-ai/2.4-verification-and-critical-use.html" class="pagination-link" aria-label="2.4 Verification and critical use">
+        <span class="nav-page-text"><span class="chapter-title">2.4 Verification and critical use</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

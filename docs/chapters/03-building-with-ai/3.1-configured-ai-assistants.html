@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-12-04">
+
+<title>3.1 Configured AI assistants – Catching up with AI</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../notebook/notes-reflections-updates.html" rel="next">
+<link href="../../chapters/02-working-with-ai/2.4-verification-and-critical-use.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-44a412e410507888c4469fe221759d6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/03-building-with-ai/3.1-configured-ai-assistants.html">03 — Building with AI</a></li><li class="breadcrumb-item"><a href="../../chapters/03-building-with-ai/3.1-configured-ai-assistants.html"><span class="chapter-title">3.1 Configured AI assistants</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Catching up with AI</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Catching up with AI</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">02 — Working with AI</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.1 Prompt engineering and prompt patterns</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/02-working-with-ai/2.2-working-with-data-documents-and-files.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.2 Working with data, documents and files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/02-working-with-ai/2.3-human-ai-workflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.3 Human–AI workflows</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/02-working-with-ai/2.4-verification-and-critical-use.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.4 Verification and critical use</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">03 — Building with AI</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/03-building-with-ai/3.1-configured-ai-assistants.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">3.1 Configured AI assistants</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notebook</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notebook/notes-reflections-updates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notes, reflections &amp; updates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notebook/ai-developments-updates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI developments &amp; updates</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-makes-an-assistant-configurable" id="toc-what-makes-an-assistant-configurable" class="nav-link active" data-scroll-target="#what-makes-an-assistant-configurable">What makes an assistant configurable?</a></li>
+  <li><a href="#designing-instructions-and-workflows" id="toc-designing-instructions-and-workflows" class="nav-link" data-scroll-target="#designing-instructions-and-workflows">Designing instructions and workflows</a></li>
+  <li><a href="#practical-experiments-with-custom-gpts" id="toc-practical-experiments-with-custom-gpts" class="nav-link" data-scroll-target="#practical-experiments-with-custom-gpts">Practical experiments with Custom GPTs</a>
+  <ul class="collapse">
+  <li><a href="#experiment-1-fit-fun-mealbuddy" id="toc-experiment-1-fit-fun-mealbuddy" class="nav-link" data-scroll-target="#experiment-1-fit-fun-mealbuddy">Experiment 1: Fit &amp; Fun MealBuddy</a></li>
+  <li><a href="#experiment-2-note-organizer" id="toc-experiment-2-note-organizer" class="nav-link" data-scroll-target="#experiment-2-note-organizer">Experiment 2: Note Organizer</a></li>
+  <li><a href="#experiment-3-job-application-assistant" id="toc-experiment-3-job-application-assistant" class="nav-link" data-scroll-target="#experiment-3-job-application-assistant">Experiment 3: Job Application Assistant</a></li>
+  </ul></li>
+  <li><a href="#what-did-these-experiments-teach-me" id="toc-what-did-these-experiments-teach-me" class="nav-link" data-scroll-target="#what-did-these-experiments-teach-me">What did these experiments teach me?</a></li>
+  <li><a href="#from-configured-assistants-to-ai-enabled-systems" id="toc-from-configured-assistants-to-ai-enabled-systems" class="nav-link" data-scroll-target="#from-configured-assistants-to-ai-enabled-systems">From configured assistants to AI-enabled systems</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/03-building-with-ai/3.1-configured-ai-assistants.html">03 — Building with AI</a></li><li class="breadcrumb-item"><a href="../../chapters/03-building-with-ai/3.1-configured-ai-assistants.html"><span class="chapter-title">3.1 Configured AI assistants</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">3.1 Configured AI assistants</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">4 December 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>These notes are based on courses from <a href="https://academy.openai.com"><em>OpenAI Academy</em></a> and the Coursera course <a href="https://www.coursera.org/learn/openai-custom-gpts"><em>OpenAI GPTs: Creating your own custom AI assistant</em></a> by Jules White at Vanderbilt University. After exploring different ways of working with general-purpose AI assistants, I became interested in how they could be configured for more specific tasks and contexts.</p>
+<p><strong>General-purpose AI assistants</strong> can support a wide range of tasks, but using them repeatedly for a particular purpose often involves providing the same instructions, preferences and contextual information again and again.</p>
+<p><strong>Configured AI assistants</strong> offer a way to make these interactions more consistent. Rather than starting with a general-purpose assistant each time, we can define its purpose, behaviour and available information in advance.</p>
+<p>One approach I explored was <strong>Custom GPTs</strong>, which allowed users to configure specialised versions of ChatGPT without programming. My interest was not yet in building sophisticated applications, but in starting with a more accessible approach and understanding how far configuration alone could take me and where its limitations became apparent.</p>
+<section id="what-makes-an-assistant-configurable" class="level1">
+<h1>What makes an assistant configurable?</h1>
+<p>A configured assistant typically combines several elements:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Instructions</strong></td>
+<td>Define the assistant’s role, scope, behaviour and constraints</td>
+</tr>
+<tr class="even">
+<td><strong>Context and knowledge</strong></td>
+<td>Provide task-specific information, preferences or reference documents</td>
+</tr>
+<tr class="odd">
+<td><strong>Capabilities and tools</strong></td>
+<td>Extend what the assistant can do beyond generating text</td>
+</tr>
+<tr class="even">
+<td><strong>Interaction design</strong></td>
+<td>Specify what information to request and how to guide the conversation</td>
+</tr>
+<tr class="odd">
+<td><strong>Output requirements</strong></td>
+<td>Define the structure, format and level of detail of responses</td>
+</tr>
+</tbody>
+</table>
+<p>These components serve different purposes.</p>
+<p>Instructions influence how the assistant behaves, while contextual information and reference documents provide material it can use when responding. Tools may allow the assistant to perform additional operations, such as working with files, analysing data or accessing external information.</p>
+<p>Importantly, configuring an assistant does not ordinarily involve retraining the underlying language model. The model remains the same; what changes is the information and instructions provided to it, along with the capabilities made available through the surrounding application.</p>
+<p>This distinction is relevant when considering reliability. A configured assistant may behave more consistently within its intended scope, but configuration alone does not guarantee factual accuracy or successful task completion.</p>
+</section>
+<section id="designing-instructions-and-workflows" class="level1">
+<h1>Designing instructions and workflows</h1>
+<p>Configuring an assistant involves more than assigning it a role or defining a preferred tone.</p>
+<p>For recurring tasks, it can be useful to specify how the assistant should interact with the user, which information it should collect, what decisions it should make and how the results should be presented.</p>
+<p>For example, instructions may require an assistant to:</p>
+<ul>
+<li>Ask for missing information before proceeding.</li>
+<li>Follow a sequence of steps rather than immediately producing a final answer.</li>
+<li>Use particular rules or criteria when generating recommendations.</li>
+<li>Produce outputs in a specified format.</li>
+<li>Indicate uncertainty instead of inventing missing information.</li>
+<li>Request human review or approval before continuing.</li>
+</ul>
+<p>These instructions resemble a workflow, but there is an important distinction between <strong>describing a workflow in natural language and enforcing it programmatically</strong>.</p>
+<p>A language model may follow a carefully written sequence of instructions, but its behaviour is not guaranteed. Similarly, instructing an assistant to avoid unsupported claims does not ensure that it will always do so.</p>
+<p>The effectiveness of a configuration therefore needs to be assessed through use and testing rather than assumed from the instructions themselves.</p>
+</section>
+<section id="practical-experiments-with-custom-gpts" class="level1">
+<h1>Practical experiments with Custom GPTs</h1>
+<p>I experimented with three Custom GPTs designed to support different recurring tasks. Each had a defined purpose, interaction rules and output requirements.</p>
+<p>Although the applications were quite different, they provided useful opportunities to examine how well a language model follows persistent instructions and what happens when those instructions are insufficient.</p>
+<section id="experiment-1-fit-fun-mealbuddy" class="level3">
+<h3 class="anchored" data-anchor-id="experiment-1-fit-fun-mealbuddy">Experiment 1: Fit &amp; Fun MealBuddy</h3>
+<p>My first experiment was <strong>Fit &amp; Fun MealBuddy</strong>, a family meal-planning assistant.</p>
+<p>The aim was to simplify everyday meal planning by incorporating information about family members, dietary preferences, physical activities and available cooking time.</p>
+<p>The configuration included:</p>
+<ul>
+<li>User profiles and dietary preferences.</li>
+<li>Questions about planned activities and who would be eating.</li>
+<li>Rules for adapting meals to sport and rest days.</li>
+<li>Requirements for quick, practical weekday meals.</li>
+<li>Output formats for daily plans, weekly plans and grocery lists.</li>
+<li>An example conversation illustrating the intended interaction.</li>
+</ul>
+<p>The assistant was instructed to ask a series of questions before suggesting meals. It would first establish whether the day involved sporting activities, then identify who would be eating and finally determine the desired output format.</p>
+<p>It also included nutritional guidance and rules for adapting meals to different circumstances.</p>
+<p><strong>Observations and limitations</strong></p>
+<p>Overall, MealBuddy followed its configuration well. It consistently asked the intended questions, accounted for dietary requirements, including vegetarian preferences, and produced outputs in the requested formats.</p>
+<p>The initial meal suggestions were generally practical and varied. However, I noticed that new conversations often started with the same or very similar recommendations.</p>
+<p>Asking for alternatives revealed another limitation. The first alternative was usually still reasonable, but subsequent suggestions became increasingly impractical. Some combinations of ingredients did not work particularly well together, while others were difficult to prepare.</p>
+<p>This was an interesting example of the difference between <strong>instruction adherence and recommendation quality</strong>. The assistant followed the intended interaction structure, but that did not guarantee diversity, practicality or culinary coherence across repeated requests.</p>
+<p>It also showed that testing an assistant with a single successful interaction is insufficient. Some limitations only became apparent through repeated use.</p>
+</section>
+<section id="experiment-2-note-organizer" class="level3">
+<h3 class="anchored" data-anchor-id="experiment-2-note-organizer">Experiment 2: Note Organizer</h3>
+<p>My second experiment was <strong>Note Organizer</strong>, an assistant designed to convert photographs of handwritten notes into structured digital documents.</p>
+<p>The motivation was to reduce the effort involved in transcribing and reorganising handwritten material.</p>
+<p>The configuration defined three main tasks:</p>
+<ol type="1">
+<li>Extract text from photographs of handwritten pages.</li>
+<li>Organise and edit the extracted material into coherent sections.</li>
+<li>Produce structured text, with Markdown or R Markdown available on request.</li>
+</ol>
+<p>The assistant was also instructed to follow a sequential workflow: collect the photographs, ask for contextual information and wait until all pages had been uploaded before processing the notes.</p>
+<p>An important part of the configuration concerned preserving the original information. The assistant was instructed not to introduce new concepts, to mark uncertain passages as <code>[unclear]</code> and to add explanatory examples only with explicit permission.</p>
+<p><strong>Observations and limitations</strong></p>
+<p>The assistant performed surprisingly well at recognising my handwriting. It also generally followed the intended page-by-page workflow.</p>
+<p>However, preserving the original content proved more difficult. Despite explicit instructions not to invent information, the assistant occasionally introduced details that were not present in my notes.</p>
+<p>The resulting documents also required several rounds of review and restructuring before I was satisfied with them.</p>
+<p>Nevertheless, I found the assistant very useful. It substantially reduced the effort involved in creating an initial digital version of handwritten notes, even though the output still required careful editing.</p>
+<p>This experiment highlighted the distinction between <strong>recognising information and faithfully interpreting it</strong>. Accurate transcription does not necessarily imply that the model will preserve the meaning of incomplete or ambiguous notes when reorganising them into coherent text.</p>
+<p>It also demonstrated that instructions intended to prevent unsupported additions do not always work as expected.</p>
+</section>
+<section id="experiment-3-job-application-assistant" class="level3">
+<h3 class="anchored" data-anchor-id="experiment-3-job-application-assistant">Experiment 3: Job Application Assistant</h3>
+<p>My third experiment was a Custom GPT designed to support job applications in bioinformatics, biomedical data science and related research or leadership positions.</p>
+<p>Unlike the previous assistants, this one was configured to support a more complex workflow involving document analysis, critical assessment, iterative editing and document generation.</p>
+<p>The assistant was intended to work with my existing CV and a specific job advertisement.</p>
+<p>Its workflow included:</p>
+<ol type="1">
+<li>Analyse the job advertisement and identify its requirements.</li>
+<li>Assess how well my experience matched the position, including gaps and potential mismatches.</li>
+<li>Save the original job advertisement.</li>
+<li>Adapt my CV to the position without inventing or exaggerating qualifications.</li>
+<li>Present the revised CV for review and approval.</li>
+<li>Prepare a tailored cover letter if requested.</li>
+<li>Export the approved documents to Word.</li>
+</ol>
+<p>I explicitly instructed the assistant to provide critical rather than overly supportive feedback. It was also asked to distinguish between established expertise and areas in which I was developing my skills, and to avoid generic, overly polished language.</p>
+<p>The configuration included several <strong>human review and approval stages</strong>, with the intention of retaining control over the final application documents.</p>
+<p><strong>Observations and limitations</strong></p>
+<p>The assistant generally performed well at critically assessing my suitability for different positions. It identified relevant experience and gaps without inventing qualifications or exaggerating my background.</p>
+<p>It also respected the intended review stages.</p>
+<p>However, the generated CVs and cover letters still required substantial editing. Some formulations were vague or unnecessarily technical, and the writing often had a recognisably AI-generated quality. I needed to revise the text to reflect my own voice and accurately position my experience for each application.</p>
+<p>Document generation proved particularly unreliable. Despite explicit instructions to produce complete Word documents and preserve the original formatting, the results were inconsistent. Sometimes documents contained only part of the content, formatting was incorrect, or no Word document was produced.</p>
+<p>Eventually, I switched to working with <strong>Markdown</strong>, which proved considerably more reliable for reviewing and editing the text.</p>
+<p>This experiment highlighted several distinctions:</p>
+<ul>
+<li><strong>Factual accuracy is not the same as writing quality.</strong> An assistant can avoid inventing information while still producing generic or poorly tailored text.</li>
+<li><strong>Following a workflow is not the same as completing it successfully.</strong> The assistant respected the review stages but struggled with document production.</li>
+<li><strong>Content generation and document export are separate capabilities.</strong> Producing useful text does not guarantee that a correctly formatted document can be generated.</li>
+</ul>
+<p>Overall, the assistant was useful for analysing job requirements and developing initial drafts, but the final applications still depended heavily on human judgement and editing.</p>
+</section>
+</section>
+<section id="what-did-these-experiments-teach-me" class="level1">
+<h1>What did these experiments teach me?</h1>
+<p>The three experiments differed considerably in purpose, but they revealed some common strengths and limitations.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 37%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Experiment</th>
+<th>What worked well</th>
+<th>Main limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>MealBuddy</strong></td>
+<td>Following instructions and generating initial recommendations</td>
+<td>Repetitive suggestions and declining quality of alternatives</td>
+</tr>
+<tr class="even">
+<td><strong>Note Organizer</strong></td>
+<td>Handwriting recognition and initial document organisation</td>
+<td>Occasional invented information and substantial editing required</td>
+</tr>
+<tr class="odd">
+<td><strong>Job Application Assistant</strong></td>
+<td>Critical analysis and structured review workflow</td>
+<td>Generic wording and unreliable Word export</td>
+</tr>
+</tbody>
+</table>
+<p>The most obvious advantage of configured assistants was that they reduced the need to repeat instructions and made recurring tasks easier to initiate.</p>
+<p>They were also generally successful at following structured interaction patterns, including asking questions and waiting for input or approval.</p>
+<p>However, their limitations differed depending on the task. MealBuddy struggled to maintain the quality of generated recommendations, Note Organizer sometimes altered the information it was supposed to preserve, and the Job Application Assistant encountered difficulties with writing quality and document production.</p>
+<p>These are not necessarily the same kind of failure. Some concern the model’s generated content, while others relate to the tools and functionality of the surrounding application.</p>
+<p>One particularly useful lesson was that <strong>a successful initial response does not necessarily indicate reliable performance across repeated interactions or more demanding requests</strong>.</p>
+<p>The experiments also reinforced the importance of keeping a human involved, not simply to approve the final result but to assess whether it is accurate, appropriate and useful.</p>
+</section>
+<section id="from-configured-assistants-to-ai-enabled-systems" class="level1">
+<h1>From configured assistants to AI-enabled systems</h1>
+<p>Custom GPTs provided an accessible way to experiment with task-specific AI assistants without writing code. They helped me understand the role of instructions, contextual information, interaction design and tools in shaping an assistant’s behaviour.</p>
+<p>At the same time, these experiments exposed limitations that cannot necessarily be resolved by writing more detailed instructions.</p>
+<p>More reliable systems may require explicit workflow control, better ways of providing and retrieving information, validation of intermediate results, and mechanisms for evaluating performance over time.</p>
+<p>These are some of the questions I want to explore next as I move from configuring assistants towards understanding how AI-enabled applications and workflows are built.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../chapters/02-working-with-ai/2.4-verification-and-critical-use.html" class="pagination-link" aria-label="2.4 Verification and critical use">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">2.4 Verification and critical use</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../notebook/notes-reflections-updates.html" class="pagination-link" aria-label="Notes, reflections &amp; updates">
+        <span class="nav-page-text"><span class="chapter-title">Notes, reflections &amp; updates</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>This book was built with curiosity and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

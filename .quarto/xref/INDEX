@@ -25,5 +25,44 @@
   },
   "Data_analysis_with_ChatGPT.qmd": {
     "Data_analysis_with_ChatGPT.html": "4cb61e64"
+  },
+  "chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.md": {
+    "2.1-prompt-engineering-and-prompt-patterns.html": "815e1aab"
+  },
+  "chapters/02-working-with-ai/2.2-working-with-data-documents-and-files.md": {
+    "2.2-working-with-data-documents-and-files.html": "0fba6211"
+  },
+  "chapters/02-working-with-ai/2.3.human-ai-workflow.md": {
+    "2.3.human-ai-workflow.html": "15f49305"
+  },
+  "chapters/02-working-with-ai/2.4.verification-and-critical-use.md": {
+    "2.4.verification-and-critical-use.html": "4b7be7f4"
+  },
+  "chapters/03-building-with-ai/3.1.configured-ai-assistents.md": {
+    "3.1.configured-ai-assistents.html": "5c2f9c79"
+  },
+  "notebook/notes-reflections-updates.qmd": {
+    "notes-reflections-updates.html": "1217ca08"
+  },
+  "notebook/ai-developments-updates.qmd": {
+    "ai-developments-updates.html": "338a863d"
+  },
+  "chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.qmd": {
+    "2.1-prompt-engineering-and-prompt-patterns.html": "957715ff"
+  },
+  "chapters/02-working-with-ai/2.2-working-with-data-documents-and-files.qmd": {
+    "2.2-working-with-data-documents-and-files.html": "24e3a91c"
+  },
+  "chapters/02-working-with-ai/2.3-human-ai-workflow.qmd": {
+    "2.3-human-ai-workflow.html": "1a8b3d59"
+  },
+  "chapters/02-working-with-ai/2.4-verification-and-critical-use.qmd": {
+    "2.4-verification-and-critical-use.html": "846623ba"
+  },
+  "chapters/03-building-with-ai/3.1-configured-ai-assistents.qmd": {
+    "3.1-configured-ai-assistents.html": "aecd40d7"
+  },
+  "chapters/03-building-with-ai/3.1-configured-ai-assistants.qmd": {
+    "3.1-configured-ai-assistants.html": "014d042d"
   }
 }

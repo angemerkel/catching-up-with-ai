@@ -1,0 +1,327 @@
+---
+title: "2.1 Prompt engineering and prompt patterns"
+date: "2025-10-30"
+---
+
+These notes are based on the Coursera courses [*Prompt Engineering for
+ChatGPT*](https://www.coursera.org/learn/prompt-engineering) and [*Advanced
+Prompt Engineering for
+Everyone*](https://www.coursera.org/learn/advanced-prompt-engineering-for-everyone) by Jules
+White at Vanderbilt University. These courses were how I first learned
+to work systematically with large language models. The material I
+present here has subsequently been organized and adapted from my
+original course notes.
+
+**Prompt patterns** are reusable strategies for interacting with large
+language models — or, as I would call it, *“the art of talking to the
+machine.”* For users and developers learning to work with LLMs, prompt
+patterns provide a systematic way of thinking about how to formulate
+instructions, guide the interaction and shape the resulting output. The
+idea follows the concept of design patterns in software engineering,
+where a general solution can be adapted to different problems and
+contexts [@white2023prompt].
+
+Although prompt patterns provide a systematic approach, interacting with
+a language model is not a rigid process. Different users develop their
+own ways of working with AI, depending on their background, tasks and
+preferences. What works well for one person or task may not necessarily
+work for another.
+
+# Prompt engineering
+
+A **prompt** is the input given to a large language model. It can
+contain a question or task, but also additional context, constraints,
+examples, or instructions about the expected output.
+
+**Prompt engineering** is the process of designing this input to guide
+the model towards a useful response. Some of the basic elements that can
+be specified in a prompt include:
+
+-   **task** — what should the model do?
+-   **context** — what information does it need?
+-   **constraints** — what should or should not be included?
+-   **output structure** — how should the response be presented?
+
+For example, instead of simply asking:
+
+> Explain CRISPR.
+
+the task can be made more specific:
+
+> Act as a molecular biologist. Explain CRISPR to a motivated
+> high-school student in three bullet points.
+
+Similarly, instead of:
+
+> Explain PCA.
+
+a more specific prompt might be:
+
+> Provide a mathematically grounded explanation of PCA for an R
+> programmer. Include eigenvectors, variance decomposition, and a short
+> R code example.
+
+The additional information communicates not only the topic, but also the
+expected level, focus and form of the response.
+
+# Prompt patterns
+
+Prompt patterns provide reusable strategies for structuring interactions
+with a language model. Rather than defining one particular prompt, they
+describe a general approach or strategy that can be adapted to different
+tasks [@white2023prompt].
+
+## Persona pattern
+
+The **Persona Pattern** asks the model to adopt a particular role or
+perspective. This can influence the terminology, level of expertise and
+type of response.
+
+> Act as a senior bioinformatician experienced in single-cell
+> epigenomics. Provide actionable suggestions.
+
+## Audience Persona pattern
+
+The **Audience Persona Pattern** specifies who the response is intended
+for so that the explanation can be adapted to their background.
+
+> Assume I am new to machine learning but familiar with R and
+> statistics. Explain what a transformer is.
+
+The distinction is useful: the Persona Pattern describes the perspective
+from which the model should respond, whereas the Audience Persona
+Pattern describes the person for whom the response is intended.
+
+## Question Refinement pattern
+
+Sometimes the original question itself has been poorly specified. The
+**Question Refinement Pattern** asks the model to improve or clarify the
+question before answering it.
+
+> When I ask you something unclear, suggest a more precise version first
+> and ask whether I want to use it.
+
+This can be useful for technical problems where small differences in the
+formulation of the question can change what is actually being asked.
+
+## Flipped Interaction pattern
+
+Normally, the user asks questions and the model answers them. The
+**Flipped Interaction Pattern** reverses this relationship: the model
+asks the user questions until it has enough information to perform the
+task.
+
+> Ask me clarifying questions until you can design a workshop outline.
+> When you have enough information, present the final outline.
+
+This is useful when the information required to complete a task is not
+known in advance or would be cumbersome to specify in a single prompt.
+
+## Few-shot prompting
+
+With **few-shot prompting**, examples of the desired input-output
+relationship are included directly in the prompt. The model can then
+infer the pattern from those examples.
+
+For example:
+
+> Input: ATGCGT Output: reversed sequence: TGCGTA
+>
+> Input: AACCAT Output:
+
+Examples can be particularly useful for classification, extraction,
+transformation, or formatting tasks.
+
+## Chain-of-Thought prompting
+
+**Chain-of-Thought prompting** encourages the model to work through
+intermediate reasoning steps before producing an answer.
+
+Something like:
+
+> Show your reasoning in short bullet points and end with a final
+> answer.
+
+The idea is to break the problem down into smaller steps instead of
+asking the model to produce the final answer straight away.
+
+## ReAct
+
+**ReAct** is an approach that combines reasoning with actions performed
+using external tools. Instead of producing an answer only from the
+prompt and its internal context, the model can alternate between
+deciding what to do, performing an action, and using the result to
+continue the task.
+
+Conceptually:
+
+**reason → act → inspect → continue → answer**
+
+For example, with access to appropriate tools:
+
+> Search PubMed for recent papers on DNA methylation in HSCs, summarize
+> the main findings, and explain how they relate to AML biology.
+
+This introduces the important idea that interactions **with language
+models** can extend beyond prompting itself: models can be connected to
+tools and external information sources.
+
+## Alternative Approaches pattern
+
+Rather than asking for one solution, the **Alternative Approaches
+Pattern** asks the model to explore several possible strategies.
+
+> Propose five different ways to create a metadata-capture workflow for
+> a small lab, ranked by feasibility.
+
+This can be useful for brainstorming, planning and problems where there
+is no single obvious solution.
+
+## Evaluation pattern
+
+The **Evaluation Pattern** provides explicit criteria against which an
+output should be assessed.
+
+> Here are three example abstracts. Score the following abstract for
+> clarity (1–5), structure (1–5), and scientific accuracy (1–5). Provide
+> a justification for each score.
+
+Explicit criteria make the basis of the evaluation clearer and can make
+different outputs easier to compare.
+
+## Game Play pattern
+
+The **Game Play Pattern** introduces rules that turn an interaction into
+a structured exercise.
+
+> We are going to play a game. I describe a laboratory workflow. You
+> identify five mistakes a junior researcher might make and suggest how
+> each could be avoided.
+
+The rules constrain the interaction while still allowing the content to
+change between rounds.
+
+## Recipe pattern
+
+The **Recipe Pattern** is useful when part of a sequence or procedure is
+already known and the model is asked to complete or refine it.
+
+For example:
+
+> Complete the missing steps in this workflow:
+>
+> 1.  Load FASTQ files
+> 2.  \[...\]
+> 3.  Align reads using BWA
+> 4.  \[...\]
+> 5.  Generate a BAM summary
+
+This allows existing knowledge or constraints to be incorporated rather
+than asking the model to generate an entire workflow from scratch.
+
+## Template pattern
+
+The **Template Pattern** specifies the structure in which information
+should be returned.
+
+For example:
+
+> **Mutation Summary** Gene: `<GENE>` Variant: `<VARIANT>` Impact:
+> `<IMPACT>` Evidence: `<QUOTES FROM ARTICLE>`
+
+Templates are useful when similar information needs to be extracted or
+presented consistently across multiple inputs.
+
+# Text and output manipulation
+
+Some patterns focus less on the task itself and more on how information
+is transformed or returned.
+
+## Semantic Filter
+
+A **Semantic Filter** specifies information that should be removed or
+transformed while preserving the remainder.
+
+> Remove all dates from the text but change as little as possible.
+
+## Meta-language pattern
+
+The **Meta-language Pattern** defines a shorthand or small
+domain-specific vocabulary that has a particular meaning within the
+interaction.
+
+> When I write `QC-S1`, interpret it as: run initial QC on sequencing
+> files and summarize FastQC results.
+
+This allows frequently used instructions to be represented using a more
+compact notation.
+
+## Tail Generation
+
+**Tail Generation** automatically adds a specified operation or output
+after the main task has been completed.
+
+> After summarizing the paper, append a list of unresolved questions.
+
+# Verification patterns
+
+Other patterns attempt to introduce checking or verification into the
+interaction.
+
+## Cognitive Verifier pattern
+
+The **Cognitive Verifier Pattern** breaks a larger question into
+additional questions whose answers can be used to construct the final
+response [@white2023prompt].
+
+Rather than answering the original question immediately, the model first
+identifies additional questions that need to be answered. The answers to
+these questions are then combined to produce the final response.
+
+Unlike Chain-of-Thought, which focuses on the reasoning steps used to
+solve a problem, the Cognitive Verifier Pattern focuses on **which
+additional questions need to be answered before the original question
+can be answered well**.
+
+## Fact Check List pattern
+
+The **Fact Check List Pattern** asks the model to identify factual
+statements in its output that should be checked.
+
+For example:
+
+> Extract the factual claims from the response and list those that
+> require verification.
+
+Importantly, identifying claims that require verification is not the
+same as independently verifying them. The claims still need to be
+checked against appropriate sources.
+
+# Prompt patterns at a glance
+
+| Pattern | Short description | Intended use |
+|------------------------|------------------------|------------------------|
+| **Persona** | Ask the model to respond from a particular role or perspective. | Adapt expertise, terminology or perspective. |
+| **Audience Persona** | Specify who the response is intended for. | Adapt explanations to the reader's background. |
+| **Question Refinement** | Ask the model to improve or clarify the original question. | Turn vague or poorly specified questions into more useful ones. |
+| **Flipped Interaction** | Let the model ask questions before completing the task. | Gather information that is missing from the initial prompt. |
+| **Few-shot** | Provide examples of the desired input-output relationship. | Guide classification, extraction, transformation or formatting. |
+| **Chain-of-Thought** | Encourage intermediate reasoning before producing an answer. | Work through problems that require several reasoning steps. |
+| **ReAct** | Combine reasoning with actions using external tools. | Perform tasks that require information retrieval or other external actions. |
+| **Alternative Approaches** | Ask for several possible solutions rather than one. | Explore options when there is no obvious single approach. |
+| **Evaluation** | Define criteria against which an output should be assessed. | Compare or assess outputs systematically. |
+| **Game Play** | Define rules for a structured interaction. | Create exercises, simulations or iterative interactions. |
+| **Recipe** | Provide part of a procedure and ask the model to complete it. | Extend or refine an existing workflow or sequence. |
+| **Template** | Specify the structure of the desired output. | Produce consistent structured outputs. |
+| **Semantic Filter** | Remove or transform selected information while preserving the rest. | Modify text according to semantic criteria. |
+| **Meta-language** | Define shorthand with a specific meaning in the interaction. | Reuse complex or frequently repeated instructions. |
+| **Tail Generation** | Automatically append a specified operation or output. | Add a consistent follow-up to repeated tasks. |
+| **Cognitive Verifier** | Break a question into additional questions before constructing the answer. | Identify information that needs to be resolved before answering a complex question. |
+| **Fact Check List** | Identify factual claims in an output that should be checked. | Make verification requirements explicit. |
+
+# References
+
+White, J., Fu, Q., Hays, S., Sandborn, M., Olea, C., Gilbert, H.,
+Elnashar, A., Spencer-Smith, J., & Schmidt, D. C. (2023). *A Prompt
+Pattern Catalog to Enhance Prompt Engineering with ChatGPT*.
+arXiv:2302.11382.

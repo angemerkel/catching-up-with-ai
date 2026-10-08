@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Angelika Merkel">
 
-<title>Catching up with AI</title>
+<title>AI developments &amp; updates – Catching up with AI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-44a412e410507888c4469fe221759d6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../notebook/notes-reflections-updates.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-44a412e410507888c4469fe221759d6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -82,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Catching up with AI</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebook/notes-reflections-updates.html">Notebook</a></li><li class="breadcrumb-item"><a href="../notebook/ai-developments-updates.html"><span class="chapter-title">AI developments &amp; updates</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -97,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Catching up with AI</a> 
+      <a href="../">Catching up with AI</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -109,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Catching up with AI</span></a>
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Catching up with AI</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -123,22 +122,22 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.1 Prompt engineering and prompt patterns</span></a>
+  <a href="../chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.1 Prompt engineering and prompt patterns</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/02-working-with-ai/2.2-working-with-data-documents-and-files.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.2 Working with data, documents and files</span></a>
+  <a href="../chapters/02-working-with-ai/2.2-working-with-data-documents-and-files.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.2 Working with data, documents and files</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/02-working-with-ai/2.3-human-ai-workflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.3 Human–AI workflows</span></a>
+  <a href="../chapters/02-working-with-ai/2.3-human-ai-workflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.3 Human–AI workflows</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/02-working-with-ai/2.4-verification-and-critical-use.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.4 Verification and critical use</span></a>
+  <a href="../chapters/02-working-with-ai/2.4-verification-and-critical-use.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.4 Verification and critical use</span></a>
   </div>
 </li>
       </ul>
@@ -154,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/03-building-with-ai/3.1-configured-ai-assistants.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.1 Configured AI assistants</span></a>
+  <a href="../chapters/03-building-with-ai/3.1-configured-ai-assistants.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.1 Configured AI assistants</span></a>
   </div>
 </li>
       </ul>
@@ -170,12 +169,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebook/notes-reflections-updates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notes, reflections &amp; updates</span></a>
+  <a href="../notebook/notes-reflections-updates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notes, reflections &amp; updates</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebook/ai-developments-updates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI developments &amp; updates</span></a>
+  <a href="../notebook/ai-developments-updates.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">AI developments &amp; updates</span></a>
   </div>
 </li>
       </ul>
@@ -185,37 +184,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#why-this-site-exists" id="toc-why-this-site-exists" class="nav-link active" data-scroll-target="#why-this-site-exists">Why this site exists</a></li>
-  <li><a href="#how-i-started" id="toc-how-i-started" class="nav-link" data-scroll-target="#how-i-started">How I started</a></li>
-  <li><a href="#how-this-notebook-is-organised" id="toc-how-this-notebook-is-organised" class="nav-link" data-scroll-target="#how-this-notebook-is-organised">How this notebook is organised</a></li>
-  <li><a href="#notes-reflections-and-updates" id="toc-notes-reflections-and-updates" class="nav-link" data-scroll-target="#notes-reflections-and-updates">Notes, reflections and updates</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebook/notes-reflections-updates.html">Notebook</a></li><li class="breadcrumb-item"><a href="../notebook/ai-developments-updates.html"><span class="chapter-title">AI developments &amp; updates</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Catching up with AI</h1>
-<p class="subtitle lead">A learning notebook on generative AI</p>
+<h1 class="title"><span class="chapter-title">AI developments &amp; updates</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Angelika Merkel </p>
-          </div>
-  </div>
     
   
     
@@ -226,52 +209,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="why-this-site-exists" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="why-this-site-exists">Why this site exists</h2>
-<p>For the last 15 years, I have worked in <strong>bioinformatics</strong> and <strong>biomedical data science</strong>, developing data analysis pipelines and supporting scientific research. During that time, artificial intelligence evolved rapidly — particularly in areas such as deep learning and, more recently, generative AI.</p>
-<p>Like many scientists working with data, I realised at some point that I had developed a <strong>knowledge gap</strong>. I was comfortable with statistical modelling, genomic data analysis and scientific computing, but the knowledge around <strong>large language models (LLMs)</strong> and <strong>AI-assisted workflows</strong> had largely evolved outside my day-to-day work.</p>
-<p>This notebook is my way of catching up. It collects my notes along the way — part learning log, part technical guide. I try to document not just <em>what</em> I learn, but also <em>how</em> I learn it, what I find confusing and what actually turns out to be useful in practice.</p>
-</section>
-<section id="how-i-started" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="how-i-started">How I started</h2>
-<p>I started exploring generative AI with tools such as <a href="https://chatgpt.com">ChatGPT</a> and <a href="https://www.perplexity.ai">Perplexity</a>, followed tutorials from the <a href="https://academy.openai.com">OpenAI Academy</a> and took online courses on prompt engineering, custom AI assistants and AI-assisted data analysis.</p>
-<p>But I wanted to understand more than just how to use these tools. How do they actually work? How reliable are they? And how might they be integrated into computational and scientific workflows? This also made me realise that I needed a more systematic understanding of machine learning and neural networks. Over the years, I had picked up bits and pieces, but never really developed a solid foundation in either.</p>
-<p>At the same time, I wanted to learn how to work with AI coding assistants, as this is clearly becoming an increasingly relevant skill in software development. I was also particularly interested in understanding what AI could actually contribute to scientific research.</p>
-<p>AI is often presented as something that will fundamentally change how we work and do research. Undoubtedly, it is a powerful technology, but generative AI is still relatively young. Many of the tools, methods and skills for working with it are still being developed, and the field itself is still taking shape. At the same time, the limitations and risks of AI — from unreliable outputs and bias to questions around privacy, accountability and responsible use — are becoming increasingly important to understand. It is therefore not always easy to distinguish genuine progress from the surrounding hype.</p>
-<!-- For me, this notebook is about **understanding AI beyond the hype: how it works, what it can and cannot do, how to work with it, and what it might actually contribute to scientific research.** -->
-</section>
-<section id="how-this-notebook-is-organised" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="how-this-notebook-is-organised">How this notebook is organised</h2>
-<p>The material is organised into five broad areas:</p>
-<ol type="1">
-<li><strong>Foundations</strong> — Learning the foundations of machine learning and neural networks, and understanding the concepts behind modern generative AI.</li>
-<li><strong>Working with AI</strong> — Exploring prompt engineering, human–AI workflows, data analysis and the critical use of AI assistants.</li>
-<li><strong>Building with AI</strong> — Learning how AI can become part of computational work, from configured assistants and AI-assisted coding to grounding models with data and building AI-enabled workflows.</li>
-<li><strong>AI for Science</strong> — Exploring how AI can support literature discovery, scientific reasoning, data analysis and communication, and where it may become useful as a research tool.</li>
-<li><strong>Responsible AI</strong> — Examining the limitations, risks, ethical considerations and legal frameworks surrounding AI, particularly in scientific research.</li>
-</ol>
-<p>This notebook is not intended as a comprehensive guide to artificial intelligence. The chapters simply reflect the topics I am interested in and want to learn more about.</p>
-<!--
-TODO: Activate once new entries are being added regularly.
-
-## Latest entry {.unnumbered}
-
-**DATE — [TITLE](path/to/page.qmd)**
-
-Short description.
--->
-</section>
-<section id="notes-reflections-and-updates" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="notes-reflections-and-updates">Notes, reflections and updates</h2>
-<p>AI is developing quickly, and my own understanding is (hopefully) evolving with it. Rather than continually rewriting earlier material, I want to preserve the context in which I learned something and add new observations or corrections as my understanding changes.</p>
-<p>In addition to the main chapters, I have included two sections for notes and updates:</p>
-<ul>
-<li><strong>Notes, Reflections &amp; Updates</strong> — Personal observations, experiments, open questions and changes in my understanding.</li>
-<li><strong>AI Developments &amp; Updates</strong> — Selected developments in AI technology, scientific applications and regulation that are relevant to the subjects explored here.</li>
-</ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -675,11 +614,11 @@ Short description.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../notebook/notes-reflections-updates.html" class="pagination-link" aria-label="Notes, reflections &amp; updates">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Notes, reflections &amp; updates</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html" class="pagination-link" aria-label="2.1 Prompt engineering and prompt patterns">
-        <span class="nav-page-text"><span class="chapter-title">2.1 Prompt engineering and prompt patterns</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

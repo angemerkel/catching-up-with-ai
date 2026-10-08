@@ -1,0 +1,80 @@
+---
+title: 2.2 Working with data, documents and files
+date: "2025-11-18"
+---
+
+These notes are based on the Coursera course [*Advanced Data Analysis with ChatGPT*](https://www.coursera.org/learn/advanced-data-analysis-with-chatgpt) by Jules White at Vanderbilt University. After learning how to formulate prompts and use prompt patterns, the next step is learning how to bring information into the interaction and work with it.
+
+Working with datasets, documents and other files shifts the focus from **how to formulate a prompt** to **what information the model has available and how it is presented**.
+
+Files can provide both the material to work with and information that the model needs to complete a task. This might involve analysing datasets, extracting information from documents, comparing sources or transforming files. A useful first step is to inspect the material rather than immediately requesting a final result.
+
+# Working with data
+
+When working with a data file, it is useful to understand its structure before starting the analysis.
+
+A simple workflow might be:
+
+**load → inspect → clean and transform → analyse → visualise → interpret**
+
+For example, imagine uploading a table containing gene-expression measurements for a set of samples.
+
+First, inspect the data:
+
+> Inspect this dataset. Report its dimensions, column names and data types, identify missing values, and provide basic summary statistics. Do not perform any further analysis yet.
+
+Next, examine whether the data need cleaning or transformation:
+
+> Check whether the expression values require transformation and whether there are obvious problems with the data. Explain what you find before making any changes.
+
+Then, perform the analysis:
+
+> Compare the two experimental groups and identify genes showing the largest differences in expression. Create an appropriate visualisation of the results.
+
+Finally, interpret the results:
+
+> Explain what the visualisation shows and identify any patterns or observations that should be investigated further.
+
+In this way, intermediate results can be inspected before deciding what to do next.
+
+Importantly, the language model does not necessarily perform all these operations itself. Depending on the environment, it can use computational tools such as Python to manipulate data, perform calculations and create visualisations. The model can help formulate the analysis, generate or execute code, and interpret the resulting output.
+
+# Working with documents
+
+Documents can be used in different ways depending on the task. A useful distinction is between treating a **document as an object** and treating a **document as knowledge**.
+
+When working with a **document as an object**, the task concerns the document itself, such as extracting text, reorganising sections or changing its format.
+
+> Extract the tables from this document and return them in a structured format.
+
+When working with a **document as knowledge**, its content provides information needed to answer a question or perform another task.
+
+> Read this paper and summarise the main findings, methods and limitations.
+
+Several documents can also be brought together:
+
+> Compare the conclusions of these three papers. Identify where they agree, where they differ, and which evidence each paper provides for its conclusions.
+
+# Bringing information into the conversation
+
+When working with larger documents or several sources, it can be useful to extract relevant information and bring it into the conversation in a more manageable form.
+
+Also, the amount of information that can be provided to a language model at once is limited by its **context window**. Long documents or collections of documents may therefore need to be summarised or divided into smaller pieces. This can also help keep the interaction focused on information relevant to the task.
+
+For example:
+
+> Extract the information relevant to this question and present it in a form that I can quickly verify.
+
+For larger collections, an index or structured overview can help organise the information while retaining its source:
+
+> Create a table listing the relevant information, the document it came from, and where in the document it was found.
+
+For example:
+
+| Information          | Source     | Location        |
+|----------------------|------------|-----------------|
+| Finding or statement | Document A | Page 4          |
+| Finding or statement | Document B | Results section |
+| Finding or statement | Document C | Table 2         |
+
+Keeping information connected to its original source makes it easier to inspect, verify and return to the source when necessary. This is particularly important when information is summarised or combined across several documents.

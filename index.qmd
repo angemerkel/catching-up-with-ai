@@ -3,24 +3,56 @@ title: "Catching up with AI"
 subtitle: "A learning notebook on generative AI"
 ---
 
-
 ## Why this site exists {.unnumbered}
 
+For the last 15 years, I have worked in **bioinformatics** and **biomedical data science**, developing data analysis pipelines and supporting scientific research. During that time, artificial intelligence evolved rapidly — particularly in areas such as deep learning and, more recently, generative AI.
 
-For the last 15 years I have worked in **bioinformatics** and **biomedical data science**, building data analysis pipelines and supporting scientific research. During that time, artificial intelligence evolved rapidly — especially in areas like **deep learning** and, more recently, **generative AI**.
+Like many scientists working with data, I realised at some point that I had developed a **knowledge gap**. I was comfortable with statistical modelling, genomic data analysis and scientific computing, but the knowledge around **large language models (LLMs)** and **AI-assisted workflows** had largely evolved outside my day-to-day work.
 
-Like many scientists working with data, I realized at some point that I had developed a **knowledge gap**. I was comfortable with statistical modeling, genomics data analysis, and scientific computing — but the whole ecosystem around **large language models (LLMs)** and **AI-assisted workflows** had largely evolved outside my day-to-day work.
+This notebook is my way of catching up. It collects my notes along the way — part learning log, part technical guide. I try to document not just *what* I learn, but also *how* I learn it, what I find confusing and what actually turns out to be useful in practice.
 
-This notebook is my way of catching up. It collects my notes along the way — part learning log, part technical guide.  I try to document not just *what* I learn, but also *how* I do it, what I find confusing, and what actually turns out to be useful in practice. 
+## How I started {.unnumbered}
 
-Here is the rough path I followed:
+I started exploring generative AI with tools such as [ChatGPT](https://chatgpt.com) and [Perplexity](https://www.perplexity.ai), followed tutorials from the [OpenAI Academy](https://academy.openai.com) and took online courses on prompt engineering, custom AI assistants and AI-assisted data analysis.
 
-- [A short history of generative AI](History.qmd) – I started by simply using using tools *ChatGPT* [[link]](https://chatgpt.com) and *Perplexity* [[link]](https://www.perplexity.ai) to get some background: how we got here, which milestones really mattered, and who the main players and models are today.
+But I wanted to understand more than just how to use these tools. How do they actually work? How reliable are they? And how might they be integrated into computational and scientific workflows? This also made me realise that I needed a more systematic understanding of machine learning and neural networks. Over the years, I had picked up bits and pieces, but never really developed a solid foundation in either.
 
-- [ChatGPT, the basics](Prompt_engineering.qmd) – I subscribed to ChatGPT Pro (22 EUR/month) and worked through the beginner tutorials at the *OpenAI Academy* [[link]](https://academy.openai.com) (free). This was quick but surprisingly solid to build a foundation and understand what the tool can do (and what not) and how to use the interface.
+At the same time, I wanted to learn how to work with AI coding assistants, as this is clearly becoming an increasingly relevant skill in software development. I was also particularly interested in understanding what AI could actually contribute to scientific research.
 
-- [Prompt engineering](Prompt_engineering.qmd) – To learn what I call *"The art of talking to the machine"*, I subscribed to *Coursera* [[link]](https://www.coursera.org) (42 EUR/month) and took some basic and advanced courses on prompt engineering by Jules White, including how to create custom AI assistants (Custom GPTs) and build trustworthy genAI. This is where I started to get some real insights
+AI is often presented as something that will fundamentally change how we work and do research. Undoubtedly, it is a powerful technology, but generative AI is still relatively young. Many of the tools, methods and skills for working with it are still being developed, and the field itself is still taking shape. At the same time, the limitations and risks of AI — from unreliable outputs and bias to questions around privacy, accountability and responsible use — are becoming increasingly important to understand. It is therefore not always easy to distinguish genuine progress from the surrounding hype.
 
-- [Data analysis workflows with ChatGPT](Data_analysis_with_ChatGPT.qmd) – Also by Jules White, these courses go deeper into practical workflows, showing how to use *ChatGPT (via Code Interpreter)* together with external tools for real data analysis tasks (and real magic).
- 
-- [Reflections](Risks_and_ethics.qmd) - A complication of insights and resources on how to provide appropriate rail guards for generative AI, AI agents and agentic AI and how (in my opinion) generative AI should be used ethically 
+<!-- For me, this notebook is about **understanding AI beyond the hype: how it works, what it can and cannot do, how to work with it, and what it might actually contribute to scientific research.** -->
+
+
+## How this notebook is organised {.unnumbered}
+
+The material is organised into five broad areas:
+
+1.  **Foundations** — Learning the foundations of machine learning and neural networks, and understanding the concepts behind modern generative AI.
+2.  **Working with AI** — Exploring prompt engineering, human–AI workflows, data analysis and the critical use of AI assistants.
+3.  **Building with AI** — Learning how AI can become part of computational work, from configured assistants and AI-assisted coding to grounding models with data and building AI-enabled workflows.
+4.  **AI for Science** — Exploring how AI can support literature discovery, scientific reasoning, data analysis and communication, and where it may become useful as a research tool.
+5.  **Responsible AI** — Examining the limitations, risks, ethical considerations and legal frameworks surrounding AI, particularly in scientific research.
+
+This notebook is not intended as a comprehensive guide to artificial intelligence. The chapters simply reflect the topics I am interested in and want to learn more about.
+
+
+<!--
+TODO: Activate once new entries are being added regularly.
+
+## Latest entry {.unnumbered}
+
+**DATE — [TITLE](path/to/page.qmd)**
+
+Short description.
+-->
+
+
+## Notes, reflections and updates {.unnumbered}
+
+AI is developing quickly, and my own understanding is (hopefully) evolving with it. Rather than continually rewriting earlier material, I want to preserve the context in which I learned something and add new observations or corrections as my understanding changes.
+
+In addition to the main chapters, I have included two sections for notes and updates:
+
+-   **Notes, Reflections & Updates** — Personal observations, experiments, open questions and changes in my understanding.
+-   **AI Developments & Updates** — Selected developments in AI technology, scientific applications and regulation that are relevant to the subjects explored here.

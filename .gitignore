@@ -1,9 +1,13 @@
-.Rproj.user
+# R / RStudio
+.Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
-_book/
+
+# Quarto
 .quarto/
+_book/
 
-
+# System files
+.DS_Store
 /.quarto/
