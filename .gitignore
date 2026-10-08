@@ -11,3 +11,6 @@ _book/
 # System files
 .DS_Store
 /.quarto/
+
+# Notes
+notes/backlog.md
