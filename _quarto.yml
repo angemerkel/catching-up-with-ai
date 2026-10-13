@@ -18,11 +18,12 @@ book:
     # ----------------------------------------
     # 01 — Foundations
     # ----------------------------------------
-    # - part: "01 — Foundations"
-    #   chapters:
-    #     - chapters/01-foundations/1.1-machine-learning.md
-    #     - chapters/01-foundations/1.2-neural-networks.md
-    #     - chapters/01-foundations/1.3-generative-ai.md
+    - part: "01 — Foundations"
+      chapters:
+        - chapters/01-foundations/1.1-a-short-history-of-ai.qmd
+    #     - chapters/01-foundations/1.2-machine-learning.md
+    #     - chapters/01-foundations/1.3-neural-networks.md
+    #     - chapters/01-foundations/1.4-generative-ai.md
 
     # ----------------------------------------
     # 02 — Working with AI

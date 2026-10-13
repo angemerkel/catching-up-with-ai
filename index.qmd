@@ -23,7 +23,6 @@ AI is often presented as something that will fundamentally change how we work an
 
 <!-- For me, this notebook is about **understanding AI beyond the hype: how it works, what it can and cannot do, how to work with it, and what it might actually contribute to scientific research.** -->
 
-
 ## How this notebook is organised {.unnumbered}
 
 The material is organised into five broad areas:
@@ -36,7 +35,7 @@ The material is organised into five broad areas:
 
 This notebook is not intended as a comprehensive guide to artificial intelligence. The chapters simply reflect the topics I am interested in and want to learn more about.
 
-
+```{=html}
 <!--
 TODO: Activate once new entries are being added regularly.
 
@@ -46,7 +45,7 @@ TODO: Activate once new entries are being added regularly.
 
 Short description.
 -->
-
+```
 
 ## Notes, reflections and updates {.unnumbered}
 

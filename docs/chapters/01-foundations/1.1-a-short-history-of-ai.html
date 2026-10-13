@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-12-16">
+
+<title>1.1 A short history of AI – Catching up with AI</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html" rel="next">
+<link href="../../index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-44a412e410507888c4469fe221759d6a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/01-foundations/1.1-a-short-history-of-ai.html">01 — Foundations</a></li><li class="breadcrumb-item"><a href="../../chapters/01-foundations/1.1-a-short-history-of-ai.html"><span class="chapter-title">1.1 A short history of AI</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Catching up with AI</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Catching up with AI</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">01 — Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/01-foundations/1.1-a-short-history-of-ai.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">1.1 A short history of AI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">02 — Working with AI</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.1 Prompt engineering and prompt patterns</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/02-working-with-ai/2.2-working-with-data-documents-and-files.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.2 Working with data, documents and files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/02-working-with-ai/2.3-human-ai-workflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.3 Human–AI workflows</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/02-working-with-ai/2.4-verification-and-critical-use.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.4 Verification and critical use</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">03 — Building with AI</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/03-building-with-ai/3.1-configured-ai-assistants.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.1 Configured AI assistants</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notebook</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notebook/notes-reflections-updates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Notes, reflections &amp; updates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notebook/ai-developments-updates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI developments &amp; updates</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#s1980s-the-foundations" id="toc-s1980s-the-foundations" class="nav-link active" data-scroll-target="#s1980s-the-foundations">1950s–1980s: The foundations</a></li>
+  <li><a href="#s2000s-statistical-machine-learning-and-neural-networks" id="toc-s2000s-statistical-machine-learning-and-neural-networks" class="nav-link" data-scroll-target="#s2000s-statistical-machine-learning-and-neural-networks">1990s–2000s: Statistical machine learning and neural networks</a></li>
+  <li><a href="#s-deep-learning-and-the-emergence-of-generative-ai" id="toc-s-deep-learning-and-the-emergence-of-generative-ai" class="nav-link" data-scroll-target="#s-deep-learning-and-the-emergence-of-generative-ai">2010s: Deep learning and the emergence of generative AI</a></li>
+  <li><a href="#the-beginning-of-the-large-language-model-era" id="toc-the-beginning-of-the-large-language-model-era" class="nav-link" data-scroll-target="#the-beginning-of-the-large-language-model-era">2018–2020: The beginning of the large language model era</a></li>
+  <li><a href="#foundation-models-and-generative-ai-become-widely-accessible" id="toc-foundation-models-and-generative-ai-become-widely-accessible" class="nav-link" data-scroll-target="#foundation-models-and-generative-ai-become-widely-accessible">2021–2023: Foundation models and generative AI become widely accessible</a></li>
+  <li><a href="#multimodal-ai-reasoning-models-and-ai-assistants" id="toc-multimodal-ai-reasoning-models-and-ai-assistants" class="nav-link" data-scroll-target="#multimodal-ai-reasoning-models-and-ai-assistants">2024–2025: Multimodal AI, reasoning models and AI assistants</a></li>
+  <li><a href="#major-companies-models-and-tools" id="toc-major-companies-models-and-tools" class="nav-link" data-scroll-target="#major-companies-models-and-tools">Major companies, models and tools</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/01-foundations/1.1-a-short-history-of-ai.html">01 — Foundations</a></li><li class="breadcrumb-item"><a href="../../chapters/01-foundations/1.1-a-short-history-of-ai.html"><span class="chapter-title">1.1 A short history of AI</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">1.1 A short history of AI</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">16 December 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Artificial intelligence (AI) has been around for more than 70 years, but the release of ChatGPT in 2022 brought it to the attention of a much wider audience. What has changed is not only what computers can do, but also how researchers approach the problem of making machines perform tasks that we associate with intelligence.</p>
+<p>When I started exploring generative AI, I wanted to understand more about how we got here. The following is a brief overview of the major developments and milestones, along with the companies and models that have shaped today’s AI landscape.</p>
+<section id="s1980s-the-foundations" class="level2">
+<h2 class="anchored" data-anchor-id="s1980s-the-foundations">1950s–1980s: The foundations</h2>
+<p>Early AI research focused on whether machines could imitate human intelligence, primarily through symbolic reasoning and rule-based systems. Researchers also began exploring artificial neural networks and methods for learning from data.</p>
+<ul>
+<li><p><strong>1950</strong> – Alan Turing publishes <em>Computing Machinery and Intelligence</em>, proposing what later became known as the <strong>Turing Test</strong> as a way to examine machine intelligence <span class="citation" data-cites="turing1950">(<a href="#ref-turing1950" role="doc-biblioref">Turing 1950</a>)</span>.</p></li>
+<li><p><strong>1956</strong> – The term <strong>artificial intelligence</strong> is introduced in the proposal for the Dartmouth Summer Research Project, organised by John McCarthy, Marvin Minsky, Nathaniel Rochester and Claude Shannon. The workshop is generally considered a founding event of AI research.</p></li>
+<li><p><strong>1960s–1970s</strong> – Early conversational systems such as <strong>ELIZA</strong> (1966, Joseph Weizenbaum, MIT) simulate conversation using pattern matching and predefined rules.</p></li>
+<li><p><strong>1970s–1980s</strong> – <strong>Expert systems</strong>, such as MYCIN at Stanford, use explicitly encoded knowledge and rules to support decision-making in specialised domains.</p></li>
+<li><p><strong>1986</strong> – Rumelhart, Hinton and Williams popularise <strong>backpropagation</strong> for training multilayer neural networks, laying important groundwork for modern deep learning <span class="citation" data-cites="rumelhart1986">(<a href="#ref-rumelhart1986" role="doc-biblioref">Rumelhart, Hinton, and Williams 1986</a>)</span>.</p></li>
+</ul>
+</section>
+<section id="s2000s-statistical-machine-learning-and-neural-networks" class="level2">
+<h2 class="anchored" data-anchor-id="s2000s-statistical-machine-learning-and-neural-networks">1990s–2000s: Statistical machine learning and neural networks</h2>
+<p>Statistical machine learning became increasingly important, while advances in neural-network architectures provided new approaches to image recognition and sequential data. However, progress in deep learning remained constrained by computing power and the availability of training data.</p>
+<ul>
+<li><p><strong>1990s–2000s</strong> – Statistical methods, including support vector machines, decision trees and ensemble methods, become widely used for classification, prediction and pattern recognition.</p></li>
+<li><p><strong>1997</strong> – Hochreiter and Schmidhuber introduce <strong>Long Short-Term Memory (LSTM)</strong> networks, designed to capture long-range dependencies in sequential data <span class="citation" data-cites="hochreiter1997">(<a href="#ref-hochreiter1997" role="doc-biblioref">Hochreiter and Schmidhuber 1997</a>)</span>.</p></li>
+<li><p><strong>1998</strong> – Yann LeCun and colleagues demonstrate <strong>convolutional neural networks (CNNs)</strong> for handwritten character recognition with LeNet-5 <span class="citation" data-cites="lecun1998">(<a href="#ref-lecun1998" role="doc-biblioref">LeCun et al. 1998</a>)</span>.</p></li>
+<li><p><strong>2006</strong> – Geoffrey Hinton and colleagues demonstrate methods for training deep neural networks, contributing to renewed interest in <strong>deep learning</strong> <span class="citation" data-cites="hinton2006">(<a href="#ref-hinton2006" role="doc-biblioref">Hinton, Osindero, and Teh 2006</a>)</span>.</p></li>
+</ul>
+</section>
+<section id="s-deep-learning-and-the-emergence-of-generative-ai" class="level2">
+<h2 class="anchored" data-anchor-id="s-deep-learning-and-the-emergence-of-generative-ai">2010s: Deep learning and the emergence of generative AI</h2>
+<p>Larger datasets, improved algorithms and powerful graphics processing units (GPUs) enabled major advances in deep learning, particularly in image recognition, speech processing and natural language processing. New architectures also expanded the possibilities for generating content.</p>
+<ul>
+<li><p><strong>2012</strong> – Alex Krizhevsky, Ilya Sutskever and Geoffrey Hinton achieve a major improvement in the ImageNet image classification competition with <strong>AlexNet</strong>, demonstrating the potential of deep CNNs trained using GPUs <span class="citation" data-cites="krizhevsky2012">(<a href="#ref-krizhevsky2012" role="doc-biblioref">Krizhevsky, Sutskever, and Hinton 2012</a>)</span>.</p></li>
+<li><p><strong>2014</strong> – Ian Goodfellow and colleagues introduce <strong>Generative Adversarial Networks (GANs)</strong>, which train two competing neural networks to generate realistic data <span class="citation" data-cites="goodfellow2014">(<a href="#ref-goodfellow2014" role="doc-biblioref">Goodfellow et al. 2014</a>)</span>.</p></li>
+<li><p><strong>2014</strong> – Kingma and Welling introduce <strong>Variational Autoencoders (VAEs)</strong>, another influential approach to deep generative modelling <span class="citation" data-cites="kingma2014">(<a href="#ref-kingma2014" role="doc-biblioref">Kingma and Welling 2014</a>)</span>.</p></li>
+<li><p><strong>2015</strong> – <strong>OpenAI</strong> is founded as an AI research organisation.</p></li>
+<li><p><strong>2017</strong> – Vaswani and colleagues introduce the <strong>Transformer architecture</strong> in <em>Attention Is All You Need</em>. Based on attention mechanisms, transformers enable more parallelised training than earlier recurrent approaches and become central to modern large language models <span class="citation" data-cites="vaswani2017">(<a href="#ref-vaswani2017" role="doc-biblioref">Vaswani et al. 2017</a>)</span>.</p></li>
+</ul>
+</section>
+<section id="the-beginning-of-the-large-language-model-era" class="level2">
+<h2 class="anchored" data-anchor-id="the-beginning-of-the-large-language-model-era">2018–2020: The beginning of the large language model era</h2>
+<p>Transformer-based architectures made it possible to train models on increasingly large text datasets. Pretraining on general-purpose data, followed by adaptation to specific tasks, became a central approach in natural language processing.</p>
+<ul>
+<li><p><strong>2018</strong> – Google introduces <strong>BERT (Bidirectional Encoder Representations from Transformers)</strong>, demonstrating the effectiveness of bidirectional pretraining for language understanding.</p></li>
+<li><p><strong>2018</strong> – OpenAI introduces <strong>GPT (Generative Pre-trained Transformer)</strong>, combining transformer-based language modelling with generative pretraining.</p></li>
+<li><p><strong>2018–2019</strong> – <strong>Hugging Face</strong> develops its open-source <strong>Transformers</strong> library, making pretrained language models easier to access and reuse. Together with the Hugging Face Hub, it helps establish an open ecosystem for sharing models and datasets <span class="citation" data-cites="wolf2020">(<a href="#ref-wolf2020" role="doc-biblioref">Wolf et al. 2020</a>)</span>.</p></li>
+<li><p><strong>2019</strong> – OpenAI releases <strong>GPT-2</strong>, demonstrating improved text generation. Google introduces <strong>T5</strong>, which treats different natural language processing tasks as text-to-text problems.</p></li>
+<li><p><strong>2020</strong> – OpenAI introduces <strong>GPT-3</strong>, a language model with 175 billion parameters, demonstrating improved few-shot learning across a range of language tasks <span class="citation" data-cites="brown2020">(<a href="#ref-brown2020" role="doc-biblioref">Brown et al. 2020</a>)</span>.</p></li>
+<li><p><strong>2020</strong> – Research on <strong>denoising diffusion probabilistic models</strong> provides an important foundation for later image-generation systems <span class="citation" data-cites="ho2020">(<a href="#ref-ho2020" role="doc-biblioref">Ho, Jain, and Abbeel 2020</a>)</span>.</p></li>
+</ul>
+</section>
+<section id="foundation-models-and-generative-ai-become-widely-accessible" class="level2">
+<h2 class="anchored" data-anchor-id="foundation-models-and-generative-ai-become-widely-accessible">2021–2023: Foundation models and generative AI become widely accessible</h2>
+<p>Large pretrained models increasingly serve as the basis for applications across different tasks. Meanwhile, conversational interfaces and image-generation tools bring generative AI to a much wider audience.</p>
+<ul>
+<li><p><strong>2021</strong> – The concept of <strong>foundation models</strong> gains prominence, describing models trained on broad datasets that can be adapted to different tasks <span class="citation" data-cites="bommasani2021">(<a href="#ref-bommasani2021" role="doc-biblioref">Bommasani et al. 2021</a>)</span>. <strong>Anthropic</strong> is founded, with a focus on AI safety, alignment and interpretability.</p></li>
+<li><p><strong>2022</strong> – OpenAI releases <strong>DALL·E 2</strong>, while <strong>Stable Diffusion</strong> makes text-to-image generation more widely accessible.</p></li>
+<li><p><strong>November 2022</strong> – OpenAI launches <strong>ChatGPT</strong>, bringing conversational interfaces based on large language models to a broad public audience.</p></li>
+<li><p><strong>2023</strong> – OpenAI releases <strong>GPT-4</strong>, expanding the capabilities of the GPT family, including support for image input.</p></li>
+<li><p><strong>2023</strong> – <strong>Anthropic</strong> introduces Claude, <strong>Meta</strong> releases Llama and Llama 2, and <strong>Google DeepMind</strong> introduces Gemini, expanding the range of competing language models.</p></li>
+<li><p><strong>2023</strong> – Generative AI becomes increasingly integrated into software development and productivity tools, including <strong>GitHub Copilot</strong> and <strong>Microsoft Copilot</strong>.</p></li>
+</ul>
+</section>
+<section id="multimodal-ai-reasoning-models-and-ai-assistants" class="level2">
+<h2 class="anchored" data-anchor-id="multimodal-ai-reasoning-models-and-ai-assistants">2024–2025: Multimodal AI, reasoning models and AI assistants</h2>
+<p>Generative AI moves beyond text-based chatbots. Models increasingly support multiple types of input and output, while advances in reasoning and tool integration expand what AI assistants can do.</p>
+<ul>
+<li><p><strong>2024</strong> – OpenAI introduces <strong>GPT-4o</strong>, supporting real-time interaction with text, images and audio. Google’s <strong>Gemini 1.5</strong> and Anthropic’s <strong>Claude 3</strong> demonstrate further advances in multimodal capabilities and long-context processing.</p></li>
+<li><p><strong>2024</strong> – OpenAI introduces the <strong>o1</strong> model family, using additional computation during inference to improve performance on reasoning tasks.</p></li>
+<li><p><strong>December 2024</strong> – <strong>DeepSeek-V3</strong> demonstrates competitive performance using a <strong>Mixture-of-Experts (MoE)</strong> architecture and techniques to improve training and inference efficiency <span class="citation" data-cites="deepseek2024">(<a href="#ref-deepseek2024" role="doc-biblioref">DeepSeek-AI 2024</a>)</span>.</p></li>
+<li><p><strong>January 2025</strong> – <strong>DeepSeek-R1</strong> attracts attention for its reasoning capabilities and use of reinforcement learning, contributing to the growing ecosystem of <strong>open-weight models</strong> <span class="citation" data-cites="deepseek2025">(<a href="#ref-deepseek2025" role="doc-biblioref">DeepSeek-AI 2025</a>)</span>.</p></li>
+<li><p><strong>2025</strong> – AI coding assistants, including <strong>GitHub Copilot</strong>, <strong>Cursor</strong>, <strong>Claude Code</strong> and <strong>OpenAI Codex</strong>, increasingly support software development beyond code completion.</p></li>
+<li><p><strong>2025</strong> – AI systems increasingly combine language models with external tools, information retrieval and multi-step workflows, driving interest in <strong>AI agents</strong> and more autonomous assistants.</p></li>
+</ul>
+</section>
+<section id="major-companies-models-and-tools" class="level2">
+<h2 class="anchored" data-anchor-id="major-companies-models-and-tools">Major companies, models and tools</h2>
+<p>Generative AI has created a diverse landscape of research organisations, model developers, technology providers and user-facing applications. Some companies develop their own foundation models, while others build applications or infrastructure around existing models.</p>
+<p>The following table provides a selection of major players and their contributions as of December 2025.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Company / organisation</th>
+<th>Key contributions</th>
+<th>Notable models / tools</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>OpenAI</strong></td>
+<td>Large language models, image generation, reasoning models</td>
+<td>GPT series, o-series, DALL·E, ChatGPT, Codex</td>
+</tr>
+<tr class="even">
+<td><strong>Google / Google DeepMind</strong></td>
+<td>Transformer research, language and multimodal models</td>
+<td>BERT, T5, Gemini, Imagen, Gemini app</td>
+</tr>
+<tr class="odd">
+<td><strong>Anthropic</strong></td>
+<td>Language models, AI safety and alignment research</td>
+<td>Claude, Claude Code</td>
+</tr>
+<tr class="even">
+<td><strong>Meta AI</strong></td>
+<td>Open-weight language models and AI research</td>
+<td>Llama family, Meta AI</td>
+</tr>
+<tr class="odd">
+<td><strong>DeepSeek</strong></td>
+<td>Efficient language models, reasoning models and open-weight releases</td>
+<td>DeepSeek-V3, DeepSeek-R1, DeepSeek Chat</td>
+</tr>
+<tr class="even">
+<td><strong>Mistral AI</strong></td>
+<td>Open-weight and commercial language models</td>
+<td>Mistral, Mixtral, Le Chat</td>
+</tr>
+<tr class="odd">
+<td><strong>Hugging Face</strong></td>
+<td>Open-source ML libraries, model and dataset sharing, collaborative development</td>
+<td>Transformers, Hugging Face Hub, Datasets, Spaces</td>
+</tr>
+<tr class="even">
+<td><strong>Microsoft / GitHub</strong></td>
+<td>Integration of AI into productivity software, development tools and cloud services</td>
+<td>Microsoft Copilot, GitHub Copilot, Azure AI</td>
+</tr>
+<tr class="odd">
+<td><strong>Stability AI</strong></td>
+<td>Generative image models and open-weight releases</td>
+<td>Stable Diffusion</td>
+</tr>
+<tr class="even">
+<td><strong>Midjourney / Runway</strong></td>
+<td>Image and video generation</td>
+<td>Midjourney, Runway video-generation models</td>
+</tr>
+<tr class="odd">
+<td><strong>NVIDIA</strong></td>
+<td>Hardware and software infrastructure for AI training and inference</td>
+<td>GPUs, CUDA, DGX systems</td>
+</tr>
+</tbody>
+</table>
+<p><em>This is a selective overview rather than a comprehensive comparison. The table includes models, applications and underlying technologies; some organisations operate across several categories.</em></p>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<p>For a more comprehensive review of the history and development of generative AI:</p>
+<ul>
+<li><p><strong>He, R., Cao, J. &amp; Tan, T. (2025).</strong> <a href="https://doi.org/10.1093/nsr/nwaf050"><em>Generative artificial intelligence: a historical perspective</em></a>. <em>National Science Review</em>, 12(5), nwaf050. Reviews the development of generative AI over seven decades, from rule-based systems to foundation models.</p></li>
+<li><p><strong>Sengar, S. S., Hasan, A. B., Kumar, S. &amp; Carroll, F. (2025; published online 2024).</strong> <a href="https://doi.org/10.1007/s11042-024-20016-1"><em>Generative artificial intelligence: a systematic review and applications</em></a>. <em>Multimedia Tools and Applications</em>, 84, 23661–23700. Reviews generative AI techniques and applications, particularly developments between 2018 and 2023.</p></li>
+</ul>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-bommasani2021" class="csl-entry" role="listitem">
+Bommasani, Rishi et al. 2021. <span>“On the Opportunities and Risks of Foundation Models.”</span> <a href="https://arxiv.org/abs/2108.07258">https://arxiv.org/abs/2108.07258</a>.
+</div>
+<div id="ref-brown2020" class="csl-entry" role="listitem">
+Brown, Tom B. et al. 2020. <span>“Language Models Are Few-Shot Learners.”</span> In <em>Advances in Neural Information Processing Systems</em>. Vol. 33. <a href="https://arxiv.org/abs/2005.14165">https://arxiv.org/abs/2005.14165</a>.
+</div>
+<div id="ref-deepseek2024" class="csl-entry" role="listitem">
+DeepSeek-AI. 2024. <span>“DeepSeek-V3 Technical Report.”</span> <a href="https://arxiv.org/abs/2412.19437">https://arxiv.org/abs/2412.19437</a>.
+</div>
+<div id="ref-deepseek2025" class="csl-entry" role="listitem">
+———. 2025. <span>“DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning.”</span> <a href="https://arxiv.org/abs/2501.12948">https://arxiv.org/abs/2501.12948</a>.
+</div>
+<div id="ref-goodfellow2014" class="csl-entry" role="listitem">
+Goodfellow, Ian et al. 2014. <span>“Generative Adversarial Nets.”</span> In <em>Advances in Neural Information Processing Systems</em>. Vol. 27. <a href="https://arxiv.org/abs/1406.2661">https://arxiv.org/abs/1406.2661</a>.
+</div>
+<div id="ref-hinton2006" class="csl-entry" role="listitem">
+Hinton, Geoffrey E., Simon Osindero, and Yee-Whye Teh. 2006. <span>“A Fast Learning Algorithm for Deep Belief Nets.”</span> <em>Neural Computation</em> 18 (7): 1527–54. <a href="https://doi.org/10.1162/neco.2006.18.7.1527">https://doi.org/10.1162/neco.2006.18.7.1527</a>.
+</div>
+<div id="ref-ho2020" class="csl-entry" role="listitem">
+Ho, Jonathan, Ajay Jain, and Pieter Abbeel. 2020. <span>“Denoising Diffusion Probabilistic Models.”</span> In <em>Advances in Neural Information Processing Systems</em>. Vol. 33. <a href="https://arxiv.org/abs/2006.11239">https://arxiv.org/abs/2006.11239</a>.
+</div>
+<div id="ref-hochreiter1997" class="csl-entry" role="listitem">
+Hochreiter, Sepp, and Jürgen Schmidhuber. 1997. <span>“Long Short-Term Memory.”</span> <em>Neural Computation</em> 9 (8): 1735–80. <a href="https://doi.org/10.1162/neco.1997.9.8.1735">https://doi.org/10.1162/neco.1997.9.8.1735</a>.
+</div>
+<div id="ref-kingma2014" class="csl-entry" role="listitem">
+Kingma, Diederik P., and Max Welling. 2014. <span>“Auto-Encoding Variational Bayes.”</span> In <em>International Conference on Learning Representations</em>. <a href="https://arxiv.org/abs/1312.6114">https://arxiv.org/abs/1312.6114</a>.
+</div>
+<div id="ref-krizhevsky2012" class="csl-entry" role="listitem">
+Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. 2012. <span>“ImageNet Classification with Deep Convolutional Neural Networks.”</span> In <em>Advances in Neural Information Processing Systems</em>. Vol. 25. <a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks">https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks</a>.
+</div>
+<div id="ref-lecun1998" class="csl-entry" role="listitem">
+LeCun, Yann, Léon Bottou, Yoshua Bengio, and Patrick Haffner. 1998. <span>“Gradient-Based Learning Applied to Document Recognition.”</span> <em>Proceedings of the IEEE</em> 86 (11): 2278–2324. <a href="https://doi.org/10.1109/5.726791">https://doi.org/10.1109/5.726791</a>.
+</div>
+<div id="ref-rumelhart1986" class="csl-entry" role="listitem">
+Rumelhart, David E., Geoffrey E. Hinton, and Ronald J. Williams. 1986. <span>“Learning Representations by Back-Propagating Errors.”</span> <em>Nature</em> 323: 533–36. <a href="https://doi.org/10.1038/323533a0">https://doi.org/10.1038/323533a0</a>.
+</div>
+<div id="ref-turing1950" class="csl-entry" role="listitem">
+Turing, Alan M. 1950. <span>“Computing Machinery and Intelligence.”</span> <em>Mind</em> 59 (236): 433–60. <a href="https://doi.org/10.1093/mind/LIX.236.433">https://doi.org/10.1093/mind/LIX.236.433</a>.
+</div>
+<div id="ref-vaswani2017" class="csl-entry" role="listitem">
+Vaswani, Ashish et al. 2017. <span>“Attention Is All You Need.”</span> In <em>Advances in Neural Information Processing Systems</em>. Vol. 30. <a href="https://arxiv.org/abs/1706.03762">https://arxiv.org/abs/1706.03762</a>.
+</div>
+<div id="ref-wolf2020" class="csl-entry" role="listitem">
+Wolf, Thomas et al. 2020. <span>“Transformers: State-of-the-Art Natural Language Processing.”</span> In <em>Proceedings of EMNLP: System Demonstrations</em>, 38–45. <a href="https://doi.org/10.18653/v1/2020.emnlp-demos.6">https://doi.org/10.18653/v1/2020.emnlp-demos.6</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../index.html" class="pagination-link" aria-label="Catching up with AI">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Catching up with AI</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html" class="pagination-link" aria-label="2.1 Prompt engineering and prompt patterns">
+        <span class="nav-page-text"><span class="chapter-title">2.1 Prompt engineering and prompt patterns</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>This book was built with curiosity and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

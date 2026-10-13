@@ -47,7 +47,7 @@
     "text": "Prompt engineering\nThese notes are based on the Coursera courses Prompt Engineering for ChatGPT and Advanced Prompt Engineering for Everyone by Jules White at Vanderbilt University. These courses were how I first learned to work systematically with large language models. The material I present here has subsequently been organized and adapted from my original course notes.\nPrompt patterns are reusable strategies for interacting with large language models — or, as I would call it, “the art of talking to the machine.” For users and developers learning to work with LLMs, prompt patterns provide a systematic way of thinking about how to formulate instructions, guide the interaction and shape the resulting output. The idea follows the concept of design patterns in software engineering, where a general solution can be adapted to different problems and contexts (White et al. 2023).\nAlthough prompt patterns provide a systematic approach, interacting with a language model is not a rigid process. Different users develop their own ways of working with AI, depending on their background, tasks and preferences. What works well for one person or task may not necessarily work for another.\nA prompt is the input given to a large language model. It can contain a question or task, but also additional context, constraints, examples, or instructions about the expected output.\nPrompt engineering is the process of designing this input to guide the model towards a useful response. Some of the basic elements that can be specified in a prompt include:\nFor example, instead of simply asking:\nthe task can be made more specific:\nSimilarly, instead of:\na more specific prompt might be:\nThe additional information communicates not only the topic, but also the expected level, focus and form of the response.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -58,7 +58,7 @@
     "text": "Persona pattern\nThe Persona Pattern asks the model to adopt a particular role or perspective. This can influence the terminology, level of expertise and type of response.\n\nAct as a senior bioinformatician experienced in single-cell epigenomics. Provide actionable suggestions.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -69,7 +69,7 @@
     "text": "Audience Persona pattern\nThe Audience Persona Pattern specifies who the response is intended for so that the explanation can be adapted to their background.\n\nAssume I am new to machine learning but familiar with R and statistics. Explain what a transformer is.\n\nThe distinction is useful: the Persona Pattern describes the perspective from which the model should respond, whereas the Audience Persona Pattern describes the person for whom the response is intended.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -80,7 +80,7 @@
     "text": "Question Refinement pattern\nSometimes the original question itself has been poorly specified. The Question Refinement Pattern asks the model to improve or clarify the question before answering it.\n\nWhen I ask you something unclear, suggest a more precise version first and ask whether I want to use it.\n\nThis can be useful for technical problems where small differences in the formulation of the question can change what is actually being asked.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -91,7 +91,7 @@
     "text": "Flipped Interaction pattern\nNormally, the user asks questions and the model answers them. The Flipped Interaction Pattern reverses this relationship: the model asks the user questions until it has enough information to perform the task.\n\nAsk me clarifying questions until you can design a workshop outline. When you have enough information, present the final outline.\n\nThis is useful when the information required to complete a task is not known in advance or would be cumbersome to specify in a single prompt.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -102,7 +102,7 @@
     "text": "Few-shot prompting\nWith few-shot prompting, examples of the desired input-output relationship are included directly in the prompt. The model can then infer the pattern from those examples.\nFor example:\n\nInput: ATGCGT Output: reversed sequence: TGCGTA\nInput: AACCAT Output:\n\nExamples can be particularly useful for classification, extraction, transformation, or formatting tasks.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -113,7 +113,7 @@
     "text": "Chain-of-Thought prompting\nChain-of-Thought prompting encourages the model to work through intermediate reasoning steps before producing an answer.\nSomething like:\n\nShow your reasoning in short bullet points and end with a final answer.\n\nThe idea is to break the problem down into smaller steps instead of asking the model to produce the final answer straight away.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -124,7 +124,7 @@
     "text": "ReAct\nReAct is an approach that combines reasoning with actions performed using external tools. Instead of producing an answer only from the prompt and its internal context, the model can alternate between deciding what to do, performing an action, and using the result to continue the task.\nConceptually:\nreason → act → inspect → continue → answer\nFor example, with access to appropriate tools:\n\nSearch PubMed for recent papers on DNA methylation in HSCs, summarize the main findings, and explain how they relate to AML biology.\n\nThis introduces the important idea that interactions with language models can extend beyond prompting itself: models can be connected to tools and external information sources.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -135,7 +135,7 @@
     "text": "Alternative Approaches pattern\nRather than asking for one solution, the Alternative Approaches Pattern asks the model to explore several possible strategies.\n\nPropose five different ways to create a metadata-capture workflow for a small lab, ranked by feasibility.\n\nThis can be useful for brainstorming, planning and problems where there is no single obvious solution.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -146,7 +146,7 @@
     "text": "Evaluation pattern\nThe Evaluation Pattern provides explicit criteria against which an output should be assessed.\n\nHere are three example abstracts. Score the following abstract for clarity (1–5), structure (1–5), and scientific accuracy (1–5). Provide a justification for each score.\n\nExplicit criteria make the basis of the evaluation clearer and can make different outputs easier to compare.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -157,7 +157,7 @@
     "text": "Game Play pattern\nThe Game Play Pattern introduces rules that turn an interaction into a structured exercise.\n\nWe are going to play a game. I describe a laboratory workflow. You identify five mistakes a junior researcher might make and suggest how each could be avoided.\n\nThe rules constrain the interaction while still allowing the content to change between rounds.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -168,7 +168,7 @@
     "text": "Recipe pattern\nThe Recipe Pattern is useful when part of a sequence or procedure is already known and the model is asked to complete or refine it.\nFor example:\n\nComplete the missing steps in this workflow:\n\nLoad FASTQ files\n[…]\nAlign reads using BWA\n[…]\nGenerate a BAM summary\n\n\nThis allows existing knowledge or constraints to be incorporated rather than asking the model to generate an entire workflow from scratch.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -179,7 +179,7 @@
     "text": "Template pattern\nThe Template Pattern specifies the structure in which information should be returned.\nFor example:\n\nMutation Summary Gene: &lt;GENE&gt; Variant: &lt;VARIANT&gt; Impact: &lt;IMPACT&gt; Evidence: &lt;QUOTES FROM ARTICLE&gt;\n\nTemplates are useful when similar information needs to be extracted or presented consistently across multiple inputs.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -190,7 +190,7 @@
     "text": "Semantic Filter\nA Semantic Filter specifies information that should be removed or transformed while preserving the remainder.\n\nRemove all dates from the text but change as little as possible.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -201,7 +201,7 @@
     "text": "Meta-language pattern\nThe Meta-language Pattern defines a shorthand or small domain-specific vocabulary that has a particular meaning within the interaction.\n\nWhen I write QC-S1, interpret it as: run initial QC on sequencing files and summarize FastQC results.\n\nThis allows frequently used instructions to be represented using a more compact notation.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -212,7 +212,7 @@
     "text": "Tail Generation\nTail Generation automatically adds a specified operation or output after the main task has been completed.\n\nAfter summarizing the paper, append a list of unresolved questions.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -223,7 +223,7 @@
     "text": "Cognitive Verifier pattern\nThe Cognitive Verifier Pattern breaks a larger question into additional questions whose answers can be used to construct the final response (White et al. 2023).\nRather than answering the original question immediately, the model first identifies additional questions that need to be answered. The answers to these questions are then combined to produce the final response.\nUnlike Chain-of-Thought, which focuses on the reasoning steps used to solve a problem, the Cognitive Verifier Pattern focuses on which additional questions need to be answered before the original question can be answered well.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -234,7 +234,7 @@
     "text": "Fact Check List pattern\nThe Fact Check List Pattern asks the model to identify factual statements in its output that should be checked.\nFor example:\n\nExtract the factual claims from the response and list those that require verification.\n\nImportantly, identifying claims that require verification is not the same as independently verifying them. The claims still need to be checked against appropriate sources.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
     ]
   },
   {
@@ -245,7 +245,7 @@
     "text": "These notes are based on the Coursera course Advanced Data Analysis with ChatGPT by Jules White at Vanderbilt University. After learning how to formulate prompts and use prompt patterns, the next step is learning how to bring information into the interaction and work with it.\nWorking with datasets, documents and other files shifts the focus from how to formulate a prompt to what information the model has available and how it is presented.\nFiles can provide both the material to work with and information that the model needs to complete a task. This might involve analysing datasets, extracting information from documents, comparing sources or transforming files. A useful first step is to inspect the material rather than immediately requesting a final result.\n\nWorking with data\nWhen working with a data file, it is useful to understand its structure before starting the analysis.\nA simple workflow might be:\nload → inspect → clean and transform → analyse → visualise → interpret\nFor example, imagine uploading a table containing gene-expression measurements for a set of samples.\nFirst, inspect the data:\n\nInspect this dataset. Report its dimensions, column names and data types, identify missing values, and provide basic summary statistics. Do not perform any further analysis yet.\n\nNext, examine whether the data need cleaning or transformation:\n\nCheck whether the expression values require transformation and whether there are obvious problems with the data. Explain what you find before making any changes.\n\nThen, perform the analysis:\n\nCompare the two experimental groups and identify genes showing the largest differences in expression. Create an appropriate visualisation of the results.\n\nFinally, interpret the results:\n\nExplain what the visualisation shows and identify any patterns or observations that should be investigated further.\n\nIn this way, intermediate results can be inspected before deciding what to do next.\nImportantly, the language model does not necessarily perform all these operations itself. Depending on the environment, it can use computational tools such as Python to manipulate data, perform calculations and create visualisations. The model can help formulate the analysis, generate or execute code, and interpret the resulting output.\n\n\nWorking with documents\nDocuments can be used in different ways depending on the task. A useful distinction is between treating a document as an object and treating a document as knowledge.\nWhen working with a document as an object, the task concerns the document itself, such as extracting text, reorganising sections or changing its format.\n\nExtract the tables from this document and return them in a structured format.\n\nWhen working with a document as knowledge, its content provides information needed to answer a question or perform another task.\n\nRead this paper and summarise the main findings, methods and limitations.\n\nSeveral documents can also be brought together:\n\nCompare the conclusions of these three papers. Identify where they agree, where they differ, and which evidence each paper provides for its conclusions.\n\n\n\nBringing information into the conversation\nWhen working with larger documents or several sources, it can be useful to extract relevant information and bring it into the conversation in a more manageable form.\nAlso, the amount of information that can be provided to a language model at once is limited by its context window. Long documents or collections of documents may therefore need to be summarised or divided into smaller pieces. This can also help keep the interaction focused on information relevant to the task.\nFor example:\n\nExtract the information relevant to this question and present it in a form that I can quickly verify.\n\nFor larger collections, an index or structured overview can help organise the information while retaining its source:\n\nCreate a table listing the relevant information, the document it came from, and where in the document it was found.\n\nFor example:\n\n\n\nInformation\nSource\nLocation\n\n\n\n\nFinding or statement\nDocument A\nPage 4\n\n\nFinding or statement\nDocument B\nResults section\n\n\nFinding or statement\nDocument C\nTable 2\n\n\n\nKeeping information connected to its original source makes it easier to inspect, verify and return to the source when necessary. This is particularly important when information is summarised or combined across several documents.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.2 Working with data, documents and files</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>2.2 Working with data, documents and files</span>"
     ]
   },
   {
@@ -256,7 +256,7 @@
     "text": "These notes are also based on the Coursera course Advanced Data Analysis with ChatGPT by Jules White at Vanderbilt University. While the previous section focused on working with data, documents and files, this section takes a broader view of how more complex tasks can be organised as workflows involving humans, AI and other computational tools.\nWorking with a language model becomes more complicated when a task involves several steps. Rather than describing the entire task in a single prompt, it can be useful to think in terms of a workflow: how the task can be divided into steps, what each step requires and produces, and which parts should be performed by humans, AI or other computational tools.\n\nFrom prompts to workflows\nA larger task can usually be divided into a sequence of smaller steps, where the output of one step becomes the input for another.\nFor example, analysing a collection of scientific papers might involve:\nidentify relevant papers → extract information → organise the information → compare findings → interpret differences → produce a summary\nNot all of these steps necessarily require the same approach. Some may involve a language model, others may require search or computational tools, and some depend on human judgement.\n\n\nETAC: structuring a larger task\nOne framework suggested by Jules White for breaking down larger tasks is ETAC:\nExtract → Transform → Analyze → Create\nThe four stages describe different operations that may occur within a workflow. For example, when working with a collection of scientific papers:\n\n\n\n\n\n\n\n\nStage\nPurpose\nScientific-paper example\n\n\n\n\nExtract\nRetrieve relevant information\nIdentify findings and retain their sources\n\n\nTransform\nOrganise, clean or convert information\nStructure findings for comparison\n\n\nAnalyze\nExamine patterns and relationships\nCompare findings and supporting evidence\n\n\nCreate\nProduce an output\nPrepare a summary or report\n\n\n\nETAC provides a simple way of thinking about the different stages of a task. In practice, however, a workflow does not always proceed neatly from Extract to Transform to Analyze to Create. Individual steps may need to be repeated, intermediate results inspected, and earlier decisions revised before moving on.\n\n\nDividing work between humans, AI and tools\nBreaking a task into steps also makes it possible to consider who or what should perform each step. A workflow can combine human judgement, language models and other computational tools.\nDifferent parts of a task are suited to different approaches. A language model can help extract and organise information, generate alternatives, explain results or plan the next step. Python or other computational tools can perform calculations, manipulate data and create visualisations, while specialised software may be needed for domain-specific analyses.\nThe human remains responsible for directing the workflow: defining the objective, providing relevant context, deciding which approaches are appropriate, inspecting intermediate results and judging whether the final result makes sense.\nFor example, in a data-analysis workflow, the work might be divided like this:\n\n\n\nStep\nPossible role\n\n\n\n\nDefine the scientific question\nHuman\n\n\nInspect the structure of the dataset\nAI + computational tools\n\n\nDecide on an appropriate analysis\nHuman + AI\n\n\nPerform calculations\nComputational tools\n\n\nInspect and visualise results\nHuman + AI + computational tools\n\n\nInterpret the results\nHuman + AI\n\n\nEvaluate whether the conclusions are justified\nHuman\n\n\n\nThese roles are not fixed. They depend on the task, available tools and consequences of an error. The important question is not whether a task should be performed by AI or a human, but how their capabilities can be combined effectively.\n\n\nWorking iteratively\nLarger tasks do not necessarily need to be planned completely before starting. A useful approach is to work iteratively:\nplan → execute → inspect → adjust → continue\n\n\n\nAn iterative human–AI workflow: plan, execute, inspect and adjust, then continue with the next step.\n\n\nA first plan provides a starting point, but each step can produce new information that changes what should happen next. Intermediate results can be inspected before continuing, and the workflow adjusted when something unexpected appears.\nFor example, a data-analysis task might begin with a plan to inspect the data, clean it, perform an analysis and visualise the results. Inspecting the data may reveal missing values, unexpected distributions or problems with the experimental groups. These observations can change the next step rather than simply continuing with the original plan.\nWorking in smaller steps also makes it easier to identify where something has gone wrong. If the final result is unexpected, intermediate outputs provide points at which the workflow can be examined and revised.\n\n\nAssembling larger tasks\nBreaking a larger task into smaller pieces makes the individual steps easier to manage, but the results eventually need to be brought together again.\nFor example, preparing a report from several sources might involve extracting information, organising tables, performing analyses and drafting individual sections. These intermediate outputs can be saved as files or structured data and then assembled into the final report.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>2.3 Human–AI workflows</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>2.3 Human–AI workflows</span>"
     ]
   },
   {
@@ -267,7 +267,7 @@
     "text": "These notes are based on the Coursera course Trustworthy Generative AI by Jules White at Vanderbilt University. The previous sections focused on how to interact with AI, work with different types of information and organise more complex tasks as workflows. This section adds another important part of working with generative AI: verifying its outputs and using them critically.\nLanguage models generate text, not necessarily answers. Some of that text may provide useful answers, but even a clear and convincing response can be wrong. This makes verification an important part of working with generative AI.\n\nWhy verification matters\nLanguage models generate responses based on patterns learned from data. They can produce incorrect information, make unsupported claims or invent details that appear plausible. These errors are often referred to as hallucinations.\nThe difficulty is that incorrect answers do not necessarily look incorrect. A response can be fluent and internally coherent while still containing factual errors.\nThe level of verification should depend on the task and its consequences. A suggestion used for brainstorming does not require the same level of checking as information used in a scientific analysis or an important decision.\n\n\nWhen is AI the right tool?\nAn important part of using AI critically is deciding whether it is appropriate for a particular task in the first place.\nLanguage models can be useful for exploring ideas, working with unstructured information, drafting text, generating code or helping to plan an analysis. However, not every task benefits from involving AI.\nFor calculations, statistical analyses or data transformations that require precise and reproducible results, conventional computational tools may be more appropriate. AI can still help formulate the approach or generate code, but the actual operations should be performed using methods that can be inspected and tested.\nOther considerations include the availability of reliable information, the sensitivity of the data, the consequences of an error and whether the output can be verified.\n\nBefore uploading data or documents to an AI service, it is important to consider whether they contain personal, confidential or unpublished information. The service’s data-handling policies and any applicable institutional requirements should be checked before sharing such material.\nThe question is therefore not simply what AI can do, but whether using AI provides an advantage over existing approaches, given the effort and risks involved.\n\n\nChecking information and sources\nWhen an answer depends on factual information, an important form of verification is to return to the original source.\nKeeping extracted information connected to its source, including document names, page numbers or sections, makes individual statements easier to check.\nFor example:\n\nSummarise the main findings of these papers. For each finding, identify the supporting paper and section, and provide a short quotation from the original text so that I can verify the interpretation.\n\nReferences generated by a language model also need to be treated carefully. A citation that looks plausible is not necessarily real, and a real paper does not necessarily support the claim for which it is cited. Both the existence of the source and the connection between the source and the claim need to be checked, including whether any quoted passage accurately reflects the original text.\n\n\nChecking calculations and analyses\nCalculations and data analyses can often be checked independently using conventional computational methods, such as reproducing calculations, inspecting generated code or comparing results with an independent analysis.\nAnother approach is to test a procedure on a simple case where the expected result is already known.\nFor example:\n\nApply this transformation to these five example values and show the result for each value.\n\nThe output can then be compared with the expected values before applying the procedure to a larger dataset.\nThis is particularly important for generated code: code that runs without errors is not necessarily correct. Its behaviour and results still need to be checked against what it was intended to do.\n\n\nChecking intermediate results\nIn a multi-step workflow, verification should not be limited to the final result. Important intermediate outputs can be checked before they become inputs to later stages.\nConsider a simple workflow:\nextract information → organise it → analyse it → produce a summary\nIf information is extracted incorrectly in the first step, the later analysis may still appear coherent while being based on incorrect input.\nChecking intermediate results helps detect errors before they propagate through the workflow and makes it easier to identify where something went wrong.\n\n\nThe cost of verification\nAI can produce an answer, analysis or draft very quickly, but generating the output is only part of the work. The result may also need to be checked.\nThis raises an important question:\n\nHow much effort is required to verify the result?\n\nFor some tasks, verification is relatively straightforward: a calculation can be reproduced, code can be tested or a statement checked against an identified source. For others, such as evaluating a complex analysis or comparing information across many documents, verification may require substantial work.\nThe usefulness of AI therefore depends not only on how quickly it produces an output, but also on the cost of establishing whether that output is reliable. Designing workflows with inspectable intermediate results and traceable sources can help reduce that cost.\n\n\nDomain expertise and human judgement\nSome errors can be detected mechanically: a calculation produces the wrong value, a reference does not exist or code fails a test. Other problems are harder to identify. An analysis may use an inappropriate method, an interpretation may overlook an alternative explanation, or a conclusion may go beyond what the evidence supports.\nRecognising these problems requires domain expertise and judgement. Someone familiar with the subject may identify implausible assumptions, missing information or methodological problems that are not obvious from the generated answer.\nHuman expertise therefore remains important throughout the workflow: defining what needs to be checked, evaluating intermediate results and judging whether the evidence supports the conclusions.\nUsing AI does not transfer responsibility for the resulting work to the model. Anyone incorporating AI-generated information, analyses or text into their work remains responsible for understanding and evaluating what they ultimately use or communicate.",
     "crumbs": [
       "02 — Working with AI",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>2.4 Verification and critical use</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>2.4 Verification and critical use</span>"
     ]
   },
   {
@@ -334,6 +334,127 @@
     "crumbs": [
       "03 — Building with AI",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>3.1 Configured AI assistants</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01-foundations/1.1-a-short-history-of-ai.html",
+    "href": "chapters/01-foundations/1.1-a-short-history-of-ai.html",
+    "title": "1.1 A short history of AI",
+    "section": "",
+    "text": "1950s–1980s: The foundations\nArtificial intelligence (AI) has been around for more than 70 years, but the release of ChatGPT in 2022 brought it to the attention of a much wider audience. What has changed is not only what computers can do, but also how researchers approach the problem of making machines perform tasks that we associate with intelligence.\nWhen I started exploring generative AI, I wanted to understand more about how we got here. The following is a brief overview of the major developments and milestones, along with the companies and models that have shaped today’s AI landscape.\nEarly AI research focused on whether machines could imitate human intelligence, primarily through symbolic reasoning and rule-based systems. Researchers also began exploring artificial neural networks and methods for learning from data.",
+    "crumbs": [
+      "01 — Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1.1 A short history of AI</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01-foundations/1.1-a-short-history-of-ai.html#s1980s-the-foundations",
+    "href": "chapters/01-foundations/1.1-a-short-history-of-ai.html#s1980s-the-foundations",
+    "title": "1.1 A short history of AI",
+    "section": "",
+    "text": "1950 – Alan Turing publishes Computing Machinery and Intelligence, proposing what later became known as the Turing Test as a way to examine machine intelligence (Turing 1950).\n1956 – The term artificial intelligence is introduced in the proposal for the Dartmouth Summer Research Project, organised by John McCarthy, Marvin Minsky, Nathaniel Rochester and Claude Shannon. The workshop is generally considered a founding event of AI research.\n1960s–1970s – Early conversational systems such as ELIZA (1966, Joseph Weizenbaum, MIT) simulate conversation using pattern matching and predefined rules.\n1970s–1980s – Expert systems, such as MYCIN at Stanford, use explicitly encoded knowledge and rules to support decision-making in specialised domains.\n1986 – Rumelhart, Hinton and Williams popularise backpropagation for training multilayer neural networks, laying important groundwork for modern deep learning (Rumelhart, Hinton, and Williams 1986).",
+    "crumbs": [
+      "01 — Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1.1 A short history of AI</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01-foundations/1.1-a-short-history-of-ai.html#s2000s-statistical-machine-learning-and-neural-networks",
+    "href": "chapters/01-foundations/1.1-a-short-history-of-ai.html#s2000s-statistical-machine-learning-and-neural-networks",
+    "title": "1.1 A short history of AI",
+    "section": "1990s–2000s: Statistical machine learning and neural networks",
+    "text": "1990s–2000s: Statistical machine learning and neural networks\nStatistical machine learning became increasingly important, while advances in neural-network architectures provided new approaches to image recognition and sequential data. However, progress in deep learning remained constrained by computing power and the availability of training data.\n\n1990s–2000s – Statistical methods, including support vector machines, decision trees and ensemble methods, become widely used for classification, prediction and pattern recognition.\n1997 – Hochreiter and Schmidhuber introduce Long Short-Term Memory (LSTM) networks, designed to capture long-range dependencies in sequential data (Hochreiter and Schmidhuber 1997).\n1998 – Yann LeCun and colleagues demonstrate convolutional neural networks (CNNs) for handwritten character recognition with LeNet-5 (LeCun et al. 1998).\n2006 – Geoffrey Hinton and colleagues demonstrate methods for training deep neural networks, contributing to renewed interest in deep learning (Hinton, Osindero, and Teh 2006).",
+    "crumbs": [
+      "01 — Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1.1 A short history of AI</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01-foundations/1.1-a-short-history-of-ai.html#s-deep-learning-and-the-emergence-of-generative-ai",
+    "href": "chapters/01-foundations/1.1-a-short-history-of-ai.html#s-deep-learning-and-the-emergence-of-generative-ai",
+    "title": "1.1 A short history of AI",
+    "section": "2010s: Deep learning and the emergence of generative AI",
+    "text": "2010s: Deep learning and the emergence of generative AI\nLarger datasets, improved algorithms and powerful graphics processing units (GPUs) enabled major advances in deep learning, particularly in image recognition, speech processing and natural language processing. New architectures also expanded the possibilities for generating content.\n\n2012 – Alex Krizhevsky, Ilya Sutskever and Geoffrey Hinton achieve a major improvement in the ImageNet image classification competition with AlexNet, demonstrating the potential of deep CNNs trained using GPUs (Krizhevsky, Sutskever, and Hinton 2012).\n2014 – Ian Goodfellow and colleagues introduce Generative Adversarial Networks (GANs), which train two competing neural networks to generate realistic data (Goodfellow et al. 2014).\n2014 – Kingma and Welling introduce Variational Autoencoders (VAEs), another influential approach to deep generative modelling (Kingma and Welling 2014).\n2015 – OpenAI is founded as an AI research organisation.\n2017 – Vaswani and colleagues introduce the Transformer architecture in Attention Is All You Need. Based on attention mechanisms, transformers enable more parallelised training than earlier recurrent approaches and become central to modern large language models (Vaswani et al. 2017).",
+    "crumbs": [
+      "01 — Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1.1 A short history of AI</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01-foundations/1.1-a-short-history-of-ai.html#the-beginning-of-the-large-language-model-era",
+    "href": "chapters/01-foundations/1.1-a-short-history-of-ai.html#the-beginning-of-the-large-language-model-era",
+    "title": "1.1 A short history of AI",
+    "section": "2018–2020: The beginning of the large language model era",
+    "text": "2018–2020: The beginning of the large language model era\nTransformer-based architectures made it possible to train models on increasingly large text datasets. Pretraining on general-purpose data, followed by adaptation to specific tasks, became a central approach in natural language processing.\n\n2018 – Google introduces BERT (Bidirectional Encoder Representations from Transformers), demonstrating the effectiveness of bidirectional pretraining for language understanding.\n2018 – OpenAI introduces GPT (Generative Pre-trained Transformer), combining transformer-based language modelling with generative pretraining.\n2018–2019 – Hugging Face develops its open-source Transformers library, making pretrained language models easier to access and reuse. Together with the Hugging Face Hub, it helps establish an open ecosystem for sharing models and datasets (Wolf et al. 2020).\n2019 – OpenAI releases GPT-2, demonstrating improved text generation. Google introduces T5, which treats different natural language processing tasks as text-to-text problems.\n2020 – OpenAI introduces GPT-3, a language model with 175 billion parameters, demonstrating improved few-shot learning across a range of language tasks (Brown et al. 2020).\n2020 – Research on denoising diffusion probabilistic models provides an important foundation for later image-generation systems (Ho, Jain, and Abbeel 2020).",
+    "crumbs": [
+      "01 — Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1.1 A short history of AI</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01-foundations/1.1-a-short-history-of-ai.html#foundation-models-and-generative-ai-become-widely-accessible",
+    "href": "chapters/01-foundations/1.1-a-short-history-of-ai.html#foundation-models-and-generative-ai-become-widely-accessible",
+    "title": "1.1 A short history of AI",
+    "section": "2021–2023: Foundation models and generative AI become widely accessible",
+    "text": "2021–2023: Foundation models and generative AI become widely accessible\nLarge pretrained models increasingly serve as the basis for applications across different tasks. Meanwhile, conversational interfaces and image-generation tools bring generative AI to a much wider audience.\n\n2021 – The concept of foundation models gains prominence, describing models trained on broad datasets that can be adapted to different tasks (Bommasani et al. 2021). Anthropic is founded, with a focus on AI safety, alignment and interpretability.\n2022 – OpenAI releases DALL·E 2, while Stable Diffusion makes text-to-image generation more widely accessible.\nNovember 2022 – OpenAI launches ChatGPT, bringing conversational interfaces based on large language models to a broad public audience.\n2023 – OpenAI releases GPT-4, expanding the capabilities of the GPT family, including support for image input.\n2023 – Anthropic introduces Claude, Meta releases Llama and Llama 2, and Google DeepMind introduces Gemini, expanding the range of competing language models.\n2023 – Generative AI becomes increasingly integrated into software development and productivity tools, including GitHub Copilot and Microsoft Copilot.",
+    "crumbs": [
+      "01 — Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1.1 A short history of AI</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01-foundations/1.1-a-short-history-of-ai.html#multimodal-ai-reasoning-models-and-ai-assistants",
+    "href": "chapters/01-foundations/1.1-a-short-history-of-ai.html#multimodal-ai-reasoning-models-and-ai-assistants",
+    "title": "1.1 A short history of AI",
+    "section": "2024–2025: Multimodal AI, reasoning models and AI assistants",
+    "text": "2024–2025: Multimodal AI, reasoning models and AI assistants\nGenerative AI moves beyond text-based chatbots. Models increasingly support multiple types of input and output, while advances in reasoning and tool integration expand what AI assistants can do.\n\n2024 – OpenAI introduces GPT-4o, supporting real-time interaction with text, images and audio. Google’s Gemini 1.5 and Anthropic’s Claude 3 demonstrate further advances in multimodal capabilities and long-context processing.\n2024 – OpenAI introduces the o1 model family, using additional computation during inference to improve performance on reasoning tasks.\nDecember 2024 – DeepSeek-V3 demonstrates competitive performance using a Mixture-of-Experts (MoE) architecture and techniques to improve training and inference efficiency (DeepSeek-AI 2024).\nJanuary 2025 – DeepSeek-R1 attracts attention for its reasoning capabilities and use of reinforcement learning, contributing to the growing ecosystem of open-weight models (DeepSeek-AI 2025).\n2025 – AI coding assistants, including GitHub Copilot, Cursor, Claude Code and OpenAI Codex, increasingly support software development beyond code completion.\n2025 – AI systems increasingly combine language models with external tools, information retrieval and multi-step workflows, driving interest in AI agents and more autonomous assistants.",
+    "crumbs": [
+      "01 — Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1.1 A short history of AI</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01-foundations/1.1-a-short-history-of-ai.html#major-companies-models-and-tools",
+    "href": "chapters/01-foundations/1.1-a-short-history-of-ai.html#major-companies-models-and-tools",
+    "title": "1.1 A short history of AI",
+    "section": "Major companies, models and tools",
+    "text": "Major companies, models and tools\nGenerative AI has created a diverse landscape of research organisations, model developers, technology providers and user-facing applications. Some companies develop their own foundation models, while others build applications or infrastructure around existing models.\nThe following table provides a selection of major players and their contributions as of December 2025.\n\n\n\n\n\n\n\n\nCompany / organisation\nKey contributions\nNotable models / tools\n\n\n\n\nOpenAI\nLarge language models, image generation, reasoning models\nGPT series, o-series, DALL·E, ChatGPT, Codex\n\n\nGoogle / Google DeepMind\nTransformer research, language and multimodal models\nBERT, T5, Gemini, Imagen, Gemini app\n\n\nAnthropic\nLanguage models, AI safety and alignment research\nClaude, Claude Code\n\n\nMeta AI\nOpen-weight language models and AI research\nLlama family, Meta AI\n\n\nDeepSeek\nEfficient language models, reasoning models and open-weight releases\nDeepSeek-V3, DeepSeek-R1, DeepSeek Chat\n\n\nMistral AI\nOpen-weight and commercial language models\nMistral, Mixtral, Le Chat\n\n\nHugging Face\nOpen-source ML libraries, model and dataset sharing, collaborative development\nTransformers, Hugging Face Hub, Datasets, Spaces\n\n\nMicrosoft / GitHub\nIntegration of AI into productivity software, development tools and cloud services\nMicrosoft Copilot, GitHub Copilot, Azure AI\n\n\nStability AI\nGenerative image models and open-weight releases\nStable Diffusion\n\n\nMidjourney / Runway\nImage and video generation\nMidjourney, Runway video-generation models\n\n\nNVIDIA\nHardware and software infrastructure for AI training and inference\nGPUs, CUDA, DGX systems\n\n\n\nThis is a selective overview rather than a comprehensive comparison. The table includes models, applications and underlying technologies; some organisations operate across several categories.",
+    "crumbs": [
+      "01 — Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1.1 A short history of AI</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01-foundations/1.1-a-short-history-of-ai.html#further-reading",
+    "href": "chapters/01-foundations/1.1-a-short-history-of-ai.html#further-reading",
+    "title": "1.1 A short history of AI",
+    "section": "Further reading",
+    "text": "Further reading\nFor a more comprehensive review of the history and development of generative AI:\n\nHe, R., Cao, J. & Tan, T. (2025). Generative artificial intelligence: a historical perspective. National Science Review, 12(5), nwaf050. Reviews the development of generative AI over seven decades, from rule-based systems to foundation models.\nSengar, S. S., Hasan, A. B., Kumar, S. & Carroll, F. (2025; published online 2024). Generative artificial intelligence: a systematic review and applications. Multimedia Tools and Applications, 84, 23661–23700. Reviews generative AI techniques and applications, particularly developments between 2018 and 2023.",
+    "crumbs": [
+      "01 — Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1.1 A short history of AI</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html#references",
+    "href": "chapters/02-working-with-ai/2.1-prompt-engineering-and-prompt-patterns.html#references",
+    "title": "2.1 Prompt engineering and prompt patterns",
+    "section": "References",
+    "text": "References\n\n\n\n\nWhite, Jules, Quchen Fu, Sam Hays, Michael Sandborn, Carlos Olea, Henry Gilbert, Ashraf Elnashar, Jesse Spencer-Smith, and Douglas C. Schmidt. 2023. “A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT.” https://doi.org/10.48550/arXiv.2302.11382.",
+    "crumbs": [
+      "02 — Working with AI",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2.1 Prompt engineering and prompt patterns</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01-foundations/1.1-a-short-history-of-ai.html#references",
+    "href": "chapters/01-foundations/1.1-a-short-history-of-ai.html#references",
+    "title": "1.1 A short history of AI",
+    "section": "References",
+    "text": "References\n\n\n\n\nBommasani, Rishi et al. 2021. “On the Opportunities and Risks of Foundation Models.” https://arxiv.org/abs/2108.07258.\n\n\nBrown, Tom B. et al. 2020. “Language Models Are Few-Shot Learners.” In Advances in Neural Information Processing Systems. Vol. 33. https://arxiv.org/abs/2005.14165.\n\n\nDeepSeek-AI. 2024. “DeepSeek-V3 Technical Report.” https://arxiv.org/abs/2412.19437.\n\n\n———. 2025. “DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning.” https://arxiv.org/abs/2501.12948.\n\n\nGoodfellow, Ian et al. 2014. “Generative Adversarial Nets.” In Advances in Neural Information Processing Systems. Vol. 27. https://arxiv.org/abs/1406.2661.\n\n\nHinton, Geoffrey E., Simon Osindero, and Yee-Whye Teh. 2006. “A Fast Learning Algorithm for Deep Belief Nets.” Neural Computation 18 (7): 1527–54. https://doi.org/10.1162/neco.2006.18.7.1527.\n\n\nHo, Jonathan, Ajay Jain, and Pieter Abbeel. 2020. “Denoising Diffusion Probabilistic Models.” In Advances in Neural Information Processing Systems. Vol. 33. https://arxiv.org/abs/2006.11239.\n\n\nHochreiter, Sepp, and Jürgen Schmidhuber. 1997. “Long Short-Term Memory.” Neural Computation 9 (8): 1735–80. https://doi.org/10.1162/neco.1997.9.8.1735.\n\n\nKingma, Diederik P., and Max Welling. 2014. “Auto-Encoding Variational Bayes.” In International Conference on Learning Representations. https://arxiv.org/abs/1312.6114.\n\n\nKrizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. 2012. “ImageNet Classification with Deep Convolutional Neural Networks.” In Advances in Neural Information Processing Systems. Vol. 25. https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.\n\n\nLeCun, Yann, Léon Bottou, Yoshua Bengio, and Patrick Haffner. 1998. “Gradient-Based Learning Applied to Document Recognition.” Proceedings of the IEEE 86 (11): 2278–2324. https://doi.org/10.1109/5.726791.\n\n\nRumelhart, David E., Geoffrey E. Hinton, and Ronald J. Williams. 1986. “Learning Representations by Back-Propagating Errors.” Nature 323: 533–36. https://doi.org/10.1038/323533a0.\n\n\nTuring, Alan M. 1950. “Computing Machinery and Intelligence.” Mind 59 (236): 433–60. https://doi.org/10.1093/mind/LIX.236.433.\n\n\nVaswani, Ashish et al. 2017. “Attention Is All You Need.” In Advances in Neural Information Processing Systems. Vol. 30. https://arxiv.org/abs/1706.03762.\n\n\nWolf, Thomas et al. 2020. “Transformers: State-of-the-Art Natural Language Processing.” In Proceedings of EMNLP: System Demonstrations, 38–45. https://doi.org/10.18653/v1/2020.emnlp-demos.6.",
+    "crumbs": [
+      "01 — Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1.1 A short history of AI</span>"
     ]
   }
 ]

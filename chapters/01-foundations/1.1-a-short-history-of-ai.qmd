@@ -1,0 +1,128 @@
+---
+title: "1.1 A short history of AI"
+date: "2025-12-16"
+---
+
+Artificial intelligence (AI) has been around for more than 70 years, but the release of ChatGPT in 2022 brought it to the attention of a much wider audience. What has changed is not only what computers can do, but also how researchers approach the problem of making machines perform tasks that we associate with intelligence.
+
+When I started exploring generative AI, I wanted to understand more about how we got here. The following is a brief overview of the major developments and milestones, along with the companies and models that have shaped today's AI landscape.
+
+## 1950s–1980s: The foundations
+
+Early AI research focused on whether machines could imitate human intelligence, primarily through symbolic reasoning and rule-based systems. Researchers also began exploring artificial neural networks and methods for learning from data.
+
+-   **1950** – Alan Turing publishes *Computing Machinery and Intelligence*, proposing what later became known as the **Turing Test** as a way to examine machine intelligence [@turing1950].
+
+-   **1956** – The term **artificial intelligence** is introduced in the proposal for the Dartmouth Summer Research Project, organised by John McCarthy, Marvin Minsky, Nathaniel Rochester and Claude Shannon. The workshop is generally considered a founding event of AI research.
+
+-   **1960s–1970s** – Early conversational systems such as **ELIZA** (1966, Joseph Weizenbaum, MIT) simulate conversation using pattern matching and predefined rules.
+
+-   **1970s–1980s** – **Expert systems**, such as MYCIN at Stanford, use explicitly encoded knowledge and rules to support decision-making in specialised domains.
+
+-   **1986** – Rumelhart, Hinton and Williams popularise **backpropagation** for training multilayer neural networks, laying important groundwork for modern deep learning [@rumelhart1986].
+
+## 1990s–2000s: Statistical machine learning and neural networks
+
+Statistical machine learning became increasingly important, while advances in neural-network architectures provided new approaches to image recognition and sequential data. However, progress in deep learning remained constrained by computing power and the availability of training data.
+
+-   **1990s–2000s** – Statistical methods, including support vector machines, decision trees and ensemble methods, become widely used for classification, prediction and pattern recognition.
+
+-   **1997** – Hochreiter and Schmidhuber introduce **Long Short-Term Memory (LSTM)** networks, designed to capture long-range dependencies in sequential data [@hochreiter1997].
+
+-   **1998** – Yann LeCun and colleagues demonstrate **convolutional neural networks (CNNs)** for handwritten character recognition with LeNet-5 [@lecun1998].
+
+-   **2006** – Geoffrey Hinton and colleagues demonstrate methods for training deep neural networks, contributing to renewed interest in **deep learning** [@hinton2006].
+
+## 2010s: Deep learning and the emergence of generative AI
+
+Larger datasets, improved algorithms and powerful graphics processing units (GPUs) enabled major advances in deep learning, particularly in image recognition, speech processing and natural language processing. New architectures also expanded the possibilities for generating content.
+
+-   **2012** – Alex Krizhevsky, Ilya Sutskever and Geoffrey Hinton achieve a major improvement in the ImageNet image classification competition with **AlexNet**, demonstrating the potential of deep CNNs trained using GPUs [@krizhevsky2012].
+
+-   **2014** – Ian Goodfellow and colleagues introduce **Generative Adversarial Networks (GANs)**, which train two competing neural networks to generate realistic data [@goodfellow2014].
+
+-   **2014** – Kingma and Welling introduce **Variational Autoencoders (VAEs)**, another influential approach to deep generative modelling [@kingma2014].
+
+-   **2015** – **OpenAI** is founded as an AI research organisation.
+
+-   **2017** – Vaswani and colleagues introduce the **Transformer architecture** in *Attention Is All You Need*. Based on attention mechanisms, transformers enable more parallelised training than earlier recurrent approaches and become central to modern large language models [@vaswani2017].
+
+## 2018–2020: The beginning of the large language model era
+
+Transformer-based architectures made it possible to train models on increasingly large text datasets. Pretraining on general-purpose data, followed by adaptation to specific tasks, became a central approach in natural language processing.
+
+-   **2018** – Google introduces **BERT (Bidirectional Encoder Representations from Transformers)**, demonstrating the effectiveness of bidirectional pretraining for language understanding.
+
+-   **2018** – OpenAI introduces **GPT (Generative Pre-trained Transformer)**, combining transformer-based language modelling with generative pretraining.
+
+-   **2018–2019** – **Hugging Face** develops its open-source **Transformers** library, making pretrained language models easier to access and reuse. Together with the Hugging Face Hub, it helps establish an open ecosystem for sharing models and datasets [@wolf2020].
+
+-   **2019** – OpenAI releases **GPT-2**, demonstrating improved text generation. Google introduces **T5**, which treats different natural language processing tasks as text-to-text problems.
+
+-   **2020** – OpenAI introduces **GPT-3**, a language model with 175 billion parameters, demonstrating improved few-shot learning across a range of language tasks [@brown2020].
+
+-   **2020** – Research on **denoising diffusion probabilistic models** provides an important foundation for later image-generation systems [@ho2020].
+
+## 2021–2023: Foundation models and generative AI become widely accessible
+
+Large pretrained models increasingly serve as the basis for applications across different tasks. Meanwhile, conversational interfaces and image-generation tools bring generative AI to a much wider audience.
+
+-   **2021** – The concept of **foundation models** gains prominence, describing models trained on broad datasets that can be adapted to different tasks [@bommasani2021]. **Anthropic** is founded, with a focus on AI safety, alignment and interpretability.
+
+-   **2022** – OpenAI releases **DALL·E 2**, while **Stable Diffusion** makes text-to-image generation more widely accessible.
+
+-   **November 2022** – OpenAI launches **ChatGPT**, bringing conversational interfaces based on large language models to a broad public audience.
+
+-   **2023** – OpenAI releases **GPT-4**, expanding the capabilities of the GPT family, including support for image input.
+
+-   **2023** – **Anthropic** introduces Claude, **Meta** releases Llama and Llama 2, and **Google DeepMind** introduces Gemini, expanding the range of competing language models.
+
+-   **2023** – Generative AI becomes increasingly integrated into software development and productivity tools, including **GitHub Copilot** and **Microsoft Copilot**.
+
+## 2024–2025: Multimodal AI, reasoning models and AI assistants
+
+Generative AI moves beyond text-based chatbots. Models increasingly support multiple types of input and output, while advances in reasoning and tool integration expand what AI assistants can do.
+
+-   **2024** – OpenAI introduces **GPT-4o**, supporting real-time interaction with text, images and audio. Google's **Gemini 1.5** and Anthropic's **Claude 3** demonstrate further advances in multimodal capabilities and long-context processing.
+
+-   **2024** – OpenAI introduces the **o1** model family, using additional computation during inference to improve performance on reasoning tasks.
+
+-   **December 2024** – **DeepSeek-V3** demonstrates competitive performance using a **Mixture-of-Experts (MoE)** architecture and techniques to improve training and inference efficiency [@deepseek2024].
+
+-   **January 2025** – **DeepSeek-R1** attracts attention for its reasoning capabilities and use of reinforcement learning, contributing to the growing ecosystem of **open-weight models** [@deepseek2025].
+
+-   **2025** – AI coding assistants, including **GitHub Copilot**, **Cursor**, **Claude Code** and **OpenAI Codex**, increasingly support software development beyond code completion.
+
+-   **2025** – AI systems increasingly combine language models with external tools, information retrieval and multi-step workflows, driving interest in **AI agents** and more autonomous assistants.
+
+## Major companies, models and tools
+
+Generative AI has created a diverse landscape of research organisations, model developers, technology providers and user-facing applications. Some companies develop their own foundation models, while others build applications or infrastructure around existing models.
+
+The following table provides a selection of major players and their contributions as of December 2025.
+
+| Company / organisation | Key contributions | Notable models / tools |
+|----|----|----|
+| **OpenAI** | Large language models, image generation, reasoning models | GPT series, o-series, DALL·E, ChatGPT, Codex |
+| **Google / Google DeepMind** | Transformer research, language and multimodal models | BERT, T5, Gemini, Imagen, Gemini app |
+| **Anthropic** | Language models, AI safety and alignment research | Claude, Claude Code |
+| **Meta AI** | Open-weight language models and AI research | Llama family, Meta AI |
+| **DeepSeek** | Efficient language models, reasoning models and open-weight releases | DeepSeek-V3, DeepSeek-R1, DeepSeek Chat |
+| **Mistral AI** | Open-weight and commercial language models | Mistral, Mixtral, Le Chat |
+| **Hugging Face** | Open-source ML libraries, model and dataset sharing, collaborative development | Transformers, Hugging Face Hub, Datasets, Spaces |
+| **Microsoft / GitHub** | Integration of AI into productivity software, development tools and cloud services | Microsoft Copilot, GitHub Copilot, Azure AI |
+| **Stability AI** | Generative image models and open-weight releases | Stable Diffusion |
+| **Midjourney / Runway** | Image and video generation | Midjourney, Runway video-generation models |
+| **NVIDIA** | Hardware and software infrastructure for AI training and inference | GPUs, CUDA, DGX systems |
+
+*This is a selective overview rather than a comprehensive comparison. The table includes models, applications and underlying technologies; some organisations operate across several categories.*
+
+## Further reading
+
+For a more comprehensive review of the history and development of generative AI:
+
+-   **He, R., Cao, J. & Tan, T. (2025).** [*Generative artificial intelligence: a historical perspective*](https://doi.org/10.1093/nsr/nwaf050). *National Science Review*, 12(5), nwaf050. Reviews the development of generative AI over seven decades, from rule-based systems to foundation models.
+
+-   **Sengar, S. S., Hasan, A. B., Kumar, S. & Carroll, F. (2025; published online 2024).** [*Generative artificial intelligence: a systematic review and applications*](https://doi.org/10.1007/s11042-024-20016-1). *Multimedia Tools and Applications*, 84, 23661–23700. Reviews generative AI techniques and applications, particularly developments between 2018 and 2023.
+
+## References
